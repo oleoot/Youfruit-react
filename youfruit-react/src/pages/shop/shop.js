@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import Apple from '../../product-pages/apple/apple';
 import "./shop.css"
 class Shop extends Component {
     render() {
         return (
-
             <div className="shop">
                 <div className="container">
                     <p className="text-llg section-headline">Пастила</p>
                     <div className="underline"></div>
                     <section className="shop-wrap grid-container">
+                        <Link to="/shop:apple" className="shop-item">
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
+                            <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
+                            <div className="shop-price-wrap flex-container">
+                                <p className="text-sm shop-item-price">69.00 грн.</p>
+                                <p className="text-sm">70 гр.</p>
+                            </div>
+
+                        </Link>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple-cinnamon.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -20,7 +29,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple-cinnamon.png`)} alt="logo" />
+                            <img src={require(`../../img/products/pear.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -29,7 +38,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/banana.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -38,7 +47,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/orange.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -47,7 +56,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/kiwi.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -56,7 +65,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/sharon.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -65,7 +74,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/mango.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -74,7 +83,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/pineapple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -83,16 +92,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
-                            <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
-                            <div className="shop-price-wrap flex-container">
-                                <p className="text-sm shop-item-price">69.00 грн.</p>
-                                <p className="text-sm">70 гр.</p>
-                            </div>
-
-                        </div>
-                        <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/mix.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -110,7 +110,7 @@ class Shop extends Component {
 
                     <section className="shop-wrap grid-container">
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -119,7 +119,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -128,7 +128,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -137,7 +137,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -146,7 +146,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -155,7 +155,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -164,7 +164,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -173,7 +173,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -182,7 +182,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>
@@ -191,7 +191,7 @@ class Shop extends Component {
 
                         </div>
                         <div className="shop-item">
-                            <img src={require(`../../img/products/apple.png`)} alt="logo" />
+                            <img src={require(`../../img/products/apple.jpg`)} alt="logo" />
                             <p className="text-md shop-item-name">Фруктовые чипсы - яблоко</p>
                             <div className="shop-price-wrap flex-container">
                                 <p className="text-sm shop-item-price">69.00 грн.</p>

@@ -5,7 +5,7 @@ class Blog extends Component {
     render() {
         return (
 
-            <div className="shop">
+            <div className="blog">
                 <div className="container">
                     <p className="text-llg section-headline">Блог</p>
                     <div className="underline"></div>

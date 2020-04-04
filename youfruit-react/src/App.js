@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import Shop from './pages/shop/shop';
+import Apple from './product-pages/apple/apple';
 import Main from './pages/main/main';
 import Blog from './pages/blog/blog';
 import './App.css';
@@ -34,15 +35,19 @@ class App extends Component {
             </div>
           </header>
 
-          <Route exact path="/" component={Main}>
-          </Route>
+          <Switch>
+            <Route exact path="/" component={Main}>
+            </Route>
 
-          <Route path="/shop" component={Shop}>
-          </Route>
+            <Route exact path="/shop" component={Shop}>
+            </Route>
 
-          <Route path="/blog" component={Blog}>
-          </Route>
+            <Route path="/shop:apple" component={Apple}>
+            </Route>
 
+            <Route path="/blog" component={Blog}>
+            </Route>
+          </Switch>
 
           <footer id="footer">
 

@@ -2,10 +2,26 @@
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 100px;
 }
+.shop-item{
+   display: block;
+   text-decoration: none;
+}
+.shop-item p{
+color: var(--primary-color);
+}
 .shop-item img{
 display: block;
 width: 100%;
+overflow: hidden;
+-moz-transition: all 0.5s ease-out;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
 }
+.shop-item  img:hover{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ }
 .shop-item-name{
 margin: 30px 0 10px 0;
 }
@@ -14,6 +30,6 @@ justify-content: flex-start !important;
 }
 .shop-item-price{
 margin-right: 20px;
-font-weight: 400 !important;
-color: var(--accent-color);
+font-weight: 600 !important;
+color: var(--accent-color) !important;
 }

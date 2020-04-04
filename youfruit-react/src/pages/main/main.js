@@ -25,8 +25,13 @@ class Main extends Component {
                 <div id="adv">
                     <p className="text-llg section-headline">Преимущества</p>
                     <div className="underline"></div>
-                    sdfjdsjopsdjf
-                    sdkjgsdfjgj
+                    <div className="adv-wrap grid-container">
+                        <div>
+                            <img src={require(`../../img/icons/healthy.png`)} alt="healthy" />
+                            <p className="text-sm">Вкусно и полезно для организма</p>
+                            <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
