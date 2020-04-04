@@ -1,7 +1,7 @@
 /* Header section ============================================================================*/
-#header{
+/* #header{
 height: 100vh;
-}
+} */
 .nav{
 height: 90px;
 }
@@ -14,7 +14,7 @@ list-style-type: none;
 .nav li{
 margin: 0 40px;
 }
-.nav li a{
+.nav-a{
 text-decoration: none;
 color: var(--primary-color);
 }
@@ -26,25 +26,28 @@ margin-right: 15px;
 #nav-left span{
 color: var(--accent-color);
 }
+.nav-active{
+color: var(--accent-color);
+}
 #cart{
 display: block;
 }
-.header{
+.header-main{
 height: calc(100vh - 90px);
 background: #F4D8DD;
 grid-template-columns: 1fr 1fr;
 }
-.header h1{
+.header-main h1{
 width: 90%;
 margin: 0 auto;
 font-weight: 300;
 text-align: center;
 }
-.header p{
+.header-main p{
 margin: 20px 0 50px 0;
 text-align: center;
 }
-.header img{
+.header-main img{
 display: block;
 width: 80%;
 }
