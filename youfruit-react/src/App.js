@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
-import Shop from './pages/shop'
-import Main from './pages/main'
+import Shop from './pages/shop/shop';
+import Main from './pages/main/main';
+import Blog from './pages/blog/blog';
 import './App.css';
 
 class App extends Component {
@@ -9,8 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
-          <section id="header">
+          <header id="header">
             <div className="container">
               <nav className="nav flex-container align-center">
 
@@ -32,17 +32,53 @@ class App extends Component {
                 <a href="#"><img src={require(`./img/cart.png`)} alt="cart" id="cart" /></a>
               </nav>
             </div>
-          </section>
+          </header>
+
           <Route exact path="/" component={Main}>
           </Route>
-
-
-
 
           <Route path="/shop" component={Shop}>
           </Route>
 
+          <Route path="/blog" component={Blog}>
+          </Route>
 
+
+          <footer id="footer">
+
+            <div className="container">
+              <div className="footer-wrap grid-container">
+                <div className="footer-call flex-container-center">
+                  <div className="call-item flex-container align-center">
+                    <img src={require(`./img/icons/lifecell.png`)} alt="lifecell" />
+                    <p className="text-xs">+380674591254</p>
+                  </div>
+                  <div className="call-item flex-container align-center">
+                    <img src={require(`./img/icons/vodafone.png`)} alt="vodafone" />
+                    <p className="text-xs">+380674591254</p>
+                  </div>
+                </div>
+
+
+                <div className="footer-question flex-container-center align-center">
+                  <input type="phone" placeholder="Ваш телефон" />
+                  <button type="submit">Задать вопрос</button>
+                </div>
+
+
+
+                <div className="footer-social flex-container-center align-center">
+                  <a href="#"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
+                  <a href="#"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
+                  <a href="#"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
+                  <a href="#"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
+                </div>
+              </div>
+
+
+              <p className="text-xs">&copy; Youfruit 2020</p>
+            </div>
+          </footer>
         </div>
       </Router>
     );

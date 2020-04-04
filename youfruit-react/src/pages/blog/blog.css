@@ -1,0 +1,21 @@
+.blog-wrap{
+grid-template-columns: 1fr 1fr;
+grid-gap: 50px;
+}
+.blog-wrap img{
+display: block;
+width: 100%;
+}
+.blog-item{
+grid-template-columns: 1fr 1fr;
+grid-gap: 30px;
+}
+.blog-item p:last-of-type{
+margin: 20px 0;
+}
+.blog-item a{
+width: 200px;
+height: 50px;
+line-height: 50px;
+margin: 0;
+}
