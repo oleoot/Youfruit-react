@@ -1,0 +1,32 @@
+.product-wrap{
+grid-template-columns: 1fr 1fr;
+grid-gap: 100px;
+padding-top: 100px;
+}
+.product-wrap img{
+width: 100%;
+display: block;
+}
+.product-wrap p {
+margin-bottom: 20px;
+}
+.product-wrap a{
+height: 50px;
+line-height: 50px;
+margin: 20px 0 0 0;
+}
+.product-wrap input{
+width: 100px;
+height: 40px;
+outline: none;
+padding-left: 10px;
+}
+.product-weight{
+color: #a5a5a5;
+}
+.product-description{
+line-height: 40px;
+}
+.product-description span{
+font-weight: 400;
+}
