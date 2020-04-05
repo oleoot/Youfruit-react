@@ -16,7 +16,7 @@ class Apple extends Component {
                             <p className="text-md">69.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
-                            <input type="number" placeholder="0" className="text-sm" />
+                            <input type="number" placeholder="1" className="text-sm" />
                             <a href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>

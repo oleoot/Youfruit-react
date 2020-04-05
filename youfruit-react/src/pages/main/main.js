@@ -19,45 +19,13 @@ class Main extends Component {
                     </div>
                 </section>
 
-
-
-
-                <section id="advantages">
-                    <div className="container-sm">
-                        <p className="text-llg section-headline">Преимущества</p>
-                        <div className="underline"></div>
-                        <div className="advantages-wrap grid-container">
-                            <div>
-                                <img src={require(`../../img/icons/healthy.png`)} alt="healthy" />
-                                <p className="text-sm">Вкусно и полезно для организма</p>
-                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
-                            </div>
-                            <div>
-                                <img src={require(`../../img/icons/percent.png`)} alt="healthy" />
-                                <p className="text-sm">Вкусно и полезно для организма</p>
-                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
-                            </div>
-                            <div>
-                                <img src={require(`../../img/icons/packaging.png`)} alt="healthy" />
-                                <p className="text-sm">Вкусно и полезно для организма</p>
-                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
-                            </div>
-                            <div>
-                                <img src={require(`../../img/icons/present.png`)} alt="healthy" />
-                                <p className="text-sm">Вкусно и полезно для организма</p>
-                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <section id="products">
                     <p className="text-llg section-headline">Продукция</p>
                     <div className="underline"></div>
-                    <div className="container-sm">
+                    <div className="container-sm" id="products-border">
                         <div className="products-wrap grid-container">
                             <div>
-                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" />
+                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" />
                             </div>
                             <div id="pr-pd-1" className="flex-container-center align-center">
                                 <div>
@@ -80,11 +48,44 @@ class Main extends Component {
                                 </div>
                             </div>
                             <div>
-                                <img src={require(`../../img/products/pastila.jpg`)} alt="healthy" />
+                                <img src={require(`../../img/products/pastila.jpg`)} alt="healthy" id="img-bottom-right" />
                             </div>
                         </div>
                     </div>
                 </section>
+
+
+                <section id="advantages">
+                    <div className="container-sm">
+                        <p className="text-llg section-headline">Преимущества</p>
+                        <div className="underline"></div>
+                        <div className="advantages-wrap grid-container">
+                            <div>
+                                <img src={require(`../../img/icons/healthy.png`)} alt="healthy" />
+                                <p className="text-sm">Вкусно и полезно для организма</p>
+                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
+                            </div>
+                            <div>
+                                <img src={require(`../../img/icons/present.png`)} alt="healthy" />
+                                <p className="text-sm">Вкусно и полезно для организма</p>
+                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
+                            </div>
+                            <div>
+                                <img src={require(`../../img/icons/natural.png`)} alt="healthy" />
+                                <p className="text-sm">Вкусно и полезно для организма</p>
+                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
+                            </div>
+                            <div>
+                                <img src={require(`../../img/icons/packaging.png`)} alt="healthy" />
+                                <p className="text-sm">Вкусно и полезно для организма</p>
+                                <p className="text-xs">Альтернатива сладкого для тех, кто следит за здоровьем и любит перекусить</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
 
                 <section id="social">
                     <p className="text-llg section-headline">Мы в социальных сетях</p>

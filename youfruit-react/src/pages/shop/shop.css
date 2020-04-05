@@ -1,6 +1,6 @@
 .shop-wrap{
 grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-gap: 70px;
+grid-gap: 20px;
 }
 .shop-item{
    display: block;

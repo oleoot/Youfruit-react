@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import Shop from './pages/shop/shop';
 import Apple from './product-pages/apple/apple';
+import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
+import Pear from './product-pages/pear/pear';
+import Banana from './product-pages/banana/banana';
+import Orange from './product-pages/orange/orange';
 import Main from './pages/main/main';
 import Blog from './pages/blog/blog';
 import './App.css';
@@ -42,11 +46,24 @@ class App extends Component {
             <Route exact path="/shop" component={Shop}>
             </Route>
 
-            <Route path="/shop:apple" component={Apple}>
+            <Route path="/shop/apple" component={Apple}>
+            </Route>
+
+            <Route path="/shop/apple-cinnamon" component={AppleCinnamon}>
+            </Route>
+
+            <Route path="/shop/pear" component={Pear}>
+            </Route>
+
+            <Route path="/shop/banana" component={Banana}>
+            </Route>
+
+            <Route path="/shop/orange" component={Orange}>
             </Route>
 
             <Route path="/blog" component={Blog}>
             </Route>
+
           </Switch>
 
           <footer id="footer">
