@@ -25,7 +25,7 @@ width: 80%;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 20px;
 }
-.advantages-wrap>div{
+.advantages-wrap>div, .social-wrap>a{
     background: #fff;
     padding: 30px;
     border-radius: 30px;
@@ -51,7 +51,15 @@ margin: 15px auto;
 #products{
 background: url(../../img/bg.png);
 background-size: cover;
+background-position: center;
+/* position: relative; */
 }
+/* #wave-top-left{
+position: absolute;
+top: 0;
+right: 0;
+z-index: 10;
+} */
 #products-border{
     background: #fff;
     border-radius: 30px;
@@ -101,6 +109,7 @@ border-bottom-right-radius: 30px;
 #social{
 background: url(../../img/bg-2.png);
 background-size: 100% 100%;
+padding: 80px 0 150px;
 }
 .social-wrap{
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -145,4 +154,29 @@ height: 50px;
 opacity: 0;
 transition: 0.5s;
 z-index: 100;
+}
+.review-wrap{
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 50px;
+}
+.review-img{
+width: 80px !important;
+height: auto;
+margin: 0 auto 20px;
+display: block;
+}
+.review-item{
+background: #fff;
+border-radius: 30px;
+box-shadow: 5px 3px 30px rgba(0,0,0, 0.1);
+padding: 40px;
+}
+.review-item p{
+text-align: center;
+}
+.review-item p:last-of-type{
+margin-top: 10px;
+}
+.review-headline{
+margin-top: 180px !important;
 }

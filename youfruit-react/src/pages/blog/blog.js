@@ -5,7 +5,7 @@ class Blog extends Component {
     render() {
         return (
 
-            <div className="blog">
+            <section className="blog">
                 <div className="container">
                     <p className="text-llg section-headline">Блог</p>
                     <div className="underline"></div>
@@ -29,12 +29,50 @@ class Blog extends Component {
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>
                         </div>
+                        <div className="grid-container blog-item">
+
+                            <img src={require(`../../img/blog/porrige-1.jpg`)} alt="porrige" />
+                            <div>
+                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
+                                <a href="#" className="btn text-md">Читать</a>
+                            </div>
+                        </div>
+                        <div className="grid-container blog-item">
+
+                            <img src={require(`../../img/blog/pears.jpg`)} alt="porrige" />
+                            <div>
+                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
+                                <a href="#" className="btn text-md">Читать</a>
+                            </div>
+                        </div>
+                        <div className="grid-container blog-item">
+
+                            <img src={require(`../../img/blog/croissant.jpg`)} alt="porrige" />
+                            <div>
+                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
+                                <a href="#" className="btn text-md">Читать</a>
+                            </div>
+                        </div>
+                        <div className="grid-container blog-item">
+
+                            <img src={require(`../../img/blog/daria.jpg`)} alt="porrige" />
+                            <div>
+                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
+                                <a href="#" className="btn text-md">Читать</a>
+                            </div>
+                        </div>
+
+
                     </div>
 
 
                 </div>
 
-            </div>
+            </section>
 
 
 

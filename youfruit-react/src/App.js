@@ -81,25 +81,26 @@ class App extends Component {
                   </div>
                 </div>
 
+                <div className="call-item flex-container question-item">
+                  <input type="tel" placeholder="Ваш телефон" />
+                  <button type="submit" className="text-xs">Задать вопрос</button>
 
-                <div className="footer-question flex-container-center align-center">
-                  <input type="phone" placeholder="Ваш телефон" />
-                  <button type="submit">Задать вопрос</button>
                 </div>
 
 
 
                 <div className="footer-social flex-container-center align-center">
-                  <a href="#"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
-                  <a href="#"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
-                  <a href="#"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
-                  <a href="#"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
+                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
+                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
+                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
+                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
                 </div>
               </div>
 
 
-              <p className="text-xs">&copy; Youfruit 2020</p>
+
             </div>
+            <div className="call-item flex-container-center align-center copy"><p className="text-xs">&copy; Youfruit 2020</p></div>
           </footer>
         </div>
       </Router>

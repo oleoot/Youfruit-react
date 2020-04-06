@@ -33,7 +33,8 @@
 
 /* Footer section ============================================================================*/
 #footer{
-margin: 300px 0 40px;
+padding: 50px 0;
+background: #FFEDE2;
 }
 #footer p{
 text-align: center;
@@ -43,8 +44,7 @@ width: 30px;
 height: 30px;
 }
 .footer-wrap{
-margin-bottom: 60px;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 0.6fr 1fr;
 }
 .footer-wrap div:first-of-type{
 justify-content: flex-start;
@@ -53,7 +53,11 @@ justify-content: flex-start;
 justify-content: flex-end;
 }
 .call-item{
-margin: 0 30px;
+margin: 0 5px;
+padding: 10px 20px;
+border-radius: 30px;
+background: #fff;
+box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
 }
 .call-item img{
 margin-right: 10px;
@@ -78,8 +82,43 @@ cursor: pointer;
 .footer-social img{
 margin: 0 5px;
 }
-
-
+.footer-social a{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
+background: #fff;
+margin: 0 5px;
+}
+.question-item{
+padding: 5px;
+}
+.footer-wrap button{
+border-radius: 30px;
+height: 100%;
+width: 150px;
+border: none;
+background: #D4E6CC;
+color: #fff;
+text-transform: uppercase;
+outline: none;
+cursor: pointer;
+}
+.footer-wrap input{
+border: none;
+border-radius: 30px;
+outline: none;
+width: 50%;
+padding-left: 20px;
+color: #c3c3c3;
+}
+.footer-wrap input::placeholder{
+color: #c3c3c3;
+}
+.copy{
+width: 200px;
+margin: 20px auto 0;
+}
 /* Utility classes ============================================================================*/
 section{
 padding: 80px 0;
@@ -147,7 +186,7 @@ opacity: 0.8;
 }
 .section-headline{
 text-align: center;
-margin: 0 auto ;
+margin: 20px auto ;
 }
 .underline{
 width: 100px;

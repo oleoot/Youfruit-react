@@ -6,9 +6,10 @@ class Shop extends Component {
     render() {
         return (
             <div className="shop">
+                <p className="text-llg section-headline">Пастила</p>
+                <div className="underline"></div>
                 <div className="container">
-                    <p className="text-llg section-headline">Пастила</p>
-                    <div className="underline"></div>
+
                     <section className="shop-wrap grid-container">
                         <Link to="/shop/apple" className="shop-item">
                             <div className="shop-img-wrap">

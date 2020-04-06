@@ -1,6 +1,11 @@
+.shop{
+background: url(../../img/bg-shop.png);
+background-size: cover;
+background-repeat: round;
+}
 .shop-wrap{
 grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-gap: 20px;
+grid-gap: 40px;
 }
 .shop-item{
    display: block;
@@ -9,6 +14,8 @@ grid-gap: 20px;
    padding: 30px;
    border-radius: 30px;
    transition: 0.5s;
+   box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
+   background: #fff;
 }
 .shop-item p{
 color: var(--primary-color);
@@ -19,7 +26,7 @@ width: 100%;
 }
 
 .shop-item:hover{
-   box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
+  transform: scale(1.1);
    -webkit-transition: all 0.5s ease;
  }
 .shop-item-name{

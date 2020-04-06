@@ -4,7 +4,7 @@ import "../product.css"
 class AppleCinnamon extends Component {
     render() {
         return (
-            <div className="apple-cinnamon">
+            <section className="apple-cinnamon">
                 <div className="container-sm">
                     <div className="product-wrap grid-container">
                         <div>
@@ -29,7 +29,7 @@ class AppleCinnamon extends Component {
                     </div>
 
                 </div>
-            </div>
+            </section>
 
         )
     }

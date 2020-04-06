@@ -20,6 +20,7 @@ class Main extends Component {
                 </section>
 
                 <section id="products">
+                    {/* <img src={require(`../../img/wave-top.png`)} alt="healthy" id="wave-top-left" /> */}
                     <p className="text-llg section-headline">Продукция</p>
                     <div className="underline"></div>
                     <div className="container-sm" id="products-border">
@@ -88,30 +89,48 @@ class Main extends Component {
 
 
                 <section id="social">
-                    <p className="text-llg section-headline">Мы в социальных сетях</p>
+                    <p className="text-llg section-headline">Бестселлеры</p>
                     <div className="underline"></div>
                     <div className="container-sm">
                         <div className="social-wrap grid-container">
-                            <a href="#" className="social-item">
-                                <div className="social-overlay"></div>
-                                <img src={require(`../../img/social-1.jpg`)} alt="healthy" />
-                                <img src={require(`../../img/icons/facebook-white.svg`)} alt="healthy" className="social-icon" />
-                            </a>
-                            <a href="#" className="social-item">
-                                <div className="social-overlay"></div>
-                                <img src={require(`../../img/social-2.jpg`)} alt="healthy" />
-                                <img src={require(`../../img/icons/instagram-white.svg`)} alt="healthy" className="social-icon" />
-                            </a>
-                            <a href="#" className="social-item">
-                                <div className="social-overlay"></div>
-                                <img src={require(`../../img/social-3.jpg`)} alt="healthy" />
-                                <img src={require(`../../img/icons/viber-white.svg`)} alt="healthy" className="social-icon" />
-                            </a>
-                            <a href="#" className="social-item">
-                                <div className="social-overlay"></div>
-                                <img src={require(`../../img/social-4.jpg`)} alt="healthy" />
-                                <img src={require(`../../img/icons/telegram-white.svg`)} alt="healthy" className="social-icon" />
-                            </a>
+                            <Link to="/shop/apple">
+                                <img src={require(`../../img/products/apple.jpg`)} alt="healthy" id="img-bottom-right" />
+                            </Link>
+                            <Link to="/shop/mix">
+                                <img src={require(`../../img/products/mix.jpg`)} alt="healthy" id="img-bottom-right" />
+                            </Link>
+                            <Link to="/shop/sharon">
+                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" />
+                            </Link>
+                            <Link to="/shop/banana">
+                                <img src={require(`../../img/products/banana.jpg`)} alt="healthy" id="img-bottom-right" />
+                            </Link>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <p className="text-llg section-headline review-headline">Отзывы</p>
+                    <div className="underline"></div>
+                    <div className="container-sm">
+                        <div className="review-wrap grid-container">
+                            <div className="review-item">
+                                <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
+                                <p className="text-md">Олег</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                            </div>
+                            <div className="review-item">
+                                <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
+                                <p className="text-md">Дарья</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                            </div>
+                            <div className="review-item">
+                                <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
+                                <p className="text-md">Юля</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                            </div>
                         </div>
 
                     </div>
