@@ -6,7 +6,10 @@ class Shop extends Component {
     render() {
         return (
             <div className="shop">
-                <p className="text-llg section-headline">Пастила</p>
+                <div className="shop-headline">
+                    <p className="text-llg section-headline">Фруктовые чипсы</p>
+
+                </div>
                 <div className="underline"></div>
                 <div className="container">
 
@@ -151,8 +154,10 @@ class Shop extends Component {
 
                     </section>
 
+                    <div className="shop-headline">
+                        <p className="text-llg section-headline">Фруктовые чипсы</p>
 
-                    <p className="text-llg section-headline">Фруктовые чипсы</p>
+                    </div>
                     <div className="underline"></div>
 
 

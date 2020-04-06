@@ -2,6 +2,18 @@
 background: url(../../img/bg-shop.png);
 background-size: cover;
 background-repeat: round;
+padding-top: 120px;
+}
+.shop-headline{
+   background: #fff;
+   width: fit-content;
+   border-radius: 30px;
+   margin: 0 auto;
+   padding: 5px 20px;
+   box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
+}
+.shop-headline p{
+margin: 0 !important;
 }
 .shop-wrap{
 grid-template-columns: 1fr 1fr 1fr 1fr;

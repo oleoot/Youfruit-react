@@ -7,7 +7,10 @@ class Blog extends Component {
 
             <section className="blog">
                 <div className="container">
-                    <p className="text-llg section-headline">Блог</p>
+                    <div className="shop-headline">
+                        <p className="text-llg section-headline">Блог</p>
+                    </div>
+
                     <div className="underline"></div>
 
                     <div className="blog-wrap grid-container">
