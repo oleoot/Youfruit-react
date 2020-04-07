@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "./delivery.css"
 class Delivery extends Component {
     render() {
         return (
 
             <section className="delivery">
-                <div className="shop-headline">
-                    <p className="text-llg section-headline">Доставка</p>
+                <div className="headline-wrap">
+                    <p className="text-xl">Доставка</p>
 
                 </div>
                 <div className="underline"></div>

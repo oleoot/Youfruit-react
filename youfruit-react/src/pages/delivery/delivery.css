@@ -7,9 +7,9 @@ background-position: center;
 grid-gap: 50px;
 }
 .delivery-item{
-background-color: #fff;
+background-color: var(--secondary-color);
 border-radius: 30px;
-box-shadow: 5px 3px 30px rgba(0,0,0, 0.1);
+box-shadow: 5px 5px 30px rgba(0,0,0, 0.1);
 padding: 30px;
 grid-template-columns: 1fr 2fr;
 }
@@ -17,5 +17,6 @@ grid-template-columns: 1fr 2fr;
 margin: 10px 0 20px;
 }
 .delivery-item img{
+  display: block;
   width: 80%;
 }

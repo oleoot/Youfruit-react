@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import Shop from './pages/shop/shop';
+import Blog from './pages/blog/blog';
+import About from './pages/about/about';
 import Delivery from './pages/delivery/delivery';
+
 import Apple from './product-pages/apple/apple';
 import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
 import Pear from './product-pages/pear/pear';
 import Banana from './product-pages/banana/banana';
 import Orange from './product-pages/orange/orange';
 import Main from './pages/main/main';
-import Blog from './pages/blog/blog';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <Router>
         <div className="App">
           <header id="header">
             <div className="container">
-              <nav className="nav flex-container align-center">
+              <nav className="nav grid-container align-center">
 
-                <div className="flex-container-center align-center" id="nav-left">
+                <div className="flex-container-start align-center" id="nav-left">
                   <img src={require(`./img/logo.png`)} alt="logo" />
                   <p className="text-md"><span>You</span>fruit</p>
                 </div>
@@ -39,7 +42,18 @@ class App extends Component {
               </nav>
             </div>
           </header>
-
+          <div className="cart">
+            <div className="cart-header grid-container align-center">
+              <div className="flex-container cart-cross">
+                <div className="cart-line" id="line1"></div>
+                <div className="cart-line" id="line2"></div>
+              </div>
+              <div>
+                <p className="text-md">Корзина</p>
+              </div>
+              <div></div>
+            </div>
+          </div>
           <Switch>
             <Route exact path="/" component={Main}>
             </Route>
@@ -66,14 +80,15 @@ class App extends Component {
             </Route>
             <Route path="/delivery" component={Delivery}>
             </Route>
-
+            <Route path="/about" component={About}>
+            </Route>
           </Switch>
 
           <footer id="footer">
 
             <div className="container">
               <div className="footer-wrap grid-container">
-                <div className="footer-call flex-container-center">
+                <div className="flex-container-start">
                   <div className="call-item flex-container align-center">
                     <img src={require(`./img/icons/lifecell.png`)} alt="lifecell" />
                     <p className="text-xs">+380674591254</p>

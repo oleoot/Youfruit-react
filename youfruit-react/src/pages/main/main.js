@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "./main.css"
 class Main extends Component {
     render() {
@@ -8,7 +8,7 @@ class Main extends Component {
                 <section className="grid-container" id="header-main">
                     <div className="flex-container-center align-center">
                         <div>
-                            <h1 className="text-xl">Пастила и Фруктовые чипсы</h1>
+                            <h1 className="text-xxl">Пастила и Фруктовые чипсы</h1>
                             <p className="text-lg">Новый взгяд на сладости</p>
                             <Link to="/shop" className="btn text-lg">Магазин</Link>
                         </div>
@@ -20,8 +20,9 @@ class Main extends Component {
                 </section>
 
                 <section id="products">
-                    {/* <img src={require(`../../img/wave-top.png`)} alt="healthy" id="wave-top-left" /> */}
-                    <p className="text-llg section-headline">Продукция</p>
+                    <div className="headline-wrap">
+                        <p className="text-xl">Продукция</p>
+                    </div>
                     <div className="underline"></div>
                     <div className="container-sm" id="products-border">
                         <div className="products-wrap grid-container">
@@ -58,7 +59,9 @@ class Main extends Component {
 
                 <section id="advantages">
                     <div className="container-sm">
-                        <p className="text-llg section-headline">Преимущества</p>
+                        <div className="headline-wrap">
+                            <p className="text-xl">Преимущества</p>
+                        </div>
                         <div className="underline"></div>
                         <div className="advantages-wrap grid-container">
                             <div>
@@ -89,7 +92,9 @@ class Main extends Component {
 
 
                 <section id="social">
-                    <p className="text-llg section-headline">Бестселлеры</p>
+                    <div className="headline-wrap">
+                        <p className="text-xl">Бестселлеры</p>
+                    </div>
                     <div className="underline"></div>
                     <div className="container-sm">
                         <div className="social-wrap grid-container">
@@ -111,8 +116,9 @@ class Main extends Component {
 
 
 
-
-                    <p className="text-llg section-headline review-headline">Отзывы</p>
+                    <div className="headline-wrap">
+                        <p className="text-xl review-headline">Отзывы</p>
+                    </div>
                     <div className="underline"></div>
                     <div className="container-sm">
                         <div className="review-wrap grid-container">
@@ -138,7 +144,7 @@ class Main extends Component {
 
 
 
-            </div>
+            </div >
         )
     }
 }
