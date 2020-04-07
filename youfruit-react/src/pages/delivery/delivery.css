@@ -1,0 +1,21 @@
+.delivery{
+background: url(../../img/bg-delivery.png);
+background-size: cover;
+background-position: center;
+}
+.delivery-wrap{
+grid-gap: 50px;
+}
+.delivery-item{
+background-color: #fff;
+border-radius: 30px;
+box-shadow: 5px 3px 30px rgba(0,0,0, 0.1);
+padding: 30px;
+grid-template-columns: 1fr 2fr;
+}
+.delivery-item p:nth-child(2){
+margin: 10px 0 20px;
+}
+.delivery-item img{
+  width: 80%;
+}

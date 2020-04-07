@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 import Shop from './pages/shop/shop';
+import Delivery from './pages/delivery/delivery';
 import Apple from './product-pages/apple/apple';
 import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
 import Pear from './product-pages/pear/pear';
@@ -62,6 +63,8 @@ class App extends Component {
             </Route>
 
             <Route path="/blog" component={Blog}>
+            </Route>
+            <Route path="/delivery" component={Delivery}>
             </Route>
 
           </Switch>
