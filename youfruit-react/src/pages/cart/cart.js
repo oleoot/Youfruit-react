@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import "./cart.css"
 
 class Cart extends Component {
+
     constructor() {
         super();
         this.state = {
@@ -10,21 +11,44 @@ class Cart extends Component {
         }
     }
 
+
+
+
     render() {
-        console.log(this.addToCartProduct)
-        const { cartInside } = this.props;
-        console.log(this.state.inCart.addToCartProduct)
-        console.log(cartInside);
+
+        const { cartInside, products } = this.props;
+        // const newState = cartInside;
+        // this.setState({
+        //     inCart: newState
+        // })
+        // console.log(this.state);
+        // console.log(this.addToCartProduct)
+
+        // console.log(this.state.inCart.addToCartProduct)
+        // console.log(cartInside);
+        // console.log(products);
         return (
             <div className="cart-link" >
                 <div className="cart-item">
-                    <div>{cartInside.forEach(function (item) {
-                        console.log(item);
+
+                    {cartInside.map((item) => {
+                        console.log(item.name);
+                        console.log(item.price);
+                        return (
+                            <div className="cart-item-wrap">
+                                <img src={item.img} alt="" />
+                                <div>
+                                    <p>{item.name}</p>
+                                    <p>{item.price}</p>
+                                </div>
+
+                            </div>
+                        )
                     })}
 
-                    </div>
                 </div>
-            </div>
+            </div >
+
 
         )
     }

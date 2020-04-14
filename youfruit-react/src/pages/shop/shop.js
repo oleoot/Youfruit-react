@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import productData, { productsData } from '../../products'
 import "./shop.css"
+import ShopItem from "../../product-pages/shopItem"
 class Shop extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            products: productsData,
+        }
+    }
+
+
     render() {
         return (
-            // {this.state.products.map(product => {
-            //     return (
+
             <section className="shop">
+
                 <div className="headline-wrap">
                     <p className="text-xl">Фруктовые чипсы</p>
                 </div>
@@ -14,17 +25,14 @@ class Shop extends Component {
                 <div className="container">
 
                     <div className="shop-wrap grid-container">
-                        <Link to="/shop/apple" className="shop-item">
-                            <div className="shop-img-wrap">
-                                <img src={require(`../../img/products/apple.jpg`)} alt="logo" className="main-img" />
-                                <div className="shop-weight flex-container-center align-center">
-                                    <p className="text-xs">70 г</p>
-                                </div>
-                            </div>
-                            <p className="text-md shop-item-name">Чипсы - яблоко</p>
-                            <p className="text-sm shop-item-price">69.00 грн.</p>
-                        </Link>
+                        {this.state.products.map(product => {
+                            return (
+                                <ShopItem key={product.id} product={product} />
+                            )
 
+                        }
+                        )
+                        }
                         <Link to="/shop/apple-cinnamon" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/apple-cinnamon.jpg`)} alt="logo" className="main-img" />
@@ -151,6 +159,7 @@ class Shop extends Component {
             // )
             // }
         )
+
     }
 }
 export default Shop;

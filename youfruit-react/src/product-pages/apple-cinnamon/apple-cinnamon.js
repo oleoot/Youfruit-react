@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import "../product.css"
 class AppleCinnamon extends Component {
     render() {
+        const { name, price, addToCartNumber, addToCartProduct, info } = this.props;
+        console.log(info[1].name)
         return (
             <section className="apple-cinnamon">
                 <div className="container-sm">
@@ -17,7 +19,10 @@ class AppleCinnamon extends Component {
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
                             <input type="number" placeholder="1" className="text-sm" />
-                            <a href="#" className="btn text-sm">Добавить в корзину</a>
+                            <a onClick={() => {
+                                addToCartNumber()
+                                addToCartProduct(info[1].name, info[1].price, info[1].img)
+                            }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>
                             <p className="text-sm product-description">

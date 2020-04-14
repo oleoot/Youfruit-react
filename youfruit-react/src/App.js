@@ -41,15 +41,27 @@ class App extends Component {
   }
 
 
-  addToCartProduct = (specs) => {
-    const addToCartProduct = [...this.state.products];
-    console.log(addToCartProduct);
-    addToCartProduct.push(specs);
+  addToCartProduct = (name, price, img) => {
+
+    const addToCartProduct = [...this.state.cartInside];
+
+    // {
+    //   addToCartProduct.forEach(function (item) {
+    //     addToCartProduct.push(specs);
+
+    //   })
+    //   this.setState({
+    //     cartInside: addToCartProduct
+    //   })
+    // }
+    // console.log(addToCartProduct);
+
+    addToCartProduct.push({ name, price, img });
     console.log(addToCartProduct);
     this.setState({
       cartInside: addToCartProduct
     })
-
+    console.log(this.state)
 
 
   }
@@ -69,7 +81,7 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.products)
+    console.log(this.cartInside)
     return (
       <Router>
         <div className="App">
@@ -121,10 +133,10 @@ class App extends Component {
             <Route exact path="/shop" component={Shop}>
             </Route>
 
-            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} />}>
+            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} />}>
             </Route>
 
-            <Route path="/shop/apple-cinnamon" component={AppleCinnamon}>
+            <Route path="/shop/apple-cinnamon" render={(props) => < AppleCinnamon {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} />}>
             </Route>
 
             <Route path="/shop/pear" component={Pear}>
@@ -143,7 +155,7 @@ class App extends Component {
             <Route path="/about" component={About}>
             </Route>
 
-            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} />} >
+            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} products={productsData} />} >
             </Route>
 
 

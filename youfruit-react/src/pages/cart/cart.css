@@ -1,3 +1,14 @@
 .cart-link{
 height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.cart-item img{
+ width: 100px;
+}
+.cart-item-wrap{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 20px;
 }
