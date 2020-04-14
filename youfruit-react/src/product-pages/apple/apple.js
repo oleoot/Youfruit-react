@@ -1,23 +1,55 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "../product.css"
+
+
 class Apple extends Component {
+    // constructor() {
+    //     super();
+
+    //     this.state = ({
+    //         cartInside: []
+    //     })
+    // }
+
+    // addToCartNumber = (product) => {
+
+    //     const updateAddToCart = [...this.state.cartQuantity];
+    //     updateAddToCart.push(product);
+    //     this.setState({
+    //         cartQuantity: updateAddToCart
+    //     })
+
+
+
+
+    // }
+
+
+
+
     render() {
+        const { name, price, addToCartNumber, addToCartProduct } = this.props;
+        console.log(name);
+        console.log(price);
         return (
-            <div className="apple">
+            <div className="apple" >
                 <div className="container-sm">
                     <div className="product-wrap grid-container">
                         <div>
                             <img src={require(`../../img/products/apple.jpg`)} alt="apple" />
                         </div>
 
-                        <div>
+                        <div id="item-apple">
                             <p className="text-md">Фруктовые чипсы - яблоко</p>
                             <p className="text-md">69.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
                             <input type="number" placeholder="1" className="text-sm" />
-                            <a href="#" className="btn text-sm">Добавить в корзину</a>
+                            <a onClick={() => {
+                                addToCartNumber()
+                                addToCartProduct()
+                            }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>
                             <p className="text-sm product-description">
@@ -34,4 +66,5 @@ class Apple extends Component {
         )
     }
 }
+
 export default Apple;

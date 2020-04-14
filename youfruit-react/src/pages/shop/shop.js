@@ -4,6 +4,8 @@ import "./shop.css"
 class Shop extends Component {
     render() {
         return (
+            // {this.state.products.map(product => {
+            //     return (
             <section className="shop">
                 <div className="headline-wrap">
                     <p className="text-xl">Фруктовые чипсы</p>
@@ -69,7 +71,7 @@ class Shop extends Component {
                             <p className="text-sm shop-item-price">79.00 грн.</p>
                         </Link>
 
-                        <Link className="shop-item">
+                        <Link to="/shop/orange" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/kiwi.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -83,7 +85,7 @@ class Shop extends Component {
 
                         </Link>
 
-                        <Link className="shop-item">
+                        <Link to="/shop/orange" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/sharon.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -97,7 +99,7 @@ class Shop extends Component {
 
                         </Link>
 
-                        <Link className="shop-item">
+                        <Link to="/shop/orange" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/mango.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -111,7 +113,7 @@ class Shop extends Component {
 
                         </Link>
 
-                        <Link className="shop-item">
+                        <Link to="/shop/orange" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/pineapple.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -125,7 +127,7 @@ class Shop extends Component {
 
                         </Link>
 
-                        <Link className="shop-item">
+                        <Link to="/shop/orange" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/mix.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -144,6 +146,10 @@ class Shop extends Component {
 
                 </div>
             </section>
+            //     )
+            // }
+            // )
+            // }
         )
     }
 }

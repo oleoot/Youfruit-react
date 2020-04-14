@@ -27,11 +27,6 @@ margin-right: 15px;
 #nav-left span{
 color: var(--accent-color);
 }
-#cart{
-display: block;
-margin-left: calc(100% - 50px);
-}
-
 /* Footer section ========================================================================================================================================== */
 #footer{
 padding: 50px 0;
@@ -95,6 +90,24 @@ width: 200px;
 margin: 20px auto 0;
 }
 /* Cart section =========================================================================================================================================================== */
+#cart{
+display: block;
+}
+.cart-wrap{
+position: relative;
+display: block;
+width: fit-content;
+margin-left: calc(100% - 50px);
+}
+.cart-amount{
+width: 25px;
+height: 25px;
+background: var(--accent-color);
+border-radius: 50%;
+position: absolute;
+right: -2px;
+bottom: 0;
+}
 .cart{
 width: 500px;
 height: 100%;

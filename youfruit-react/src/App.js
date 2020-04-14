@@ -11,11 +11,65 @@ import Pear from './product-pages/pear/pear';
 import Banana from './product-pages/banana/banana';
 import Orange from './product-pages/orange/orange';
 import Main from './pages/main/main';
+import Cart from './pages/cart/cart';
+import productData, { productsData } from './products'
 import './App.css';
 
+
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      products: productsData,
+      cartQuantity: [],
+      cartInside: []
+    }
+  }
+
+  addToCartNumber = (products) => {
+
+    const updateAddToCart = [...this.state.cartQuantity];
+    updateAddToCart.push(products);
+    this.setState({
+      cartQuantity: updateAddToCart
+    })
+
+
+
+
+  }
+
+
+  addToCartProduct = (specs) => {
+    const addToCartProduct = [...this.state.products];
+    console.log(addToCartProduct);
+    addToCartProduct.push(specs);
+    console.log(addToCartProduct);
+    this.setState({
+      cartInside: addToCartProduct
+    })
+
+
+
+  }
+
+  // addToCartProduct = product => {
+  //   const updateProduct = this.state.products.filter(function (item) {
+  //     return (
+  //       item.name !== product.name
+  //     )
+  //   })
+  //   this.setState({
+  //     products: updateProduct
+  //   })
+  //   console.log(updateProduct)
+  // }
+
+
 
   render() {
+    console.log(this.state.products)
     return (
       <Router>
         <div className="App">
@@ -37,8 +91,14 @@ class App extends Component {
                     <li><NavLink to="/delivery" activeClassName="nav-active" className="text-sm nav-a">Доставка</NavLink></li>
                   </ul>
                 </div>
-
-                <a href="#"><img src={require(`./img/cart.png`)} alt="cart" id="cart" /></a>
+                <div>
+                  <NavLink to="/cart" className="cart-wrap">
+                    <img src={require(`./img/cart.png`)} alt="cart" id="cart" />
+                    <div className="cart-amount flex-container-center align-center">
+                      <p id="amount" className="cart-amount-number text-xs">{this.state.cartQuantity.length}</p>
+                    </div>
+                  </NavLink>
+                </div>
               </nav>
             </div>
           </header>
@@ -61,7 +121,7 @@ class App extends Component {
             <Route exact path="/shop" component={Shop}>
             </Route>
 
-            <Route path="/shop/apple" component={Apple}>
+            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} />}>
             </Route>
 
             <Route path="/shop/apple-cinnamon" component={AppleCinnamon}>
@@ -82,6 +142,11 @@ class App extends Component {
             </Route>
             <Route path="/about" component={About}>
             </Route>
+
+            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} />} >
+            </Route>
+
+
           </Switch>
 
           <footer id="footer">
