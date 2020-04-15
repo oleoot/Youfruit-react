@@ -16,7 +16,7 @@ class Cart extends Component {
 
     render() {
 
-        const { cartInside, products } = this.props;
+        const { cartInside, products, removeFromCartProduct, removeFromCartNumber } = this.props;
         // const newState = cartInside;
         // this.setState({
         //     inCart: newState
@@ -27,6 +27,10 @@ class Cart extends Component {
         // console.log(this.state.inCart.addToCartProduct)
         // console.log(cartInside);
         // console.log(products);
+        // products.forEach((product) => {
+        //     console.log(product.id);
+        // })
+
         return (
             <div className="cart-link" >
                 <div className="cart-item">
@@ -34,12 +38,21 @@ class Cart extends Component {
                     {cartInside.map((item) => {
                         console.log(item.name);
                         console.log(item.price);
+                        console.log(item);
+                        console.log(products)
                         return (
                             <div className="cart-item-wrap">
                                 <img src={item.img} alt="" />
                                 <div>
                                     <p>{item.name}</p>
                                     <p>{item.price}</p>
+                                    <button type="button" onClick={() => {
+
+                                        removeFromCartProduct(item)
+                                    }
+                                    }
+
+                                    > Удалить товар</button>
                                 </div>
 
                             </div>

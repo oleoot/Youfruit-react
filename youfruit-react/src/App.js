@@ -33,30 +33,19 @@ class App extends Component {
     updateAddToCart.push(products);
     this.setState({
       cartQuantity: updateAddToCart
-    })
 
+    })
 
 
 
   }
 
 
-  addToCartProduct = (name, price, img) => {
+  addToCartProduct = (id, name, price, img) => {
 
     const addToCartProduct = [...this.state.cartInside];
 
-    // {
-    //   addToCartProduct.forEach(function (item) {
-    //     addToCartProduct.push(specs);
-
-    //   })
-    //   this.setState({
-    //     cartInside: addToCartProduct
-    //   })
-    // }
-    // console.log(addToCartProduct);
-
-    addToCartProduct.push({ name, price, img });
+    addToCartProduct.push({ id, name, price, img });
     console.log(addToCartProduct);
     this.setState({
       cartInside: addToCartProduct
@@ -66,17 +55,39 @@ class App extends Component {
 
   }
 
-  // addToCartProduct = product => {
-  //   const updateProduct = this.state.products.filter(function (item) {
-  //     return (
-  //       item.name !== product.name
-  //     )
-  //   })
-  //   this.setState({
-  //     products: updateProduct
-  //   })
-  //   console.log(updateProduct)
-  // }
+
+  removeFromCartProduct = (products) => {
+    const updateCartInside = this.state.cartInside.filter(function (item) {
+      console.log(products.id)
+      console.log(item.id)
+      return (
+
+        item.id !== products.id
+      )
+    })
+    this.setState({
+      cartInside: updateCartInside
+    })
+    console.log(this.cartInside)
+  }
+
+
+  removeFromCartNumber = (products) => {
+    const updateCartNumber = this.state.cartQuantity.filter(function (item) {
+      return (
+        item.id !== products.id
+      )
+    })
+    this.setState({
+      cartQuantity: updateCartNumber
+    })
+  }
+
+
+
+
+
+
 
 
 
@@ -133,7 +144,7 @@ class App extends Component {
             <Route exact path="/shop" component={Shop}>
             </Route>
 
-            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} />}>
+            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} removeFromCartProduct={this.removeFromCartProduct} />}>
             </Route>
 
             <Route path="/shop/apple-cinnamon" render={(props) => < AppleCinnamon {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} />}>
@@ -155,7 +166,7 @@ class App extends Component {
             <Route path="/about" component={About}>
             </Route>
 
-            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} products={productsData} />} >
+            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} products={productsData} removeFromCartProduct={this.removeFromCartProduct} removeFromCartNumber={this.removeFromCartNumber} />} >
             </Route>
 
 

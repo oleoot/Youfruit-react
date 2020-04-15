@@ -47,7 +47,7 @@ class Apple extends Component {
                             <input type="number" placeholder="1" className="text-sm" />
                             <a onClick={() => {
                                 addToCartNumber()
-                                addToCartProduct(info[0].name, info[0].price, info[0].img)
+                                addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>
