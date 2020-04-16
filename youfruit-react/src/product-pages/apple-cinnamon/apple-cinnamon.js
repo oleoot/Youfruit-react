@@ -20,7 +20,7 @@ class AppleCinnamon extends Component {
                             <p className="text-sm">Количество</p>
                             <input type="number" placeholder="1" className="text-sm" />
                             <a onClick={() => {
-                                addToCartNumber()
+                                addToCartNumber(info[1].id)
                                 addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>

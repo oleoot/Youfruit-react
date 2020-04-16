@@ -30,7 +30,9 @@ class App extends Component {
   addToCartNumber = (products) => {
 
     const updateAddToCart = [...this.state.cartQuantity];
+    console.log(updateAddToCart)
     updateAddToCart.push(products);
+    console.log(updateAddToCart)
     this.setState({
       cartQuantity: updateAddToCart
 
@@ -39,6 +41,27 @@ class App extends Component {
 
 
   }
+
+
+  removeFromCartNumber = (products) => {
+    console.log(this.state.cartQuantity);
+    const updateCartNumber = this.state.cartQuantity.filter(function (item) {
+      console.log(item);
+      return (
+
+        item !== products
+      )
+    })
+    this.setState({
+      cartQuantity: updateCartNumber
+    })
+  }
+
+
+
+
+
+
 
 
   addToCartProduct = (id, name, price, img) => {
@@ -72,16 +95,7 @@ class App extends Component {
   }
 
 
-  removeFromCartNumber = (products) => {
-    const updateCartNumber = this.state.cartQuantity.filter(function (item) {
-      return (
-        item.id !== products.id
-      )
-    })
-    this.setState({
-      cartQuantity: updateCartNumber
-    })
-  }
+
 
 
 
@@ -92,7 +106,7 @@ class App extends Component {
 
 
   render() {
-    console.log(this.cartInside)
+    console.log(this.cartQuantity)
     return (
       <Router>
         <div className="App">

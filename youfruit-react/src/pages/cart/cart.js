@@ -49,6 +49,7 @@ class Cart extends Component {
                                     <button type="button" onClick={() => {
 
                                         removeFromCartProduct(item)
+                                        removeFromCartNumber(item.id)
                                     }
                                     }
 
@@ -58,7 +59,12 @@ class Cart extends Component {
                             </div>
                         )
                     })}
+                    {/* <div>Total{cartInside.map((cartItem) => {
+                        const total = 0;
 
+                        console.log(total)
+                    })
+                    }</div> */}
                 </div>
             </div >
 
