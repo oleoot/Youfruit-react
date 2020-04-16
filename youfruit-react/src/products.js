@@ -16,7 +16,7 @@ export const productsData = [
         name: "Чипсы яблоко",
         price: "69.00",
         img: apple,
-        weight: "70 гр"
+        weight: "70 гр",
     },
     {
         link: "/shop/apple-cinnamon",

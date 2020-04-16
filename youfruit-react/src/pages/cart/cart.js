@@ -7,16 +7,33 @@ class Cart extends Component {
     constructor() {
         super();
         this.state = {
-            inCart: []
+
+            newInputValue: ''
         }
+        console.log(this.newCartInsideInput)
     }
 
+    handleChange = (event) => {
+        const target = event.target
+        const value = target.value
+        const name = target.name;
+        console.log(value)
+        this.setState({
+            [name]: value
+        });
 
-
+        console.log(this.state)
+    }
 
     render() {
 
-        const { cartInside, products, removeFromCartProduct, removeFromCartNumber, cartTotal, removeFromTotal } = this.props;
+        const { cartInside, products, removeFromCartProduct, removeFromCartNumber, cartTotal, removeFromTotal, inputValue, input } = this.props;
+
+        // this.setState({
+        //     newCartInside: cartInside
+        // })
+
+
         // const newState = cartInside;
         // this.setState({
         //     inCart: newState
@@ -30,27 +47,25 @@ class Cart extends Component {
         // products.forEach((product) => {
         //     console.log(product.id);
         // })
-
+        console.log(cartInside)
         return (
             <div className="cart-link" >
                 <div className="cart-item">
 
                     {cartInside.map((item) => {
-                        console.log(item.name);
-                        console.log(item.price);
-                        console.log(item);
-                        console.log(products)
+
                         return (
                             <div className="cart-item-wrap">
                                 <img src={item.img} alt="" />
                                 <div>
                                     <p>{item.name}</p>
                                     <p>{item.price}</p>
+                                    <input type="number" value={this.state[item.id] || item.inputState} onChange={this.handleChange} name={item.id} className="text-sm" />
                                     <button type="button" onClick={() => {
 
                                         removeFromCartProduct(item)
                                         removeFromCartNumber(item.id)
-                                        removeFromTotal(item.price)
+                                        removeFromTotal(item.price, item.inputState)
                                     }
                                     }
 
@@ -58,6 +73,7 @@ class Cart extends Component {
                                 </div>
 
                             </div>
+
                         )
                     })}
                     <div>Сумма заказа {cartTotal}.00 грн.</div>

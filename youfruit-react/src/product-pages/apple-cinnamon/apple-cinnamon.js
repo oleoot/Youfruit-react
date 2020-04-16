@@ -2,6 +2,25 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "../product.css"
 class AppleCinnamon extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            inputValue: ""
+        }
+
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            inputValue: event.target.value
+        })
+        console.log(this.state)
+    }
+
+
+
+
     render() {
         const { name, price, addToCartNumber, addToCartProduct, info, addToTotal } = this.props;
         console.log(info[1].name)
@@ -18,11 +37,11 @@ class AppleCinnamon extends Component {
                             <p className="text-md">69.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
-                            <input type="number" placeholder="1" className="text-sm" />
+                            <input type="number" value={this.state.inputValue} onChange={this.handleChange} name="apple" className="text-sm" />
                             <a onClick={() => {
-                                addToTotal(info[1].price)
+                                addToTotal(info[1].price, this.state.inputValue)
                                 addToCartNumber(info[1].id)
-                                addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img)
+                                addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img, this.state.inputValue)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>

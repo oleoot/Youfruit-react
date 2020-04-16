@@ -4,32 +4,25 @@ import "../product.css"
 
 
 class Apple extends Component {
-    // constructor() {
-    //     super();
+    constructor() {
+        super();
 
-    //     this.state = ({
-    //         cartInside: []
-    //     })
-    // }
+        this.state = {
+            inputValue: ""
+        }
 
-    // addToCartNumber = (product) => {
+    }
 
-    //     const updateAddToCart = [...this.state.cartQuantity];
-    //     updateAddToCart.push(product);
-    //     this.setState({
-    //         cartQuantity: updateAddToCart
-    //     })
-
-
-
-
-    // }
-
-
+    handleChange = (event) => {
+        this.setState({
+            inputValue: event.target.value
+        })
+        console.log(this.state)
+    }
 
 
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal } = this.props;
+        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, input } = this.props;
         console.log(info[0].name)
         return (
             <div className="apple" >
@@ -44,11 +37,12 @@ class Apple extends Component {
                             <p className="text-md">69.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
-                            <input type="number" placeholder="1" className="text-sm" />
+                            <input type="number" value={this.state.inputValue} onChange={this.handleChange} name="apple" className="text-sm" />
                             <a onClick={() => {
-                                addToTotal(info[0].price)
+                                addToTotal(info[0].price, this.state.inputValue)
                                 addToCartNumber(info[0].id)
-                                addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img)
+                                addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue, this.handleChange)
+                                // input(this.state.inputValue)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>
