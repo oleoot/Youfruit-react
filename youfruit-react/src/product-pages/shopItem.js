@@ -10,7 +10,7 @@ class ShopItem extends Component {
     render() {
         const { product } = this.props;
         return (
-            <Link to="/shop/apple" className="shop-item" >
+            <Link to={product.link} className="shop-item" >
                 <div className="shop-img-wrap">
                     <img src={product.img} alt="logo" className="main-img" />
                     <div className="shop-weight flex-container-center align-center">

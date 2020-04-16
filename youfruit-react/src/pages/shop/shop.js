@@ -33,7 +33,7 @@ class Shop extends Component {
                         }
                         )
                         }
-                        <Link to="/shop/apple-cinnamon" className="shop-item">
+                        {/* <Link to="/shop/apple-cinnamon" className="shop-item">
                             <div className="shop-img-wrap">
                                 <img src={require(`../../img/products/apple-cinnamon.jpg`)} alt="logo" className="main-img" />
                                 <div className="shop-weight flex-container-center align-center">
@@ -147,7 +147,7 @@ class Shop extends Component {
                             <p className="text-sm shop-item-price">99.00 грн.</p>
 
 
-                        </Link>
+                        </Link> */}
 
                     </div>
 
