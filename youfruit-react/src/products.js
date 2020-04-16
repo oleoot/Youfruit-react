@@ -5,14 +5,14 @@ export const productsData = [
     {
         id: "1",
         name: "Чипсы яблоко",
-        price: "69.00 грн.",
+        price: "69.00",
         img: apple,
         weight: "70 гр"
     },
     {
         id: "2",
         name: "Чипсы яблоко - корица",
-        price: "69.00 грн.",
+        price: "69.00",
         img: appleCinnamon,
         weight: "70 гр"
     },

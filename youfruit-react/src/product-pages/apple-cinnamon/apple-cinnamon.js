@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import "../product.css"
 class AppleCinnamon extends Component {
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info } = this.props;
+        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal } = this.props;
         console.log(info[1].name)
         return (
             <section className="apple-cinnamon">
@@ -20,6 +20,7 @@ class AppleCinnamon extends Component {
                             <p className="text-sm">Количество</p>
                             <input type="number" placeholder="1" className="text-sm" />
                             <a onClick={() => {
+                                addToTotal(info[1].price)
                                 addToCartNumber(info[1].id)
                                 addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>

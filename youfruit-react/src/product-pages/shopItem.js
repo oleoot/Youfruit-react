@@ -18,7 +18,7 @@ class ShopItem extends Component {
                     </div>
                 </div>
                 <p className="text-md shop-item-name">{product.name}</p>
-                <p className="text-sm shop-item-price">{product.price}</p>
+                <p className="text-sm shop-item-price">{product.price} грн.</p>
             </Link>
         )
     }

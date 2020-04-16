@@ -29,7 +29,7 @@ class Apple extends Component {
 
 
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info } = this.props;
+        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal } = this.props;
         console.log(info[0].name)
         return (
             <div className="apple" >
@@ -46,6 +46,7 @@ class Apple extends Component {
                             <p className="text-sm">Количество</p>
                             <input type="number" placeholder="1" className="text-sm" />
                             <a onClick={() => {
+                                addToTotal(info[0].price)
                                 addToCartNumber(info[0].id)
                                 addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>

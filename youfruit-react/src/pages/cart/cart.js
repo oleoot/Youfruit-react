@@ -16,7 +16,7 @@ class Cart extends Component {
 
     render() {
 
-        const { cartInside, products, removeFromCartProduct, removeFromCartNumber } = this.props;
+        const { cartInside, products, removeFromCartProduct, removeFromCartNumber, cartTotal, removeFromTotal } = this.props;
         // const newState = cartInside;
         // this.setState({
         //     inCart: newState
@@ -50,6 +50,7 @@ class Cart extends Component {
 
                                         removeFromCartProduct(item)
                                         removeFromCartNumber(item.id)
+                                        removeFromTotal(item.price)
                                     }
                                     }
 
@@ -59,12 +60,7 @@ class Cart extends Component {
                             </div>
                         )
                     })}
-                    {/* <div>Total{cartInside.map((cartItem) => {
-                        const total = 0;
-
-                        console.log(total)
-                    })
-                    }</div> */}
+                    <div>Сумма заказа {cartTotal}.00 грн.</div>
                 </div>
             </div >
 
