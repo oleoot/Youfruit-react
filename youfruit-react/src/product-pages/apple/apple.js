@@ -8,7 +8,7 @@ class Apple extends Component {
         super();
 
         this.state = {
-            inputValue: ""
+            inputValue: "1"
         }
 
     }

@@ -6,7 +6,7 @@ class AppleCinnamon extends Component {
         super();
 
         this.state = {
-            inputValue: ""
+            inputValue: "1"
         }
 
     }

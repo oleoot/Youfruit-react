@@ -12,7 +12,7 @@ import mix from "./img/products/mix.jpg"
 export const productsData = [
     {
         link: "/shop/apple",
-        id: "1",
+        id: "0",
         name: "Чипсы яблоко",
         price: "69.00",
         img: apple,
@@ -20,7 +20,7 @@ export const productsData = [
     },
     {
         link: "/shop/apple-cinnamon",
-        id: "2",
+        id: "1",
         name: "Чипсы яблоко - корица",
         price: "69.00",
         img: appleCinnamon,

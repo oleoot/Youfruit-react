@@ -8,32 +8,52 @@ class Cart extends Component {
         super();
         this.state = {
 
-            newInputValue: ''
+            newInputValue: '',
+            newTotal: ""
         }
-        console.log(this.newCartInsideInput)
+        console.log(this.state.newTotal)
     }
 
-    handleChange = (event) => {
+    handleChange = (price, id, event) => {
         const target = event.target
         const value = target.value
         const name = target.name;
-        console.log(value)
+        const total = value * price
+        const addToArr = [...this.state.newTotal];
+        console.log(id)
+        addToArr.splice(id, 1, total)
+        console.log(total)
         this.setState({
-            [name]: value
+            [name]: value,
+            // newTotal: [...this.state.newTotal, total]
+            newTotal: addToArr
         });
 
         console.log(this.state)
     }
 
+
+
+    // newTotal = () => {
+    //     console.log(this.state.newTotal)
+    //     // const totalArr = this.state.newTotal.reduce((result, number) => result + number)
+    //     // console.log(totalArr)
+    //     this.setState({
+    //         // newTotal: totalArr
+    //     })
+    // }
+
+
+
     render() {
 
         const { cartInside, products, removeFromCartProduct, removeFromCartNumber, cartTotal, removeFromTotal, inputValue, input } = this.props;
-
         // this.setState({
         //     newCartInside: cartInside
         // })
-
-
+        console.log(cartTotal)
+        // const sum = this.state.newTotal.reduce((result, number) => result + number)
+        // console.log(sum)
         // const newState = cartInside;
         // this.setState({
         //     inCart: newState
@@ -60,7 +80,14 @@ class Cart extends Component {
                                 <div>
                                     <p>{item.name}</p>
                                     <p>{item.price}</p>
-                                    <input type="number" value={this.state[item.id] || item.inputState} onChange={this.handleChange} name={item.id} className="text-sm" />
+                                    <input type="number" value={this.state[item.id] || item.inputState} onChange={
+                                        // () => {
+                                        this.handleChange.bind(this, item.price, item.id)
+                                        // this.newTotal(this.state[item.id] * item.price)
+
+                                        // }
+                                    }
+                                        name={item.id} className="text-sm" />
                                     <button type="button" onClick={() => {
 
                                         removeFromCartProduct(item)
@@ -71,12 +98,12 @@ class Cart extends Component {
 
                                     > Удалить товар</button>
                                 </div>
-
                             </div>
 
                         )
                     })}
-                    <div>Сумма заказа {cartTotal}.00 грн.</div>
+                    {/* <div>Сумма заказа {this.state[item.id] * item.price || cartTotal}.00 грн.</div> */}
+                    <div>Сумма заказа {this.state.newTotal || cartTotal}.00 грн.</div>
                 </div>
             </div >
 
