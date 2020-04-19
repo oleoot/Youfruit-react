@@ -113,13 +113,17 @@ class App extends Component {
 
 
 
-  removeFromTotal = (price, quantity) => {
-    let updTotal = +price * quantity
-    console.log(price);
-    this.setState({
-      cartTotal: this.state.cartTotal - updTotal
-    })
-  }
+  // removeFromTotal = (price, quantity, id) => {
+  //   let updTotal = +price * quantity
+  //   console.log(price);
+  //   const addToArr = [...this.state.cartTotal];
+  //   console.log(id)
+  //   addToArr.splice(id, 1, 0)
+  //   this.setState({
+
+  //     cartTotal: addToArr
+  //   });
+  // }
 
 
   input = (input) => {

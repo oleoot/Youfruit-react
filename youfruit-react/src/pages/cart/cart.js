@@ -70,6 +70,23 @@ class Cart extends Component {
 
 
 
+
+    removeFromTotal = (price, quantity, id) => {
+        // let updTotal = +price * quantity
+        console.log(price);
+        console.log(quantity);
+        const addToArr = [...this.state.newTotal];
+        console.log(id)
+        addToArr.splice(id, 1, 0)
+        this.setState({
+
+            newTotal: addToArr
+        });
+    }
+
+
+
+
     render() {
 
         const { cartInside, products, removeFromCartProduct, removeFromCartNumber, cartTotal, removeFromTotal, inputValue, input } = this.props;
@@ -77,6 +94,7 @@ class Cart extends Component {
         //     newCartInside: cartInside
         // })
         console.log(cartTotal)
+        console.log(this.state.newTotal)
         // const sum = this.state.newTotal.reduce((result, number) => result + number)
         // console.log(sum)
         // const newState = cartInside;
@@ -92,13 +110,13 @@ class Cart extends Component {
         // products.forEach((product) => {
         //     console.log(product.id);
         // })
-        console.log(cartInside)
+
         return (
             <div className="cart-link" >
                 <div className="cart-item">
 
                     {cartInside.map((item) => {
-
+                        console.log(this.state[item.id])
                         return (
                             <div className="cart-item-wrap">
                                 <img src={item.img} alt="" />
@@ -117,7 +135,7 @@ class Cart extends Component {
 
                                         removeFromCartProduct(item)
                                         removeFromCartNumber(item.id)
-                                        removeFromTotal(item.price, item.inputState)
+                                        this.removeFromTotal(item.price, this.state[item.id], item.id)
                                     }
                                     }
 
