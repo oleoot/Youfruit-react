@@ -39,7 +39,7 @@ class Apple extends Component {
                             <p className="text-sm">Количество</p>
                             <input type="number" value={this.state.inputValue} onChange={this.handleChange} name="apple" className="text-sm" />
                             <a onClick={() => {
-                                addToTotal(info[0].price, this.state.inputValue)
+                                addToTotal(info[0].price, this.state.inputValue, info[0].id)
                                 addToCartNumber(info[0].id)
                                 addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue, this.handleChange)
                                 // input(this.state.inputValue)

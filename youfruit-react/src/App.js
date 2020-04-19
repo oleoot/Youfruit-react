@@ -24,7 +24,7 @@ class App extends Component {
       products: productsData,
       cartQuantity: [],
       cartInside: [],
-      cartTotal: 0,
+      cartTotal: ""
     }
   }
 
@@ -97,11 +97,18 @@ class App extends Component {
 
 
 
-  addToTotal = (price, quantity) => {
+  addToTotal = (price, quantity, id) => {
+
     let total = +price * quantity
+    const addToArr = [...this.state.cartTotal];
+    console.log(id)
+    addToArr.splice(id, 1, total)
+    console.log(total)
     this.setState({
-      cartTotal: this.state.cartTotal + total
-    })
+
+      cartTotal: addToArr
+    });
+
   }
 
 

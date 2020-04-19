@@ -39,7 +39,7 @@ class AppleCinnamon extends Component {
                             <p className="text-sm">Количество</p>
                             <input type="number" value={this.state.inputValue} onChange={this.handleChange} name="apple" className="text-sm" />
                             <a onClick={() => {
-                                addToTotal(info[1].price, this.state.inputValue)
+                                addToTotal(info[1].price, this.state.inputValue, info[1].id)
                                 addToCartNumber(info[1].id)
                                 addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img, this.state.inputValue)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>

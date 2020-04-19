@@ -4,12 +4,13 @@ import "./cart.css"
 
 class Cart extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
 
             newInputValue: '',
-            newTotal: ""
+            newTotal: props.cartTotal,
+            total: 0
         }
         console.log(this.state.newTotal)
     }
@@ -32,8 +33,32 @@ class Cart extends Component {
         console.log(this.state)
     }
 
+    componentDidMount = () => {
+        const arr = [...this.state.newTotal];
+        let totalSum = 0;
+        arr.forEach((item) => {
+            totalSum += item
+            console.log(totalSum)
+        })
+        this.setState({
+            total: totalSum
+        })
+    }
 
 
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevState.newTotal != this.state.newTotal) {
+            const arr = [...this.state.newTotal];
+            let totalSum = 0;
+            arr.forEach((item) => {
+                totalSum += item
+                console.log(totalSum)
+            })
+            this.setState({
+                total: totalSum
+            })
+        }
+    }
     // newTotal = () => {
     //     console.log(this.state.newTotal)
     //     // const totalArr = this.state.newTotal.reduce((result, number) => result + number)
@@ -103,7 +128,7 @@ class Cart extends Component {
                         )
                     })}
                     {/* <div>Сумма заказа {this.state[item.id] * item.price || cartTotal}.00 грн.</div> */}
-                    <div>Сумма заказа {this.state.newTotal || cartTotal}.00 грн.</div>
+                    <div>Сумма заказа {this.state.total}.00 грн.</div>
                 </div>
             </div >
 
