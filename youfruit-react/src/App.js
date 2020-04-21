@@ -4,7 +4,6 @@ import Shop from './pages/shop/shop';
 import Blog from './pages/blog/blog';
 import About from './pages/about/about';
 import Delivery from './pages/delivery/delivery';
-
 import Apple from './product-pages/apple/apple';
 import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
 import Pear from './product-pages/pear/pear';
@@ -29,27 +28,16 @@ class App extends Component {
   }
 
   addToCartNumber = (products) => {
-
     const updateAddToCart = [...this.state.cartQuantity];
-    console.log(updateAddToCart)
     updateAddToCart.push(products);
-    console.log(updateAddToCart)
     this.setState({
       cartQuantity: updateAddToCart
-
     })
-
-
-
   }
 
-
   removeFromCartNumber = (products) => {
-    console.log(this.state.cartQuantity);
     const updateCartNumber = this.state.cartQuantity.filter(function (item) {
-      console.log(item);
       return (
-
         item !== products
       )
     })
@@ -58,102 +46,46 @@ class App extends Component {
     })
   }
 
-
-
-
-
-
-
-
   addToCartProduct = (id, name, price, img, inputState) => {
-    // console.log(this.state.cartInside)
-    // this.state.cartInside.forEach((item) => {
-    //   console.log(item.id)
-    //   console.log(id)
-    //   if (item.id !== id) {
-    //     const addToCartProduct = [...this.state.cartInside];
-
-    //     addToCartProduct.push({ id, name, price, img, inputState });
-    //     console.log(addToCartProduct);
-    //     this.setState({
-    //       cartInside: addToCartProduct
-    //     })
-    //     console.log(this.state)
-    //   }
-    // })
-
-
-
     const addToCartProduct = [...this.state.cartInside];
-
     addToCartProduct.push({ id, name, price, img, inputState });
-    console.log(addToCartProduct);
     this.setState({
       cartInside: addToCartProduct
     })
-    console.log(this.state)
-
-
   }
-
 
   removeFromCartProduct = (products) => {
     const updateCartInside = this.state.cartInside.filter(function (item) {
-      console.log(products.id)
-      console.log(item.id)
       return (
-
         item.id !== products.id
       )
     })
     this.setState({
       cartInside: updateCartInside
     })
-    console.log(this.cartInside)
   }
-
-
 
   addToTotal = (price, quantity, id) => {
-
     let total = +price * quantity
     const addToArr = [...this.state.cartTotal];
-    console.log(id)
     addToArr.splice(id, 1, total)
-    console.log(total)
-    console.log(addToArr)
     this.setState({
-
       cartTotal: addToArr
     });
-    console.log(this.state.cartTotal)
   }
-
-
 
   removeFromTotal = (price, quantity, id) => {
-    let updTotal = +price * quantity
-    console.log(price);
     const addToArr = [...this.state.cartTotal];
-    console.log(id)
     addToArr.splice(id, 1, 0)
     this.setState({
-
       cartTotal: addToArr
     });
-  }
-
-
-  input = (input) => {
-    console.log(input)
-
   }
 
 
 
 
   render() {
-    console.log(this.state)
     return (
       <Router>
         <div className="App">
@@ -205,13 +137,13 @@ class App extends Component {
             <Route exact path="/shop" component={Shop}>
             </Route>
 
-            <Route path="/shop/apple" render={(props) => <Apple {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} removeFromCartProduct={this.removeFromCartProduct} addToTotal={this.addToTotal} inputValue={this.state.inputValue} handleChange={this.handleChange} input={this.input} cartTotal={this.state.cartTotal} />}>
+            <Route path="/shop/apple" render={(props) => <Apple {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
-            <Route path="/shop/apple-cinnamon" render={(props) => < AppleCinnamon {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            <Route path="/shop/apple-cinnamon" render={(props) => < AppleCinnamon {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
-            <Route path="/shop/pear" render={(props) => <Pear {...props} price="69" name="Чипсы - яблоко" state={this.state} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} removeFromCartProduct={this.removeFromCartProduct} addToTotal={this.addToTotal} inputValue={this.state.inputValue} handleChange={this.handleChange} input={this.input} />}>
+            <Route path="/shop/pear" render={(props) => <Pear {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
             <Route path="/shop/banana" component={Banana}>
@@ -227,7 +159,7 @@ class App extends Component {
             <Route path="/about" component={About}>
             </Route>
 
-            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} products={productsData} removeFromCartProduct={this.removeFromCartProduct} removeFromCartNumber={this.removeFromCartNumber} cartTotal={this.state.cartTotal} removeFromTotal={this.removeFromTotal} inputValue={this.state.inputValue} />} >
+            <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} removeFromCartProduct={this.removeFromCartProduct} removeFromCartNumber={this.removeFromCartNumber} cartTotal={this.state.cartTotal} removeFromTotal={this.removeFromTotal} />} >
             </Route>
 
 

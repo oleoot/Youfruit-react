@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "../product.css"
 class Pear extends Component {
     constructor() {
@@ -8,21 +7,19 @@ class Pear extends Component {
         this.state = {
             inputValue: "1"
         }
-
     }
 
     handleChange = (event) => {
         this.setState({
             inputValue: event.target.value
         })
-        console.log(this.state)
     }
 
 
 
 
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, input } = this.props;
+        const { addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
         return (
             <div className="pear">
                 <div className="container-sm">
@@ -30,19 +27,20 @@ class Pear extends Component {
                         <div>
                             <img src={require(`../../img/products/pear.jpg`)} alt="pear" />
                         </div>
-
                         <div>
                             <p className="text-md">Фруктовые чипсы - груша</p>
                             <p className="text-md">89.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
                             <input min="1" type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
-                            <a onClick={() => {
-                                addToTotal(info[2].price, this.state.inputValue, info[2].id)
-                                addToCartNumber(info[2].id)
-                                addToCartProduct(info[2].id, info[2].name, info[2].price, info[2].img, this.state.inputValue)
-                                // input(this.state.inputValue)
-                            }} href="#" className="btn text-sm">Добавить в корзину</a>
+                            {cartTotal[info[2].id] !== 0 ?
+                                <button disabled className="btn btn-added text-sm">Добавлено в корзину</button> :
+                                <button onClick={() => {
+                                    addToTotal(info[2].price, this.state.inputValue, info[2].id)
+                                    addToCartNumber(info[2].id)
+                                    addToCartProduct(info[2].id, info[2].name, info[2].price, info[2].img, this.state.inputValue)
+                                }} className="btn text-sm">Добавить в корзину</button>
+                            }
                         </div>
                         <div>
                             <p className="text-sm product-description">

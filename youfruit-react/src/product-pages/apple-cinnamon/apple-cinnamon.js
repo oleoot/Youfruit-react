@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "../product.css"
 class AppleCinnamon extends Component {
     constructor() {
@@ -8,22 +7,19 @@ class AppleCinnamon extends Component {
         this.state = {
             inputValue: "1",
         }
-
     }
 
     handleChange = (event) => {
         this.setState({
             inputValue: event.target.value
         })
-        console.log(this.state)
     }
 
 
 
 
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
-        console.log(info[1].name)
+        const { addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
         return (
             <section className="apple-cinnamon">
                 <div className="container-sm">
@@ -39,24 +35,12 @@ class AppleCinnamon extends Component {
                             <p className="text-sm">Количество</p>
                             <input min="1" type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
                             {cartTotal[info[1].id] !== 0 ?
-                                <button disabled onClick={() => {
-                                    this.setState({ clicked: false })
-
-                                }} href="#" className="btn btn-added text-sm">Добавлено в корзину</button> :
-
+                                <button disabled className="btn btn-added text-sm">Добавлено в корзину</button> :
                                 <button onClick={() => {
-                                    this.setState({ clicked: true })
                                     addToTotal(info[1].price, this.state.inputValue, info[1].id)
                                     addToCartNumber(info[1].id)
                                     addToCartProduct(info[1].id, info[1].name, info[1].price, info[1].img, this.state.inputValue)
-                                    // input(this.state.inputValue)
-                                }} href="#" className="btn text-sm">Добавить в корзину</button>
-
-
-
-
-
-
+                                }} className="btn text-sm">Добавить в корзину</button>
                             }
                         </div>
                         <div>
