@@ -125,7 +125,7 @@ class Cart extends Component {
                                 <div>
                                     <p>{item.name}</p>
                                     <p>{item.price}</p>
-                                    <input type="number" value={this.state[item.id] || item.inputState} onChange={
+                                    <input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
                                         // () => {
                                         this.handleChange.bind(this, item.price, item.id)
                                         // this.newTotal(this.state[item.id] * item.price)
