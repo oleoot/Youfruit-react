@@ -78,10 +78,12 @@ class Cart extends Component {
         const addToArr = [...this.state.newTotal];
         console.log(id)
         addToArr.splice(id, 1, 0)
+        console.log(addToArr)
         this.setState({
 
             newTotal: addToArr
         });
+        console.log(this.state.newTotal)
     }
 
 
@@ -94,7 +96,7 @@ class Cart extends Component {
         //     newCartInside: cartInside
         // })
         console.log(cartTotal)
-        console.log(this.state.newTotal)
+        console.log(this.state)
         // const sum = this.state.newTotal.reduce((result, number) => result + number)
         // console.log(sum)
         // const newState = cartInside;
@@ -136,6 +138,7 @@ class Cart extends Component {
                                         removeFromCartProduct(item)
                                         removeFromCartNumber(item.id)
                                         this.removeFromTotal(item.price, this.state[item.id], item.id)
+                                        removeFromTotal(item.price, this.state[item.id], item.id)
                                     }
                                     }
 

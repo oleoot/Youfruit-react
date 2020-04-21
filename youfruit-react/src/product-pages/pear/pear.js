@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import "../product.css"
 class Pear extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            inputValue: "1"
+        }
+
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            inputValue: event.target.value
+        })
+        console.log(this.state)
+    }
+
+
+
+
     render() {
+        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, input } = this.props;
         return (
             <div className="pear">
                 <div className="container-sm">
@@ -16,8 +36,13 @@ class Pear extends Component {
                             <p className="text-md">89.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
-                            <input type="number" placeholder="1" className="text-sm" />
-                            <a href="#" className="btn text-sm">Добавить в корзину</a>
+                            <input type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
+                            <a onClick={() => {
+                                addToTotal(info[2].price, this.state.inputValue, info[2].id)
+                                addToCartNumber(info[2].id)
+                                addToCartProduct(info[2].id, info[2].name, info[2].price, info[2].img, this.state.inputValue)
+                                // input(this.state.inputValue)
+                            }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>
                         <div>
                             <p className="text-sm product-description">

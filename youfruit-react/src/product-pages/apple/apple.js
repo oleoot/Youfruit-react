@@ -37,11 +37,11 @@ class Apple extends Component {
                             <p className="text-md">69.00 грн.</p>
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
-                            <input type="number" value={this.state.inputValue} onChange={this.handleChange} name="apple" className="text-sm" />
+                            <input type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
                             <a onClick={() => {
                                 addToTotal(info[0].price, this.state.inputValue, info[0].id)
                                 addToCartNumber(info[0].id)
-                                addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue, this.handleChange)
+                                addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue)
                                 // input(this.state.inputValue)
                             }} href="#" className="btn text-sm">Добавить в корзину</a>
                         </div>

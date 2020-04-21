@@ -28,7 +28,7 @@ export const productsData = [
     },
     {
         link: "/shop/pear",
-        id: "3",
+        id: "2",
         name: "Чипсы груша",
         price: "89.00",
         img: pear,
