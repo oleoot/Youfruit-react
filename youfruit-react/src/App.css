@@ -206,17 +206,28 @@ font-weight: 200;
 }
 .btn{
 width: 300px;
-height: 70px;
+height: 50px;
 display: block;
-margin: 0 auto;
+margin-top: 20px;
 text-decoration: none;
 color: var(--secondary-color);
 background: var(--accent-color);
-line-height: 70px;
+line-height: 50px;
 text-align: center;
+border: none;
+outline: none;
+cursor: pointer;
+}
+.btn-added{
+background: #000;
+color: #fff;
+cursor: auto;
 }
 .btn:hover{
 opacity: 0.8;
+}
+.btn-added:hover{
+opacity: 1;
 }
 .headline-wrap{
 background: var(--secondary-color);

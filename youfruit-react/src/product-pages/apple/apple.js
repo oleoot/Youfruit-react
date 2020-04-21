@@ -8,7 +8,7 @@ class Apple extends Component {
         super();
 
         this.state = {
-            inputValue: "1"
+            inputValue: "1",
         }
 
     }
@@ -22,8 +22,10 @@ class Apple extends Component {
 
 
     render() {
-        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, input } = this.props;
-        console.log(info[0].name)
+        const { name, price, addToCartNumber, addToCartProduct, info, addToTotal, input, cartTotal } = this.props;
+        console.log(info[0].id)
+        console.log(this.state)
+        console.log(cartTotal[info[0].id])
         return (
             <div className="apple" >
                 <div className="container-sm">
@@ -38,12 +40,33 @@ class Apple extends Component {
                             <p className="text-sm product-weight">70 г</p>
                             <p className="text-sm">Количество</p>
                             <input min="1" type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
-                            <a onClick={() => {
+                            {cartTotal[info[0].id] !== 0 ?
+                                <button disabled onClick={() => {
+                                    this.setState({ clicked: false })
+
+                                }} href="#" className="btn btn-added text-sm">Добавлено в корзину</button> :
+
+                                <button onClick={() => {
+                                    this.setState({ clicked: true })
+                                    addToTotal(info[0].price, this.state.inputValue, info[0].id)
+                                    addToCartNumber(info[0].id)
+                                    addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue)
+                                    // input(this.state.inputValue)
+                                }} href="#" className="btn text-sm">Добавить в корзину</button>
+
+
+
+
+
+
+                            }
+                            {/* <a onClick={() => {
+                                this.setState({ clicked: true })
                                 addToTotal(info[0].price, this.state.inputValue, info[0].id)
                                 addToCartNumber(info[0].id)
                                 addToCartProduct(info[0].id, info[0].name, info[0].price, info[0].img, this.state.inputValue)
                                 // input(this.state.inputValue)
-                            }} href="#" className="btn text-sm">Добавить в корзину</a>
+                            }} href="#" className="btn text-sm">Добавить в корзину</a> */}
                         </div>
                         <div>
                             <p className="text-sm product-description">
@@ -59,6 +82,7 @@ class Apple extends Component {
 
         )
     }
+
 }
 
 export default Apple;

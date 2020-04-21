@@ -36,7 +36,7 @@ export const productsData = [
     },
     {
         link: "/shop/banana",
-        id: "4",
+        id: "3",
         name: "Чипсы банан",
         price: "79.00",
         img: banana,
@@ -44,7 +44,7 @@ export const productsData = [
     },
     {
         link: "/shop/orange",
-        id: "5",
+        id: "4",
         name: "Чипсы апельсин",
         price: "79.00",
         img: orange,
@@ -52,7 +52,7 @@ export const productsData = [
     },
     {
         link: "/shop/kiwi",
-        id: "6",
+        id: "5",
         name: "Чипсы киви",
         price: "99.00",
         img: kiwi,
@@ -60,7 +60,7 @@ export const productsData = [
     },
     {
         link: "/shop/sharon",
-        id: "7",
+        id: "6",
         name: "Чипсы шарон",
         price: "89.00",
         img: sharon,
@@ -68,7 +68,7 @@ export const productsData = [
     },
     {
         link: "/shop/mango",
-        id: "8",
+        id: "7",
         name: "Чипсы манго",
         price: "129.00",
         img: mango,
@@ -76,7 +76,7 @@ export const productsData = [
     },
     {
         link: "/shop/pineapple",
-        id: "9",
+        id: "8",
         name: "Чипсы ананас",
         price: "109.00",
         img: pineapple,
@@ -84,7 +84,7 @@ export const productsData = [
     },
     {
         link: "/shop/mix",
-        id: "10",
+        id: "9",
         name: "Чипсы микс",
         price: "99.00",
         img: mix,
