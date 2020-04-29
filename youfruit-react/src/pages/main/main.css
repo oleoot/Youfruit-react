@@ -28,7 +28,7 @@ margin: 20px auto;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 20px;
 }
-.advantages-wrap>div, .social-wrap>a{
+.advantages-wrap>div, .bestsellers>a{
     background: #fff;
     padding: 30px;
     border-radius: 30px;
@@ -67,11 +67,6 @@ z-index: 10;
     background: #fff;
     border-radius: 30px;
     box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
-    max-width: 1140px;
-}
-.advantages-wrap{
-max-width: 1140px;
-margin: 0 auto;
 }
 .products-wrap{
 grid-template-columns: 1fr 1fr;
@@ -94,19 +89,11 @@ margin: 0 auto 30px;
 text-align: center;
 }
 .products-wrap p:last-of-type{
-    line-height: 30px;
     width: 70%;
-    min-width: 360px;
     margin: 0 auto;
 }
 .products-price{
 margin: 15px 0 30px;
-}
-#pr-pd-1{
-padding: 0 0 0 50px;
-}
-#pr-pd-2{
-padding: 50px 0 0 0;
 }
 #img-top-left{
 border-top-left-radius: 30px;
@@ -115,26 +102,28 @@ border-top-left-radius: 30px;
 border-bottom-right-radius: 30px;
 }
 /* Social section */
-#social{
+#bestsellers{
 background: url(../../img/bg-2.png);
 background-size: 100% 100%;
-padding: 80px 0 150px;
+padding: 50px 0;
 }
-.social-wrap{
-grid-template-columns: 1fr 1fr 1fr 1fr;
+.bestsellers{
+grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
 }
-.social-wrap a{
+.bestsellers a{
 display: block;
+text-decoration: none;
+color: var(--primary-color)
 }
-.social-wrap a:hover .social-overlay{
+.bestsellers a:hover .social-overlay{
 opacity: 1;
 -webkit-transition: all 0.5s ease;
 }
-.social-wrap a:hover .social-icon{
+.bestsellers a:hover .social-icon{
 opacity: 1;
 }
-.social-wrap img:first-of-type{
+.bestsellers img:first-of-type{
 width: 100%;
 display: block;
 }
@@ -178,7 +167,7 @@ display: block;
 background: #fff;
 border-radius: 30px;
 box-shadow: 5px 3px 30px rgba(0,0,0, 0.1);
-padding: 40px;
+padding: 30px;
 }
 .review-item p{
 text-align: center;
@@ -187,5 +176,5 @@ text-align: center;
 margin-top: 10px;
 }
 .review-headline{
-margin-top: 180px !important;
+margin-top: 100px !important;
 }

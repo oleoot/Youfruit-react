@@ -21,7 +21,7 @@ export const productsData = [
     {
         link: "/shop/apple-cinnamon",
         id: "1",
-        name: "Чипсы яблоко - корица",
+        name: "Чипсы корица",
         price: "69.00",
         img: appleCinnamon,
         weight: "70 гр"

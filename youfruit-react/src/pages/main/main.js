@@ -24,7 +24,7 @@ class Main extends Component {
                         <p className="text-xl">Продукция</p>
                     </div>
                     <div className="underline"></div>
-                    <div className="container" id="products-border">
+                    <div className="container-sm" id="products-border">
                         <div className="products-wrap grid-container">
                             <div>
                                 <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" />
@@ -58,7 +58,7 @@ class Main extends Component {
 
 
                 <section id="advantages">
-                    <div className="container">
+                    <div className="container-sm">
                         <div className="headline-wrap">
                             <p className="text-xl">Преимущества</p>
                         </div>
@@ -91,54 +91,63 @@ class Main extends Component {
 
 
 
-                <section id="social">
+                <section id="bestsellers">
                     <div className="headline-wrap">
                         <p className="text-xl">Бестселлеры</p>
                     </div>
                     <div className="underline"></div>
                     <div className="container-sm">
-                        <div className="social-wrap grid-container">
+                        <div className="bestsellers grid-container">
                             <Link to="/shop/apple">
                                 <img src={require(`../../img/products/apple.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <p className="text-md shop-item-name">Чипсы - яблоко</p>
+                                <p className="text-sm shop-item-price">69 грн.</p>
                             </Link>
                             <Link to="/shop/mix">
                                 <img src={require(`../../img/products/mix.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <p className="text-md shop-item-name">Чипсы - микс</p>
+                                <p className="text-sm shop-item-price">99 грн.</p>
                             </Link>
                             <Link to="/shop/sharon">
                                 <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <p className="text-md shop-item-name">Чипсы - шарон</p>
+                                <p className="text-sm shop-item-price">89 грн.</p>
                             </Link>
                             <Link to="/shop/banana">
                                 <img src={require(`../../img/products/banana.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <p className="text-md shop-item-name">Чипсы - банан</p>
+                                <p className="text-sm shop-item-price">79 грн.</p>
                             </Link>
                         </div>
 
-                    </div>
 
 
 
-                    <div className="headline-wrap">
-                        <p className="text-xl review-headline">Отзывы</p>
-                    </div>
-                    <div className="underline"></div>
-                    <div className="container-sm">
+
+                        <div className="headline-wrap review-headline">
+                            <p className="text-xl">Отзывы</p>
+                        </div>
+                        <div className="underline"></div>
+                        {/* <div className="container-sm"> */}
                         <div className="review-wrap grid-container">
                             <div className="review-item">
                                 <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
                                 <p className="text-md">Олег</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                <p className="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                             </div>
                             <div className="review-item">
                                 <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
                                 <p className="text-md">Дарья</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                <p className="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                             </div>
                             <div className="review-item">
                                 <img src={require(`../../img/icons/thumb.png`)} alt="healthy" className="review-img" />
                                 <p className="text-md">Юля</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                <p className="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                             </div>
                         </div>
 
+                        {/* </div> */}
                     </div>
                 </section>
 

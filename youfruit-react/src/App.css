@@ -54,7 +54,7 @@ width: 30px;
 height: 30px;
 }
 .footer-wrap{
-grid-template-columns: 1fr 0.6fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
 }
 .footer-wrap div:last-of-type{
 justify-content: flex-end;
@@ -100,7 +100,11 @@ color: #c3c3c3;
 color: #c3c3c3;
 }
 .question-item{
+width: 100%;
 padding: 5px;
+min-width: 260px;
+max-width: 400px;
+margin: 0 auto;
 }
 .copy{
 width: 200px;
@@ -165,7 +169,7 @@ transform: rotate(45deg) translate(-5px,-6px);
 }
 /* Utility classes ========================================================================================================================================================*/
 section{
-padding: 120px 0 80px;
+padding: 50px 0;
 }
 .container{
 width: 90%;
@@ -269,6 +273,17 @@ width: 100%;
 display: block;
 }
 /* Media ============================= */
+@media screen and (max-width: 1650px){
+    .advantages-wrap p:last-of-type{
+     width: 100%;
+    }
+    .advantages-wrap{
+        grid-template-columns: 1fr 1fr;
+       }
+       .review-wrap{
+        grid-gap: 20px;
+       }
+}
 @media screen and (max-width: 1440px){
 .text-sm{
 font-size: 18px;
@@ -279,26 +294,37 @@ font-size: 23px;
 .nav li{
 margin: 0 25px;
 }
-#products-border{
-    max-width: 1000px;
-}
-.advantages-wrap{
-max-width: 1000px;
-}
-.advantages-wrap>div, .social-wrap>a{
-padding: 30px 10px 30px;
-}
 }
 @media screen and (max-width: 1280px){
-#products-border{
-    max-width: 900px;
-}
-.advantages-wrap{
-max-width: 900px;
-}
-.advantages-wrap>div, .social-wrap>a{
-padding: 20px 10px 20px;
-}
+    .text-sm{
+     font-size: 16px;
+    }
+    .products-wrap a{
+     width: 150px;
+     height: 30px;
+     line-height: 30px;
+     margin: 0 auto 20px;
+    }
+    .products-price{
+    margin: 10px 0;
+    }
+    .text-md{
+     font-size: 20px;
+    }
+    .footer-wrap{
+     grid-template-columns: 1fr 1fr;
+     grid-gap: 40px;
+
+    }
+    .question-item{
+     margin: 0 0 0 auto;
+    }
+    .footer-wrap div:last-of-type {
+        justify-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
 }
 @media screen and (max-width: 1024px){
     .text-xxl{
@@ -327,12 +353,9 @@ display: flex !important;
 #products-border{
     max-width: inherit;
 }
-.advantages-wrap{
-grid-template-columns: 1fr 1fr;
-grid-gap: 50px;
-max-width: inherit;
 }
-.advantages-wrap>div, .social-wrap>a{
-    padding: 30px;
-    }
+@media screen and (max-width: 768px){
+.advantages-wrap{
+grid-template-columns: 1fr;
+}
 }
