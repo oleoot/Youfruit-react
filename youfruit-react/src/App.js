@@ -24,6 +24,7 @@ class App extends Component {
       cartQuantity: [],
       cartInside: [],
       cartTotal: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      menuOpen: false
     }
   }
 
@@ -83,7 +84,12 @@ class App extends Component {
   }
 
 
-
+  openMenu = () => {
+    this.setState({
+      menuOpen: true
+    })
+    console.log(this.state.menuOpen)
+  }
 
   render() {
     return (
@@ -96,7 +102,7 @@ class App extends Component {
                 <div className="flex-container-start align-center" id="nav-left">
                   <img src={require(`./img/logo.png`)} alt="logo" className="nav-left-hidden" id="logo" />
                   <p className="text-md nav-left-hidden"><span>You</span>fruit</p>
-                  <div class="burger-menu flex-container" id="hidden-menu-btn">
+                  <div class="burger-menu flex-container" id="hidden-menu-btn" onClick={this.openMenu}>
                     <div class="menu-line line1"></div>
                     <div class="menu-line line2"></div>
                     <div class="menu-line line3"></div>
@@ -177,11 +183,11 @@ class App extends Component {
             <div className="container">
               <div className="footer-wrap grid-container">
                 <div className="flex-container-start">
-                  <div className="call-item flex-container align-center">
+                  <div className="call-item flex-container align-center footer-call-margin">
                     <img src={require(`./img/icons/lifecell.png`)} alt="lifecell" />
                     <p className="text-xs">+380674591254</p>
                   </div>
-                  <div className="call-item flex-container align-center">
+                  <div className="call-item flex-container align-center footer-call-margin">
                     <img src={require(`./img/icons/vodafone.png`)} alt="vodafone" />
                     <p className="text-xs">+380674591254</p>
                   </div>

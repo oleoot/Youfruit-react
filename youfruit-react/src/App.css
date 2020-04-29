@@ -194,6 +194,7 @@ justify-content: center;
 .flex-container-start{
  display: flex;
  justify-content: start;
+ flex-wrap: wrap;
 }
 .grid-container{
 display: grid;
@@ -327,8 +328,14 @@ margin: 0 25px;
 
 }
 @media screen and (max-width: 1024px){
+    #header-main{
+    height: auto;
+    }
     .text-xxl{
      font-size: 40px;
+    }
+    .text-xl{
+     font-size: 30px;
     }
     .text-lg{
      font-size: 25px;
@@ -353,9 +360,79 @@ display: flex !important;
 #products-border{
     max-width: inherit;
 }
+.review-wrap{
+grid-template-columns: 1fr;
+}
+.review-item{
+max-width: 400px;
+margin: 0 auto;
+}
+}
+@media screen and (max-width: 1000px){
+.products-wrap{
+grid-template-columns: 1fr;
+grid-gap: 50px;
+}
+#products-border{
+padding: 30px;
+}
+#img-top-left, #img-bottom-right{
+border-radius: 30px;
+}
+#products-grid-4{
+grid-row-start: 3;
+}
 }
 @media screen and (max-width: 768px){
 .advantages-wrap{
 grid-template-columns: 1fr;
 }
+.footer-wrap{
+grid-template-columns: 1fr;
+}
+.footer-wrap div:last-of-type{
+grid-column-start: auto;
+grid-column-end: auto;
+}
+.footer-call-margin{
+margin: 10px auto;
+}
+.question-item{
+margin: 0 auto;
+height: 50px;
+}
+}
+@media screen and (max-width: 640px){
+.container, .container-sm{
+width: 80%;
+}
+.shop-wrap{
+grid-template-columns: 1fr;
+}
+#cart{
+width: 40px;
+}
+#logo{
+width: 40px;
+height: 40px;
+}
+.text-xxl{
+font-size: 30px;
+}
+.text-lg{
+font-size: 20px;
+}
+}
+@media screen and (max-width: 425px){
+    .products-wrap p:last-of-type{
+     width: 100%;
+    }
+    .bestsellers{
+     grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 375px){
+    #logo{
+     display: none;
+    }
 }

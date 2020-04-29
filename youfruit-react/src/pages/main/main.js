@@ -49,7 +49,7 @@ class Main extends Component {
 В состав пастилы входят исключительно свежие фрукты.</p>
                                 </div>
                             </div>
-                            <div>
+                            <div id="products-grid-4">
                                 <img src={require(`../../img/products/pastila.jpg`)} alt="healthy" id="img-bottom-right" />
                             </div>
                         </div>
