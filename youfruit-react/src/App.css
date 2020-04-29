@@ -1,7 +1,7 @@
 /* Header section ==========================================================================================================================================*/
 .nav{
 height: 90px;
-grid-template-columns: 1fr 2fr 1fr;
+grid-template-columns: 1fr 5fr 1fr;
 }
 .nav p, .nav li a{
 text-transform: uppercase;
@@ -19,13 +19,30 @@ color: var(--primary-color);
 .nav-active{
 color: var(--accent-color);
 }
-#nav-left img{
+#logo{
 width: 50px;
 height: 50px;
 margin-right: 15px;
 }
-#nav-left span{
+.nav span{
 color: var(--accent-color);
+}
+.nav-center-hidden{
+display: none;
+}
+/* Hidden nav ==================================================================================================*/
+.burger-menu{
+display: none !important;
+width: 25px;
+height: 19px;
+flex-direction: column;
+}
+.menu-line{
+width: 100%;
+height: 3px;
+background: #000;
+border-radius: 30px;
+transition: all 0.3s ease;
 }
 /* Footer section ========================================================================================================================================== */
 #footer{
@@ -208,7 +225,7 @@ font-weight: 200;
 width: 300px;
 height: 50px;
 display: block;
-margin-top: 20px;
+margin: 20px 0;
 text-decoration: none;
 color: var(--secondary-color);
 background: var(--accent-color);
@@ -250,4 +267,72 @@ margin: 20px auto 100px;
 .main-img{
 width: 100%;
 display: block;
+}
+/* Media ============================= */
+@media screen and (max-width: 1440px){
+.text-sm{
+font-size: 18px;
+}
+.text-md{
+font-size: 23px;
+}
+.nav li{
+margin: 0 25px;
+}
+#products-border{
+    max-width: 1000px;
+}
+.advantages-wrap{
+max-width: 1000px;
+}
+.advantages-wrap>div, .social-wrap>a{
+padding: 30px 10px 30px;
+}
+}
+@media screen and (max-width: 1280px){
+#products-border{
+    max-width: 900px;
+}
+.advantages-wrap{
+max-width: 900px;
+}
+.advantages-wrap>div, .social-wrap>a{
+padding: 20px 10px 20px;
+}
+}
+@media screen and (max-width: 1024px){
+    .text-xxl{
+     font-size: 40px;
+    }
+    .text-lg{
+     font-size: 25px;
+    }
+    .btn{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    }
+#nav-center-ul{
+display: none;
+}
+.nav-left-hidden{
+display: none;
+}
+.nav-center-hidden{
+display: block;
+}
+.burger-menu{
+display: flex !important;
+}
+#products-border{
+    max-width: inherit;
+}
+.advantages-wrap{
+grid-template-columns: 1fr 1fr;
+grid-gap: 50px;
+max-width: inherit;
+}
+.advantages-wrap>div, .social-wrap>a{
+    padding: 30px;
+    }
 }

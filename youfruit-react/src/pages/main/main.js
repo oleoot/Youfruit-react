@@ -10,7 +10,7 @@ class Main extends Component {
                         <div>
                             <h1 className="text-xxl">Пастила и Фруктовые чипсы</h1>
                             <p className="text-lg">Новый взгяд на сладости</p>
-                            <Link to="/shop" className="btn text-lg">Магазин</Link>
+                            <Link to="/shop" className="btn text-lg" id="btn-main">Магазин</Link>
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@ class Main extends Component {
                         <p className="text-xl">Продукция</p>
                     </div>
                     <div className="underline"></div>
-                    <div className="container-sm" id="products-border">
+                    <div className="container" id="products-border">
                         <div className="products-wrap grid-container">
                             <div>
                                 <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" />
@@ -58,7 +58,7 @@ class Main extends Component {
 
 
                 <section id="advantages">
-                    <div className="container-sm">
+                    <div className="container">
                         <div className="headline-wrap">
                             <p className="text-xl">Преимущества</p>
                         </div>

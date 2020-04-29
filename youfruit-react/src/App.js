@@ -94,12 +94,19 @@ class App extends Component {
               <nav className="nav grid-container align-center">
 
                 <div className="flex-container-start align-center" id="nav-left">
-                  <img src={require(`./img/logo.png`)} alt="logo" />
-                  <p className="text-md"><span>You</span>fruit</p>
+                  <img src={require(`./img/logo.png`)} alt="logo" className="nav-left-hidden" id="logo" />
+                  <p className="text-md nav-left-hidden"><span>You</span>fruit</p>
+                  <div class="burger-menu flex-container" id="hidden-menu-btn">
+                    <div class="menu-line line1"></div>
+                    <div class="menu-line line2"></div>
+                    <div class="menu-line line3"></div>
+                  </div>
                 </div>
 
-                <div className="flex-container-center">
-                  <ul className="flex-container">
+                <div className="flex-container-center align-center">
+                  <img src={require(`./img/logo.png`)} alt="logo" className="nav-center-hidden" id="logo" />
+                  <p className="text-md nav-center-hidden"><span>You</span>fruit</p>
+                  <ul className="flex-container" id="nav-center-ul">
                     <li><NavLink exact to="/" activeClassName="nav-active" className="text-sm nav-a">Главная</NavLink></li>
                     <li><NavLink to="/shop" activeClassName="nav-active" className="text-sm nav-a">Магазин</NavLink></li>
                     <li><NavLink to="/blog" activeClassName="nav-active" className="text-sm nav-a">Блог</NavLink></li>

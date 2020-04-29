@@ -81,34 +81,34 @@ class Cart extends Component {
         const { cartInside, removeFromCartProduct, removeFromCartNumber, removeFromTotal } = this.props;
         return (
             <div className="cart-link" >
-                <div className="cart-item">
+                <div>
+                    <table className="cart-item">
 
-                    {cartInside.map((item) => {
-                        return (
-                            <div className="cart-item-wrap">
-                                <img src={item.img} alt="" />
-                                <div>
-                                    <p>{item.name}</p>
-                                    <p>{item.price}</p>
-                                    <input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
+                        {cartInside.map((item) => {
+                            return (
+                                <tr className="cart-item-wrap">
+                                    <td><img src={item.img} alt="" /></td>
+                                    <td><p>{item.name}</p></td>
+                                    <td><p>{item.price}</p></td>
+                                    <td><input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
                                         this.handleChange.bind(this, item.price, item.id)
                                     }
-                                        name={item.id} className="text-sm" />
-                                    <button type="button" onClick={() => {
+                                        name={item.id} className="text-sm cart-item-input" /></td>
+                                    <td><button className="delete-btn" type="button" onClick={() => {
                                         removeFromCartProduct(item)
                                         removeFromCartNumber(item.id)
                                         this.removeFromTotal(item.price, this.state[item.id], item.id)
                                         removeFromTotal(item.price, this.state[item.id], item.id)
                                     }
                                     }
-                                    > Удалить товар</button>
-                                </div>
-                            </div>
+                                    >X</button></td>
+                                </tr>
 
-                        )
-                    })}
-                    <div>Сумма заказа {this.state.total}.00 грн.</div>
-                    <button type="submit" className="btn" onClick={this.showInputsForm}>Заказать</button>
+                            )
+                        })}
+                    </table>
+                    <div className="total">Сумма заказа {this.state.total}.00 грн.</div>
+                    <button type="submit" className="btn btn-open-input" onClick={this.showInputsForm}>Заказать</button>
                     {this.state.inputData === true ?
                         <div className="order-input order-input-active">
                             <button onClick={this.closeInputsForm} className="input-btn">X</button>
@@ -116,7 +116,7 @@ class Cart extends Component {
                                 <input type="text" placeholder="name" />
                                 <input type="text" placeholder="phone" />
                                 <input type="text" placeholder="msg" />
-                                <button type="submit" className="btn">Сделать заказ</button>
+                                <button type="submit" className="btn btn-open-input">Сделать заказ</button>
                             </form>
                         </div> :
                         <div className="order-input">
