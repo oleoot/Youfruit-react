@@ -6,11 +6,15 @@ background: #FFEDE2;
 .cart-item img{
  width: 100px;
 }
-/* .cart-item-wrap{
+.cart-item-wrap{
 display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 20px;
-} */
+grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+grid-gap: 10px;
+margin-bottom: 20px;
+}
+.cart-item-wrap input{
+text-align: center;
+}
 .cart-link table{
 width: 100%;
 }
@@ -36,7 +40,8 @@ color: #adadad;
 }
 .order-input{
 display: none;
-width: 600px;
+width: 90%;
+max-width: 600px;
 height: fit-content;
 position: fixed;
 z-index: 100000;
@@ -113,9 +118,11 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 1;
   }
 .cart-item-input{
-width: 50px;
-border: none;
-outline: none;
+/* padding: 5px; */
+width: 20px;
+margin-right: 5px;
+/* border: none;
+outline: none; */
 }
 .delete-btn{
 font-size: 20px;
