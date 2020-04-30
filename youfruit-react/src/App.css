@@ -559,6 +559,9 @@ font-size: 20px;
        .nav li a{
        font-size: 25px;
        }
+       .shop{
+        background-repeat: no-repeat;
+       }
 
 }
 @media screen and (max-width: 425px){
@@ -611,6 +614,9 @@ line-height: 30px;
             .nav-mobile{
              width: 100%;
             }
+            .cart-item-input{
+            width: 30px;
+            }
 }
 @media screen and (max-width: 375px){
     #logo{
@@ -625,4 +631,9 @@ line-height: 30px;
 padding: 20px;
     }
 
+}
+@media screen and (max-width: 320px){
+    .order-input input{
+     margin: 10px auto 0;
+    }
 }
