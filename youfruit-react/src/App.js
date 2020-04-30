@@ -86,7 +86,7 @@ class App extends Component {
 
   openMenu = () => {
     this.setState({
-      menuOpen: true
+      menuOpen: !this.state.menuOpen
     })
     console.log(this.state.menuOpen)
   }
@@ -107,6 +107,20 @@ class App extends Component {
                     <div class="menu-line line2"></div>
                     <div class="menu-line line3"></div>
                   </div>
+                  {this.state.menuOpen === true ?
+                    <div className="nav-mobile">
+                      <ul className="flex-container" id="nav-mobile-ul">
+                        <li><NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Главная</NavLink></li>
+                        <li><NavLink to="/shop" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Магазин</NavLink></li>
+                        <li><NavLink to="/blog" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Блог</NavLink></li>
+                        <li><NavLink to="/about" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>О нас</NavLink></li>
+                        <li><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка</NavLink></li>
+                      </ul>
+                    </div> :
+                    <div >
+
+                    </div>
+                  }
                 </div>
 
                 <div className="flex-container-center align-center">

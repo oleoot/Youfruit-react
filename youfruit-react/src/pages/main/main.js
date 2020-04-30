@@ -15,7 +15,7 @@ class Main extends Component {
                     </div>
 
                     <div className="flex-container-center align-center">
-                        <img src={require(`../../img/pineapple.png`)} alt="pineapple" />
+                        {/* <img src={require(`../../img/pineapple.png`)} alt="pineapple" /> */}
                     </div>
                 </section>
 

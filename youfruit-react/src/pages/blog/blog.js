@@ -27,7 +27,7 @@ class Blog extends Component {
 
                             <img src={require(`../../img/blog/porrige.png`)} alt="porrige" className="main-img" />
                             <div>
-                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>
@@ -37,7 +37,7 @@ class Blog extends Component {
 
                             <img src={require(`../../img/blog/porrige-1.jpg`)} alt="porrige" className="main-img" />
                             <div>
-                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>
@@ -47,7 +47,7 @@ class Blog extends Component {
 
                             <img src={require(`../../img/blog/pears.jpg`)} alt="porrige" className="main-img" />
                             <div>
-                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>
@@ -57,7 +57,7 @@ class Blog extends Component {
 
                             <img src={require(`../../img/blog/croissant.jpg`)} alt="porrige" className="main-img" />
                             <div>
-                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>
@@ -67,7 +67,7 @@ class Blog extends Component {
 
                             <img src={require(`../../img/blog/daria.jpg`)} alt="porrige" className="main-img" />
                             <div>
-                                <p className="text-lg">Какая-то вкусная овсянка</p>
+                                <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
                                 <a href="#" className="btn text-md">Читать</a>
                             </div>

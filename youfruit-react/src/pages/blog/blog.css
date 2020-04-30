@@ -4,11 +4,11 @@ background-size: cover;
 background-repeat: round;
 }
 .blog-wrap{
-grid-template-columns: 1fr 1fr;
-grid-gap: 50px;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 30px;
 }
 .blog-item{
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr;
 grid-gap: 30px;
 padding: 30px;
 background: var(--secondary-color);
@@ -22,7 +22,7 @@ color: var(--primary-color);
 .blog-item p:last-of-type{
 margin: 20px 0;
 font-size: 20px !important;
-line-height: 40px;
+line-height: 30px;
 }
 .blog-item a{
 width: 200px;

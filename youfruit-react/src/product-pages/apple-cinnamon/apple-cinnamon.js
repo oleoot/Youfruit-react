@@ -43,7 +43,7 @@ class AppleCinnamon extends Component {
                                 }} className="btn text-sm">Добавить в корзину</button>
                             }
                         </div>
-                        <div>
+                        <div className="product-wrap-description">
                             <p className="text-sm product-description">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis reiciendis excepturi autem deleniti, exercitationem nisi tempora quod architecto quia itaque. Eos cumque, quisquam voluptates quam consectetur sit voluptas neque, illo laudantium et corporis aliquam, magnam necessitatibus laboriosam quidem quos.
                     </p>
