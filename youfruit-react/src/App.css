@@ -280,6 +280,15 @@ opacity: 0.8;
 .btn-added:hover{
 opacity: 1;
 }
+.back-btn{
+display: block;
+width: fit-content;
+padding: 5px 20px;
+border-radius: 30px;
+box-shadow: 5px 3px 30px rgba(0,0,0,0.1);
+background: #fff;
+margin: 0 0 50px 0;
+}
 .headline-wrap{
 background: var(--secondary-color);
 width: fit-content;
@@ -296,7 +305,7 @@ margin: 20px auto ;
 width: 100px;
 height: 3px;
 background: var(--accent-color);
-margin: 20px auto 100px;
+margin: 20px auto 50px;
 }
 .main-img{
 width: 100%;
@@ -562,6 +571,12 @@ font-size: 20px;
        .shop{
         background-repeat: no-repeat;
        }
+       .shop-item-name{
+        font-size: 30px;
+        }
+        .shop-item-price{
+        font-size: 24px;
+        }
 
 }
 @media screen and (max-width: 425px){
@@ -617,6 +632,7 @@ line-height: 30px;
             .cart-item-input{
             width: 30px;
             }
+
 }
 @media screen and (max-width: 375px){
     #logo{

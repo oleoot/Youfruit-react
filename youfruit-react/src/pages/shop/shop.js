@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import productData, { productsData } from '../../products'
 import "./shop.css"
 import ShopItem from "../../product-pages/shopItem"
@@ -23,7 +23,11 @@ class Shop extends Component {
                 </div>
                 <div className="underline"></div>
                 <div className="container">
-
+                    <div className="back-btn">
+                        <NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a">/Главная</NavLink>
+                    </div>
+                </div>
+                <div className="container">
                     <div className="shop-wrap grid-container">
                         {this.state.products.map(product => {
                             return (
