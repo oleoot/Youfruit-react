@@ -9,6 +9,12 @@ import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
 import Pear from './product-pages/pear/pear';
 import Banana from './product-pages/banana/banana';
 import Orange from './product-pages/orange/orange';
+import Kiwi from './product-pages/kiwi/kiwi';
+import Sharon from './product-pages/sharon/sharon';
+import Mango from './product-pages/mango/mango';
+import Pineapple from './product-pages/pineapple/pineapple';
+import Mix from './product-pages/mix/mix';
+
 import Main from './pages/main/main';
 import Cart from './pages/cart/cart';
 import productData, { productsData } from './products'
@@ -102,10 +108,10 @@ class App extends Component {
                 <div className="flex-container-start align-center" id="nav-left">
                   <img src={require(`./img/logo.png`)} alt="logo" className="nav-left-hidden" id="logo" />
                   <p className="text-md nav-left-hidden"><span>You</span>fruit</p>
-                  <div class="burger-menu flex-container" id="hidden-menu-btn" onClick={this.openMenu}>
-                    <div class="menu-line line1"></div>
-                    <div class="menu-line line2"></div>
-                    <div class="menu-line line3"></div>
+                  <div className="burger-menu flex-container" id="hidden-menu-btn" onClick={this.openMenu}>
+                    <div className="menu-line line1"></div>
+                    <div className="menu-line line2"></div>
+                    <div className="menu-line line3"></div>
                   </div>
                   {this.state.menuOpen === true ?
                     <div className="nav-mobile">
@@ -173,10 +179,26 @@ class App extends Component {
             <Route path="/shop/pear" render={(props) => <Pear {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
-            <Route path="/shop/banana" component={Banana}>
+            <Route path="/shop/banana" render={(props) => <Banana {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
-            <Route path="/shop/orange" component={Orange}>
+
+            <Route path="/shop/orange" render={(props) => <Orange {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            </Route>
+
+            <Route path="/shop/kiwi" render={(props) => <Kiwi {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            </Route>
+
+            <Route path="/shop/sharon" render={(props) => <Sharon {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            </Route>
+
+            <Route path="/shop/mango" render={(props) => <Mango {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            </Route>
+
+            <Route path="/shop/pineapple" render={(props) => <Pineapple {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+            </Route>
+
+            <Route path="/shop/mix" render={(props) => <Mix {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
             </Route>
 
             <Route path="/blog" component={Blog}>

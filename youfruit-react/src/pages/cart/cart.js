@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "./cart.css"
 
 class Cart extends Component {
@@ -81,15 +82,23 @@ class Cart extends Component {
         const { cartInside, removeFromCartProduct, removeFromCartNumber, removeFromTotal } = this.props;
         return (
             <div className="cart-link" >
-                <div>
+                <div className="headline-wrap">
+                    <p className="text-xl">Корзина</p>
+                </div>
+                <div className="underline"></div>
+                <div className="container-xs cart-link-wrap">
+                    {this.state.total === 0 ?
+                        <p className="text-md empty-cart">Корзина пуста</p> :
+                        <p></p>
+                    }
                     <table className="cart-item">
 
                         {cartInside.map((item) => {
                             return (
                                 <tr className="cart-item-wrap">
                                     <td><img src={item.img} alt="" /></td>
-                                    <td><p>{item.name}</p></td>
-                                    <td><p>{item.price}</p></td>
+                                    <td><p className="text-sm">{item.name}</p></td>
+                                    <td><p className="text-sm">{item.price}</p></td>
                                     <td><input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
                                         this.handleChange.bind(this, item.price, item.id)
                                     }
@@ -107,8 +116,11 @@ class Cart extends Component {
                             )
                         })}
                     </table>
-                    <div className="total">Сумма заказа {this.state.total}.00 грн.</div>
-                    <button type="submit" className="btn btn-open-input" onClick={this.showInputsForm}>Заказать</button>
+                    {/* <div className="total text-lg">Сумма заказа {this.state.total}.00 грн.</div>
+                    {this.state.total === 0 ?
+                        <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
+                        <button type="submit" className="btn btn-open-input text-sm" onClick={this.showInputsForm}>Сделать заказ</button>
+                    }
                     {this.state.inputData === true ?
                         <div className="order-input order-input-active">
                             <button onClick={this.closeInputsForm} className="input-btn">X</button>
@@ -126,7 +138,43 @@ class Cart extends Component {
                                 <input type="text" placeholder="msg" />
                             </form>
                         </div>
-                    }
+                    } */}
+                </div>
+                <div className="container-xs">
+                    <div className="total-wrap">
+                        <div className="total text-md">Сумма заказа {this.state.total}.00 грн.</div>
+                        {this.state.total === 0 ?
+                            <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
+                            <button type="submit" className="btn btn-open-input text-sm" onClick={this.showInputsForm}>Сделать заказ</button>
+                        }
+
+                        {this.state.inputData === true ?
+                            <div className="transparent-bg">
+                                <div className="order-input order-input-active">
+                                    <div className="grid-container credentials-wrap">
+                                        <div></div>
+                                        <div><p className="text-lg">Контактные данные</p></div>
+                                        <button onClick={this.closeInputsForm} className="input-btn text-md">X</button>
+                                    </div>
+                                    <form action="telegram.php">
+                                        <input type="name" placeholder="Имя" />
+                                        <input type="tel" placeholder="Мобильный телефон" />
+                                        <input type="text" placeholder="Комментарий к заказу" />
+                                        <button type="submit" className="btn btn-open-input text-sm">Сделать заказ</button>
+                                    </form>
+                                </div>
+                            </div> :
+                            <div className="order-input">
+                                <form action="telegram.php">
+                                    <input type="text" placeholder="name" />
+                                    <input type="text" placeholder="phone" />
+                                    <input type="text" placeholder="msg" />
+                                </form>
+                            </div>
+
+                        }
+
+                    </div>
                 </div>
             </div >
 

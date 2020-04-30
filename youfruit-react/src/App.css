@@ -547,6 +547,12 @@ font-size: 20px;
        .about-logo-img{
         width: 60% !important;
        }
+       .cart-item img{
+       width: 80px;
+       }
+       td{
+        padding: 0 10px;
+       }
 }
 @media screen and (max-width: 425px){
     .products-wrap p:last-of-type{
