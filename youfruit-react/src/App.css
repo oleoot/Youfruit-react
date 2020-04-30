@@ -627,6 +627,9 @@ line-height: 30px;
         height: 40px;
         line-height: 40px;
     }
+
+
+
     .cart-link-wrap{
 padding: 20px;
     }
@@ -636,4 +639,6 @@ padding: 20px;
     .order-input input{
      margin: 10px auto 0;
     }
+
+
 }
