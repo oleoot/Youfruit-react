@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import "./delivery.css"
 class Delivery extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     render() {
         return (
 

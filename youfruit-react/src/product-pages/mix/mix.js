@@ -10,7 +10,9 @@ class Mix extends Component {
             inputValue: "1",
         }
     }
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     handleChange = (event) => {
         this.setState({
             inputValue: event.target.value

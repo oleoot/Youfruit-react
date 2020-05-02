@@ -11,7 +11,9 @@ class Shop extends Component {
             products: productsData,
         }
     }
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
 
     render() {
         return (
@@ -24,7 +26,7 @@ class Shop extends Component {
                 <div className="underline"></div>
                 <div className="container">
                     <div className="back-btn">
-                        <NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a">/Главная</NavLink>
+                        <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
                     </div>
                 </div>
                 <div className="container">

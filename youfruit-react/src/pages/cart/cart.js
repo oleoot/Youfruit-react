@@ -29,6 +29,7 @@ class Cart extends Component {
     }
 
     componentDidMount = () => {
+        window.scrollTo(0, 0);
         const arr = [...this.state.newTotal];
         let totalSum = 0;
         arr.forEach((item) => {

@@ -9,6 +9,10 @@ class Pear extends Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleChange = (event) => {
         this.setState({
             inputValue: event.target.value

@@ -49,6 +49,10 @@ box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
 .shop-weight p{
 color: var(--primary-color);
 }
+.arrow-left{
+width: 20px;
+margin-right: 10px;
+}
 /* Media */
 @media screen and (max-width: 1440px){
     .shop-wrap{

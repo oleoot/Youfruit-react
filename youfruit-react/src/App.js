@@ -96,6 +96,9 @@ class App extends Component {
     })
     console.log(this.state.menuOpen)
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     return (

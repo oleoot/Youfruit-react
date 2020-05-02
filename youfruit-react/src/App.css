@@ -459,6 +459,9 @@ grid-gap: 50px;
         grid-column-start: 1;
         grid-column-end: 3;
        }
+       .arrow-left{
+        width: 17px;
+        }
 }
 @media screen and (max-width: 1000px){
 .products-wrap{
@@ -572,11 +575,14 @@ font-size: 20px;
         background-repeat: no-repeat;
        }
        .shop-item-name{
-        font-size: 30px;
+        font-size: 25px;
         }
         .shop-item-price{
-        font-size: 24px;
+        font-size: 22px;
         }
+        .arrow-left{
+            width: 15px;
+            }
 
 }
 @media screen and (max-width: 425px){

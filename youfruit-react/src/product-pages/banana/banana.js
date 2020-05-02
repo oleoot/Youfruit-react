@@ -10,6 +10,9 @@ class Banana extends Component {
             inputValue: "1",
         }
     }
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
 
     handleChange = (event) => {
         this.setState({
