@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import "./about.css"
 class About extends Component {
     componentDidMount() {
@@ -14,6 +15,9 @@ class About extends Component {
                 </div>
                 <div className="underline"></div>
                 <div className="container">
+                    <div className="back-btn">
+                        <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
+                    </div>
                     <div className="about-wrap grid-container">
                         <div className="about-item" id="about-company">
                             <img src={require(`../../img/about/logo.png`)} alt="muffins" className="about-logo-img" />

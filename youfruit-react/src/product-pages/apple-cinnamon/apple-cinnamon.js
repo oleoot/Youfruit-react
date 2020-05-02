@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import "../product.css"
 class AppleCinnamon extends Component {
     constructor() {
@@ -24,8 +25,11 @@ class AppleCinnamon extends Component {
     render() {
         const { addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
         return (
-            <section className="apple-cinnamon">
-                <div className="container-sm">
+            <div className="apple-cinnamon">
+                <div className="container-sm container-products">
+                    <div className="back-btn back-btn-product">
+                        <NavLink exact to="/shop" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Магазин</NavLink>
+                    </div>
                     <div className="product-wrap grid-container">
                         <div>
                             <img src={require(`../../img/products/apple-cinnamon.jpg`)} alt="apple-cinnamon" />
@@ -56,7 +60,7 @@ class AppleCinnamon extends Component {
                     </div>
 
                 </div>
-            </section>
+            </div>
 
         )
     }

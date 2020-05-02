@@ -145,7 +145,7 @@ class App extends Component {
                 </div>
                 <div>
                   <NavLink to="/cart" className="cart-wrap">
-                    <img src={require(`./img/cart.png`)} alt="cart" id="cart" />
+                    <img src={require(`./img/icons/shopping-cart.svg`)} alt="cart" id="cart" />
                     <div className="cart-amount flex-container-center align-center">
                       <p id="amount" className="cart-amount-number text-xs">{this.state.cartQuantity.length}</p>
                     </div>
@@ -224,11 +224,11 @@ class App extends Component {
                 <div className="flex-container-start">
                   <div className="call-item flex-container align-center footer-call-margin">
                     <img src={require(`./img/icons/lifecell.png`)} alt="lifecell" />
-                    <p className="text-xs">+380674591254</p>
+                    <a href="tel:+380667338900" className="text-xs">+380674591254</a>
                   </div>
                   <div className="call-item flex-container align-center footer-call-margin">
                     <img src={require(`./img/icons/vodafone.png`)} alt="vodafone" />
-                    <p className="text-xs">+380674591254</p>
+                    <a href="tel:+380508373513" className="text-xs">+380508373513</a>
                   </div>
                 </div>
 
@@ -241,10 +241,10 @@ class App extends Component {
 
 
                 <div className="footer-social flex-container-center align-center">
-                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
-                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
-                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
-                  <a href="#" className="flex-container-center align-center"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
+                  <a href="https://www.instagram.com/youfruit_shop/" target="_blank" className="flex-container-center align-center"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
+                  <a href="https://www.facebook.com/youfruit.shop/" target="_blank" className="flex-container-center align-center"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
+                  <a href="viber://add?number=380508373513" className="flex-container-center align-center"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
+                  <a href="tg://resolve?domain=d_zavgorodnia" className="flex-container-center align-center"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
                 </div>
               </div>
 

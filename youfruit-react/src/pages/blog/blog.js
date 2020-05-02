@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import "./blog.css"
 class Blog extends Component {
     componentDidMount() {
@@ -14,7 +14,9 @@ class Blog extends Component {
                         <p className="text-xl">Блог</p>
                     </div>
                     <div className="underline"></div>
-
+                    <div className="back-btn">
+                        <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
+                    </div>
                     <div className="blog-wrap grid-container">
 
                         <Link className="grid-container blog-item">
