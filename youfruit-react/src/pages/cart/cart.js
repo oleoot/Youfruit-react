@@ -11,7 +11,11 @@ class Cart extends Component {
             newInputValue: '',
             newTotal: props.cartTotal,
             total: 0,
-            inputData: false
+            inputData: false,
+            orderProducts: [],
+            userName: '',
+            userEmail: '',
+            userComments: ''
         }
     }
 
@@ -78,9 +82,43 @@ class Cart extends Component {
         console.log(this.state)
     }
 
+    addToOrder = (itemName, itemPrice, itemQuantity, total, orderState) => {
+        const order = {
+            name: itemName,
+            price: itemPrice,
+            quantity: itemQuantity,
+        }
+        console.log(orderState)
+        // const orderCheck = orderState.push(order)
+        console.log(order)
+        this.setState({
+            orderProducts: order
+        })
+
+        console.log(this.state.orderProducts)
+
+    }
+    makeOrder = (orderArr, total) => {
+        console.log(orderArr)
+        const orderCompl = {
+            products: orderArr,
+            total: total
+        }
+        const API_URL = 'http://localhost:5000/order';
+        fetch(API_URL, {
+            method: "POST",
+            body: JSON.stringify(orderCompl),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(response => response.json())
+    }
 
     render() {
         const { cartInside, removeFromCartProduct, removeFromCartNumber, removeFromTotal } = this.props;
+        // console.log(cartInside)
+        let prArray = [];
+        console.log(prArray)
         return (
             <div className="cart-link" >
                 <div className="headline-wrap">
@@ -93,8 +131,21 @@ class Cart extends Component {
                         <p></p>
                     }
                     <div className="cart-item">
-
                         {cartInside.map((item) => {
+                            // console.log(this.state.orderProducts)
+                            // this.addToOrder(item.name, item.price, this.state[item.id] || item.inputState, this.state.total, this.state.orderProducts)
+                            // console.log(item.name)
+                            // console.log(item.price)
+                            // console.log(this.state[item.id] || item.inputState)
+                            // console.log(this.state.total)
+                            const orderItem = {
+                                name: item.name,
+                                price: item.price,
+                                quantity: this.state[item.id] || item.inputState,
+                            }
+                            console.log(orderItem)
+                            prArray.push(orderItem)
+                            console.log(prArray)
                             return (
                                 <div className="cart-item-wrap grid-container align-center">
                                     <div className="cart-img"><img src={item.img} alt="" /></div>
@@ -118,36 +169,18 @@ class Cart extends Component {
                             )
                         })}
                     </div>
-                    {/* <div className="total text-lg">Сумма заказа {this.state.total}.00 грн.</div>
-                    {this.state.total === 0 ?
-                        <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
-                        <button type="submit" className="btn btn-open-input text-sm" onClick={this.showInputsForm}>Сделать заказ</button>
-                    }
-                    {this.state.inputData === true ?
-                        <div className="order-input order-input-active">
-                            <button onClick={this.closeInputsForm} className="input-btn">X</button>
-                            <form action="telegram.php">
-                                <input type="text" placeholder="name" />
-                                <input type="text" placeholder="phone" />
-                                <input type="text" placeholder="msg" />
-                                <button type="submit" className="btn btn-open-input">Сделать заказ</button>
-                            </form>
-                        </div> :
-                        <div className="order-input">
-                            <form action="telegram.php">
-                                <input type="text" placeholder="name" />
-                                <input type="text" placeholder="phone" />
-                                <input type="text" placeholder="msg" />
-                            </form>
-                        </div>
-                    } */}
                 </div>
                 <div className="container-xs">
                     <div className="total-wrap">
                         <div className="total text-md">Сумма заказа {this.state.total}.00 грн.</div>
                         {this.state.total === 0 ?
                             <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
-                            <button type="submit" className="btn btn-open-input text-sm" onClick={this.showInputsForm}>Сделать заказ</button>
+                            <button type="submit" className="btn btn-open-input text-sm" onClick={() => {
+                                this.showInputsForm()
+                                this.makeOrder(prArray, this.state.total)
+                            }
+                            }
+                            >Сделать заказ</button>
                         }
 
                         {this.state.inputData === true ?
@@ -158,21 +191,21 @@ class Cart extends Component {
                                         <div><p className="text-lg">Контактные данные</p></div>
                                         <button onClick={this.closeInputsForm} className="input-btn text-md">X</button>
                                     </div>
-                                    <form action="telegram.php">
+                                    <form>
                                         <input type="name" placeholder="Имя" />
                                         <input type="tel" placeholder="Мобильный телефон" />
                                         <input type="text" placeholder="Комментарий к заказу" />
                                         <button type="submit" className="btn btn-open-input text-sm">Сделать заказ</button>
                                     </form>
                                 </div>
-                            </div> :
-                            <div className="order-input">
-                                <form action="telegram.php">
-                                    <input type="text" placeholder="name" />
-                                    <input type="text" placeholder="phone" />
-                                    <input type="text" placeholder="msg" />
-                                </form>
-                            </div>
+                            </div> : null
+                            // <div className="order-input">
+                            //     <form>
+                            //         <input type="text" placeholder="name" />
+                            //         <input type="text" placeholder="phone" />
+                            //         <input type="text" placeholder="msg" />
+                            //     </form>
+                            // </div>
 
                         }
 

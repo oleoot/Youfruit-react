@@ -14,6 +14,7 @@ import Sharon from './product-pages/sharon/sharon';
 import Mango from './product-pages/mango/mango';
 import Pineapple from './product-pages/pineapple/pineapple';
 import Mix from './product-pages/mix/mix';
+import Post from './pages/blog/blog-posts/post'
 
 import Main from './pages/main/main';
 import Cart from './pages/cart/cart';
@@ -213,6 +214,8 @@ class App extends Component {
 
             <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} removeFromCartProduct={this.removeFromCartProduct} removeFromCartNumber={this.removeFromCartNumber} cartTotal={this.state.cartTotal} removeFromTotal={this.removeFromTotal} />} >
             </Route>
+
+            <Route path="/blog/pancakes" component={Post}></Route>
 
 
           </Switch>

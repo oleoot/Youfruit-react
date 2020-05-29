@@ -19,14 +19,14 @@ class Blog extends Component {
                     </div>
                     <div className="blog-wrap grid-container">
 
-                        <Link className="grid-container blog-item">
+                        <div className="grid-container blog-item">
                             <img src={require(`../../img/blog/muffins.png`)} alt="muffins" className="main-img" />
                             <div>
                                 <p className="text-lg">Кексы из какой-то там муки</p>
                                 <p className="text-md">Превью слова превью слова превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова  превью слова </p>
-                                <a href="#" className="btn text-md">Читать</a>
+                                <Link to="/blog/pancakes" className="btn text-md">Читать</Link>
                             </div>
-                        </Link>
+                        </div>
 
                         <Link className="grid-container blog-item">
 
