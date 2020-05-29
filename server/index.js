@@ -29,7 +29,11 @@ app.get('/order', (req, res) => {
 
 app.post('/order', (req, res) => {
     const order = {
-        all: req.body,
+        name: req.body.name,
+        phone: req.body.phone,
+        comments: req.body.comments,
+        products: req.body.products,
+        total: req.body.total,
     }
     console.log(order)
     orderDb

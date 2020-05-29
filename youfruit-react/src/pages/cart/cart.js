@@ -120,7 +120,7 @@ class Cart extends Component {
             products: orderArr,
             total: total,
             name: userName,
-            email: userEmail,
+            phone: userEmail,
             comments: userComments
         }
         const API_URL = 'http://localhost:5000/order';
