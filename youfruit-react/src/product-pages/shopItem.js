@@ -17,8 +17,15 @@ class ShopItem extends Component {
                         <p className="text-xs">{product.weight}</p>
                     </div>
                 </div>
-                <p className="text-md shop-item-name">{product.name}</p>
-                <p className="text-sm shop-item-price">{product.price} грн.</p>
+                <div className="item-wrap">
+                    <div>
+                        <p className="text-md shop-item-name">{product.name}</p>
+                        <p className="text-sm shop-item-price">{product.price} грн.</p>
+                    </div>
+                    <div className="cart-img-wrap">
+                        <img src={require(`../img/icons/shopping-cart.png`)} alt="healthy" className="shop-cart" />
+                    </div>
+                </div>
             </Link>
         )
     }

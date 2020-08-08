@@ -169,10 +169,15 @@ class Cart extends Component {
         console.log(prArray)
         return (
             <div className="cart-link" >
-                <div className="headline-wrap">
-                    <p className="text-xl">Корзина</p>
+                <div className="container">
+                    <div className="headline-outer">
+                        <div className="underline"></div>
+                        <div className="headline-wrap">
+                            <p className="text-xl">Корзина</p>
+                        </div>
+                        <div className="underline"></div>
+                    </div>
                 </div>
-                <div className="underline"></div>
                 <div className="cart-wrapper grid-container container">
                     <div className="cart-link-wrap">
                         {this.state.total === 0 ?

@@ -9,11 +9,16 @@ class About extends Component {
         return (
 
             <section className="about">
-                <div className="headline-wrap">
-                    <p className="text-xl">О нас</p>
+                <div className="container">
+                    <div className="headline-outer">
+                        <div className="underline"></div>
+                        <div className="headline-wrap">
+                            <p className="text-xl">О нас</p>
 
+                        </div>
+                        <div className="underline"></div>
+                    </div>
                 </div>
-                <div className="underline"></div>
                 <div className="container">
                     <div className="back-btn">
                         <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>

@@ -10,10 +10,13 @@ class Blog extends Component {
 
             <section className="blog">
                 <div className="container">
-                    <div className="headline-wrap">
-                        <p className="text-xl">Блог</p>
+                    <div className="headline-outer">
+                        <div className="underline"></div>
+                        <div className="headline-wrap">
+                            <p className="text-xl">Блог</p>
+                        </div>
+                        <div className="underline"></div>
                     </div>
-                    <div className="underline"></div>
                     <div className="back-btn">
                         <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
                     </div>
