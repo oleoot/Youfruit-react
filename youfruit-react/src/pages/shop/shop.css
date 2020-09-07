@@ -1,5 +1,4 @@
 .shop {
-    /* background: url(../../img/bg-shop.png); */
     background-size: cover;
     background-repeat: round;
 }
@@ -24,7 +23,7 @@
 }
 
 .shop-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     -webkit-transition: all 0.5s ease;
 }
 
@@ -67,6 +66,11 @@
 
 .shop-cart {
     width: 40px;
+    transition: 0.3s;
+}
+
+.shop-cart:hover {
+    transform: rotate(-15deg);
 }
 
 .cart-img-wrap {

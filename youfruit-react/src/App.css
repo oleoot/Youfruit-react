@@ -235,9 +235,7 @@
 }
 
 /* Utility classes ========================================================================================================================================================*/
-section {
-    padding: 50px 0;
-}
+
 
 .container {
     width: 100%;
@@ -311,18 +309,30 @@ section {
 }
 
 .btn {
-    width: 300px;
-    height: 50px;
     display: block;
+    padding: 3px 60px;
     margin: 20px 0;
     text-decoration: none;
-    color: var(--secondary-color);
-    background: var(--accent-color);
+    /* color: var(--secondary-color);
+    background: var(--accent-color); */
+    background: transparent;
+    border: 3px solid #000;
+    color: #000;
     line-height: 50px;
     text-align: center;
-    border: none;
+    /* border: none; */
     outline: none;
     cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: fit-content;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
 }
 
 .btn-added {
@@ -331,9 +341,6 @@ section {
     cursor: auto;
 }
 
-.btn:hover {
-    opacity: 0.8;
-}
 
 .btn-added:hover {
     opacity: 1;

@@ -1,28 +1,72 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import TinySlider from "tiny-slider-react";
 import "./main.css"
 class Main extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
     render() {
+        const mainSettings = {
+            lazyload: true,
+            mouseDrag: true,
+            controls: false,
+            navContainer: ".main__sliderNav"
+        };
+        const bestsellersSettings = {
+            items: 2,
+            lazyload: true,
+            nav: false,
+            mouseDrag: true
+        };
         return (
-            <div className="main">
-                <section className="grid-container" id="header-main">
-                    <div className="flex-container-center align-center">
-                        <div>
-                            <h1 className="text-xxl">Пастила и Фруктовые чипсы</h1>
-                            <p className="text-lg">Новый взгяд на сладости</p>
-                            <Link to="/shop" className="btn text-lg" id="btn-main">Магазин</Link>
-                        </div>
+            <>
+                <div className="slider-wrap main__slider-wrap">
+                    <div className="main__sliderNav">
+                        <div className="nav-item"></div>
+                        <div className="nav-item"></div>
                     </div>
+                    <div className="main__sliderControls">
+                        {/* <svg width="407.436" height="407.436" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <title>Layer 1</title>
+                                <polygon fill="#fff" width="50" points="315.869,21.178 294.621,0 91.566,203.718 294.621,407.436 315.869,386.258 133.924,203.718 " />
+                            </g>
+                        </svg> */}
 
-                    <div className="flex-container-center align-center">
-                        <img src={require(`../../img/pineapple.png`)} alt="pineapple" />
                     </div>
-                </section>
-
-                <section id="products">
+                    <TinySlider settings={mainSettings}>
+                        <section className="main">
+                            <div className="container">
+                                <div className="main__inner">
+                                    <div className="main__textWrap">
+                                        <h1 className="main__headline">Пастила и Фруктовые чипсы</h1>
+                                        <p className="main__description">Новый взгяд на сладости</p>
+                                        <Link to="/shop" className="btn">Магазин</Link>
+                                    </div>
+                                    <div className="flex-container-center align-center">
+                                        <img src={require(`../../img/pineapple.png`)} alt="pineapple" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="main">
+                            <div className="container">
+                                <div className="main__inner">
+                                    <div className="main__textWrap">
+                                        <h1>Пастила и Фруктовые чипсы</h1>
+                                        <p>Новый взгяд на сладости</p>
+                                        <Link to="/shop" className="btn">Магазин</Link>
+                                    </div>
+                                    <div className="flex-container-center align-center">
+                                        <img src={require(`../../img/pineapple.png`)} alt="pineapple" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </TinySlider>
+                </div>
+                <section class='products' id="products">
                     <div className="container-xs">
                         <div className="headline-outer">
                             <div className="underline"></div>
@@ -32,43 +76,43 @@ class Main extends Component {
                             <div className="underline"></div>
                         </div>
                     </div>
-                    <div className="container-xs" id="products-border">
-                        <div className="products-wrap grid-container">
+                    <div className="container-xs">
+                        <div className="products__wrap grid-container">
                             <div>
-                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" />
+                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" className="products__img" />
                             </div>
-                            <div id="pr-pd-1" className="flex-container-center align-center">
+                            <div className="products__pane">
                                 <div>
-                                    <p className="text-md">Фруктовые чипсы яблоко</p>
-                                    <p className="text-sm products-price">От <span>69грн</span></p>
+                                    <p className="products__name">Натуральная пастила</p>
+                                    <p className="products__price">От <span className="products__price_colored">69грн</span></p>
                                     <Link to="/shop" className="btn text-sm">Купить</Link>
-                                    <p className="text-sm">Пастила - это высушенное фруктовое пюре.
+                                    <p className="text-sm products__description">Пастила - это высушенное фруктовое пюре.
                                     Благодаря длительной готовке на низкой температуре в ней сохраняются все полезные вещества.
 В состав пастилы входят исключительно свежие фрукты.</p>
                                 </div>
                             </div>
-                            <div id="pr-pd-2" className="flex-container-center align-center">
+                            <div className="products__pane">
                                 <div>
-                                    <p className="text-md">Фруктовые чипсы яблоко</p>
-                                    <p className="text-sm products-price">От <span>69грн</span></p>
+                                    <p className="products__name">Натуральная пастила</p>
+                                    <p className="products__price">От <span className="products__price_colored">69грн</span></p>
                                     <Link to="/shop" className="btn text-sm">Купить</Link>
-                                    <p className="text-sm">Пастила - это высушенное фруктовое пюре.
+                                    <p className="text-sm products__description">Пастила - это высушенное фруктовое пюре.
                                     Благодаря длительной готовке на низкой температуре в ней сохраняются все полезные вещества.
 В состав пастилы входят исключительно свежие фрукты.</p>
                                 </div>
                             </div>
-                            <div id="products-grid-4">
-                                <img src={require(`../../img/products/pastila.jpg`)} alt="healthy" id="img-bottom-right" />
+                            <div>
+                                <img src={require(`../../img/products/pastila.jpg`)} alt="healthy" id="img-bottom-right" className="products__img" />
                             </div>
                             <div>
-                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" />
+                                <img src={require(`../../img/products/frips.jpg`)} alt="healthy" id="img-top-left" className="products__img" />
                             </div>
-                            <div id="pr-pd-1" className="flex-container-center align-center">
+                            <div className="products__pane">
                                 <div>
-                                    <p className="text-md">Фруктовые чипсы яблоко</p>
-                                    <p className="text-sm products-price">От <span>69грн</span></p>
+                                    <p className="products__name">Натуральная пастила</p>
+                                    <p className="products__price">От <span className="products__price_colored">69грн</span></p>
                                     <Link to="/shop" className="btn text-sm">Купить</Link>
-                                    <p className="text-sm">Пастила - это высушенное фруктовое пюре.
+                                    <p className="text-sm products__description">Пастила - это высушенное фруктовое пюре.
                                     Благодаря длительной готовке на низкой температуре в ней сохраняются все полезные вещества.
 В состав пастилы входят исключительно свежие фрукты.</p>
                                 </div>
@@ -126,9 +170,9 @@ class Main extends Component {
                         </div>
                     </div>
                     <div className="container-xs">
-                        <div className="bestsellers grid-container">
+                        <TinySlider settings={bestsellersSettings}>
                             <Link to="/shop/apple">
-                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
                                 <div className="item-wrap">
                                     <div>
                                         <p className="text-md shop-item-name">Чипсы - шарон</p>
@@ -140,7 +184,7 @@ class Main extends Component {
                                 </div>
                             </Link>
                             <Link to="/shop/mix">
-                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
                                 <div className="item-wrap">
                                     <div>
                                         <p className="text-md shop-item-name">Чипсы - шарон</p>
@@ -152,7 +196,7 @@ class Main extends Component {
                                 </div>
                             </Link>
                             <Link to="/shop/sharon">
-                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" />
+                                <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
                                 <p className="text-md shop-item-name">Чипсы - шарон</p>
                                 <div className="item-wrap">
                                     <div>
@@ -168,7 +212,7 @@ class Main extends Component {
                                 <p className="text-md shop-item-name">Чипсы - банан</p>
                                 <p className="text-sm shop-item-price">79 грн.</p>
                             </Link> */}
-                        </div>
+                        </TinySlider>
                     </div>
                 </section>
                 <section id="reviews">
@@ -227,7 +271,7 @@ class Main extends Component {
 
 
 
-            </div >
+            </>
         )
     }
 }
