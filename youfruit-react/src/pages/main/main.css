@@ -46,12 +46,14 @@
     text-align: center;
     font-family: Akrobat-regular;
     /* color: #fff; */
+    color: var(--primary-color);
 }
 
 .main__description {
     /* color: #fff; */
     font-family: Akrobat-regular;
     margin: 20px 0;
+    color: var(--primary-color);
 }
 
 /* .main .btn {
@@ -357,28 +359,38 @@
     z-index: 100;
 }
 
-.review-wrap {
+/* .review-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
-}
+} */
 
-.review-img {
-    width: 80px !important;
-    height: auto;
+.reviews__img {
     margin: 0 auto 20px;
     display: block;
 }
 
 .review-item {
     background: #fff;
-    border-radius: 30px;
-    box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
 
 .review-item p {
     text-align: center;
+}
+
+.reviews__name {
+    font-family: Akrobat-bold;
+}
+
+.reviews__description {
+    font-family: Akrobat-regular;
+}
+
+.slider__wrap_reviews .tns-inner {
+    padding: 15px 0;
 }
 
 .review-item p:last-of-type {
@@ -405,36 +417,51 @@
     align-items: center;
 }
 
-#reviews {
-    background: #FFE3E3;
+/* Stats =================================================================================== */
+.stats {
     padding: 100px 0;
+    /* background: #26252Bf8; */
+    /* background-image: url(../../img/stats__lines.png);
+    background-position: right;
+    background-repeat: no-repeat; */
 }
 
-#reviews .container-xs {
+
+.stats .container-xs {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 30px;
 }
 
 .review {
-    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    /* background: #26252Bf8; */
+    background: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 .review p {
-    color: #BFB0B0;
+    /* color: #BFB0B0; */
     text-align: center;
+    /* color: #EE5253; */
+    /* color: #fff; */
+    /* color: #8584FC; */
 }
 
 .review__number {
     font-size: 50px;
+    color: #EE5253;
+    font-family: Akrobat-bold;
 }
 
 .review__desc {
     font-size: 20px;
     margin-top: 20px;
+    font-family: Akrobat-semibold;
+    /* color: #fff; */
 }

@@ -346,8 +346,8 @@
     /* color: var(--secondary-color);
     background: var(--accent-color); */
     background: transparent;
-    border: 3px solid #000;
-    color: #000;
+    border: 3px solid var(--primary-color);
+    color: var(--primary-color);
     /* line-height: 50px; */
     text-align: center;
     /* border: none; */
@@ -361,7 +361,7 @@
 }
 
 .btn:hover {
-    background: #000;
+    background: var(--primary-color);
     color: #fff;
 }
 
