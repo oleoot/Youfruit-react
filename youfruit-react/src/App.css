@@ -79,25 +79,41 @@
 }
 
 /* Footer section ========================================================================================================================================== */
-#footer {
+.footer {
     padding: 150px 0 50px;
     /* background: #FFEDE2; */
 }
 
-#footer img {
+.footer img {
     width: 30px;
     height: 30px;
 }
 
-.footer-wrap {
+.footer__wrap {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.footer__left {
+    display: flex;
+    align-items: center;
+}
+
+.footer__number {
+    color: var(--primary-color);
+    font-family: Akrobat-regular;
+    letter-spacing: 1px;
+}
+
 .footer-wrap div:last-of-type {
+    display: flex;
     justify-content: flex-end;
 }
 
-.call-item {
+.footer__numberWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 5px;
     padding: 10px 20px;
     border-radius: 30px;
@@ -105,7 +121,7 @@
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.call-item img {
+.footer__numberWrap img {
     margin-right: 10px;
 }
 
@@ -118,8 +134,8 @@
     margin: 0 5px;
 }
 
-.footer-wrap button {
-    border-radius: 30px;
+.footer__button {
+    border-radius: 6px;
     height: 100%;
     width: 150px;
     border: none;
@@ -130,7 +146,7 @@
     cursor: pointer;
 }
 
-.footer-wrap input {
+.footer__input {
     border: none;
     border-radius: 30px;
     outline: none;
@@ -139,21 +155,55 @@
     color: #c3c3c3;
 }
 
-.footer-wrap input::placeholder {
+.footer__input::placeholder {
     color: #c3c3c3;
 }
 
-.question-item {
+.footer__middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 5px;
     min-width: 260px;
     max-width: 400px;
     margin: 0 auto;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.copy {
-    width: 200px;
+.footer__copyWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     margin: 20px auto 0;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.footer__copy {
+    font-family: Akrobat-regular;
+}
+
+.footer__right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer__right_imgWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.footer__right_imgWrap:not(:last-child) {
+    margin-right: 15px;
 }
 
 /* Cart section =========================================================================================================================================================== */

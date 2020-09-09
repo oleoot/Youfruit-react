@@ -220,41 +220,41 @@ class App extends Component {
 
           </Switch>
 
-          <footer id="footer">
+          <footer id="footer" className="footer">
 
             <div className="container">
-              <div className="footer-wrap grid-container">
-                <div className="flex-container-start">
-                  <div className="call-item flex-container align-center footer-call-margin">
+              <div className="footer__wrap">
+                <div className="footer__left">
+                  <div className="footer__numberWrap">
                     <img src={require(`./img/icons/lifecell.png`)} alt="lifecell" />
-                    <a href="tel:+380667338900" className="text-xs">+380674591254</a>
+                    <a href="tel:+380667338900" className="text_sm footer__number">+380674591254</a>
                   </div>
-                  <div className="call-item flex-container align-center footer-call-margin">
+                  <div className="footer__numberWrap flex-container align-center footer-call-margin">
                     <img src={require(`./img/icons/vodafone.png`)} alt="vodafone" />
-                    <a href="tel:+380508373513" className="text-xs">+380508373513</a>
+                    <a href="tel:+380508373513" className="text_sm footer__number">+380508373513</a>
                   </div>
                 </div>
 
-                <div className="call-item flex-container question-item">
-                  <input type="tel" placeholder="Ваш телефон" />
-                  <button type="submit" className="text-xs">Задать вопрос</button>
+                <div className="footer__middle">
+                  <input type="tel" placeholder="Ваш телефон" className="footer__input" />
+                  <button type="submit" className="footer__button text_xs">Задать вопрос</button>
 
                 </div>
 
 
 
-                <div className="footer-social flex-container-center align-center">
-                  <a href="https://www.instagram.com/youfruit_shop/" target="_blank" className="flex-container-center align-center"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
-                  <a href="https://www.facebook.com/youfruit.shop/" target="_blank" className="flex-container-center align-center"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
-                  <a href="viber://add?number=380508373513" className="flex-container-center align-center"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
-                  <a href="tg://resolve?domain=d_zavgorodnia" className="flex-container-center align-center"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
+                <div className="footer__right">
+                  <a href="https://www.instagram.com/youfruit_shop/" target="_blank" className="footer__right_imgWrap"><img src={require(`./img/icons/instagram.png`)} alt="instagram" /></a>
+                  <a href="https://www.facebook.com/youfruit.shop/" target="_blank" className="footer__right_imgWrap"><img src={require(`./img/icons/facebook.png`)} alt="facebook" /></a>
+                  <a href="viber://add?number=380508373513" className="footer__right_imgWrap"><img src={require(`./img/icons/viber.png`)} alt="viber" /></a>
+                  <a href="tg://resolve?domain=d_zavgorodnia" className="footer__right_imgWrap"><img src={require(`./img/icons/telegram.png`)} alt="telegram" /></a>
                 </div>
               </div>
 
 
 
             </div>
-            <div className="call-item flex-container-center align-center copy"><p className="text-xs">&copy; Youfruit 2020</p></div>
+            <div className="footer__copyWrap"><p className="text_xs footer__copy">&copy; Youfruit 2020</p></div>
           </footer>
         </div>
       </Router>
