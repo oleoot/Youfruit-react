@@ -106,26 +106,25 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header id="header">
+          <header className="header">
             <div className="container">
-              <nav className="nav grid-container align-center">
-
-                <div className="flex-container-start align-center" id="nav-left">
-                  <img src={require(`./img/logo.png`)} alt="logo" className="nav-left-hidden" id="logo" />
-                  <p className="text-md nav-left-hidden"><span>You</span>fruit</p>
-                  <div className="burger-menu flex-container" id="hidden-menu-btn" onClick={this.openMenu}>
+              <nav className="header__nav">
+                <div className="header__left">
+                  <img src={require(`./img/logo.png`)} alt="logo" className="header__logo" />
+                  <p className="header__logoName main-font_regular text_md"><span>You</span>fruit</p>
+                  <div className="burger-menu" onClick={this.openMenu}>
                     <div className="menu-line line1"></div>
                     <div className="menu-line line2"></div>
                     <div className="menu-line line3"></div>
                   </div>
                   {this.state.menuOpen === true ?
-                    <div className="nav-mobile">
-                      <ul className="flex-container" id="nav-mobile-ul">
-                        <li><NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Главная</NavLink></li>
-                        <li><NavLink to="/shop" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Магазин</NavLink></li>
-                        <li><NavLink to="/blog" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Блог</NavLink></li>
-                        <li><NavLink to="/about" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>О нас</NavLink></li>
-                        <li><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка</NavLink></li>
+                    <div className="hidden-menu">
+                      <ul className="hidden-menu__list">
+                        <li className="hidden-menu__listItem"><NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Главная</NavLink></li>
+                        <li className="hidden-menu__listItem"><NavLink to="/shop" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Магазин</NavLink></li>
+                        <li className="hidden-menu__listItem"><NavLink to="/blog" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Блог</NavLink></li>
+                        <li className="hidden-menu__listItem"><NavLink to="/about" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>О нас</NavLink></li>
+                        <li className="hidden-menu__listItem"><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка</NavLink></li>
                       </ul>
                     </div> :
                     <div >
@@ -134,22 +133,22 @@ class App extends Component {
                   }
                 </div>
 
-                <div className="flex-container-center align-center">
-                  <img src={require(`./img/logo.png`)} alt="logo" className="nav-center-hidden" id="logo" />
-                  <p className="text-md nav-center-hidden"><span>You</span>fruit</p>
-                  <ul className="flex-container" id="nav-center-ul">
-                    <li><NavLink exact to="/" activeClassName="nav-active" className="text-sm nav-a">Главная</NavLink></li>
-                    <li><NavLink to="/shop" activeClassName="nav-active" className="text-sm nav-a">Магазин</NavLink></li>
-                    <li><NavLink to="/blog" activeClassName="nav-active" className="text-sm nav-a">Блог</NavLink></li>
-                    <li><NavLink to="/about" activeClassName="nav-active" className="text-sm nav-a">О нас</NavLink></li>
-                    <li><NavLink to="/delivery" activeClassName="nav-active" className="text-sm nav-a">Доставка</NavLink></li>
+                <div className="header__middle">
+                  {/* <img src={require(`./img/logo.png`)} alt="logo" className="nav-center-hidden" id="logo" />
+                  <p className="text-md nav-center-hidden"><span>You</span>fruit</p> */}
+                  <ul className="header__list">
+                    <li className="header__listItem"><NavLink exact to="/" activeClassName="header__link_active" className="header__link text_md">Главная</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="header__link text_md">Магазин</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="header__link text_md">Блог</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md">О нас</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md">Доставка</NavLink></li>
                   </ul>
                 </div>
                 <div>
-                  <NavLink to="/cart" className="cart-wrap">
-                    <img src={require(`./img/icons/shopping-cart.svg`)} alt="cart" id="cart" />
-                    <div className="cart-amount flex-container-center align-center">
-                      <p id="amount" className="cart-amount-number text-xs">{this.state.cartQuantity.length}</p>
+                  <NavLink to="/cart" className="header__cartWrap">
+                    <img src={require(`./img/icons/shopping-cart.svg`)} alt="cart" className="header__cartImg" />
+                    <div className="header__cartAmount">
+                      <p className="header__cartAmount_number text_sm">{this.state.cartQuantity.length}</p>
                     </div>
                   </NavLink>
                 </div>
