@@ -422,7 +422,7 @@
 
 /* Stats =================================================================================== */
 .stats {
-    padding: 100px 0;
+    padding: 35px 0 50px;
     /* background: #26252Bf8 */
     /* background: url(../../img/products/pastila.jpg) center/cover;
     position: relative; */
@@ -470,34 +470,49 @@
 
 .mapContainer__info li {
     font-family: Akrobat-semibold;
+    background: url(../../img/dot.png) no-repeat left center;
+    padding-left: 25px;
 }
 
 .mapContainer__info li:not(:last-child) {
     margin-bottom: 20px;
 }
 
-.stats .container-xs {
+.stats .container-xs:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 30px;
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; */
+}
+
+
+.review {
+    /* background: #26252B; */
+    border: 3px solid #26252B;
 }
 
 .review:nth-child(1) {
-    background: url(../../img/shape-1.png);
-    background-size: 100% 100%;
+    color: #fff;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
 }
 
-/*
-.review:nth-child(2) p {
-    color: #000
+
+
+
+
+
+
+.review__number {
+    color: #ee5253 !important;
 }
 
-.review:nth-child(4) p {
-    color: #000
-} */
+.review__desc {
+    color: #000;
+}
 
-
-.review:nth-child(4) {
+/* .review:nth-child(4) {
     background: url(../../img/shape-4.png);
     background-size: 100% 100%;
 }
@@ -510,10 +525,10 @@
 .review:nth-child(3) {
     background: url(../../img/shape-5.png);
     background-size: 100% 100%;
-}
+} */
 
 .review {
-    border-radius: 10px;
+    border-radius: 5px;
     /* position: absolute; */
     z-index: 10;
     /* background: #26252Bf8; */
@@ -530,7 +545,7 @@
     /* color: #BFB0B0; */
     text-align: center;
     /* color: #EE5253; */
-    color: #fff;
+    /* color: #fff; */
     /* color: #8584FC; */
 }
 
