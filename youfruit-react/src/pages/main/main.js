@@ -2,9 +2,51 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import TinySlider from "tiny-slider-react";
 import "./main.css"
+import mapboxgl from 'mapbox-gl';
+mapboxgl.accessToken = 'pk.eyJ1Ijoib2xlb290IiwiYSI6ImNrYW94NWY5MDA3cTgzMHFueGI3YjFpYXQifQ.O3vQ-bGYRrxazvXGCcnTFQ';
 class Main extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            lng: 30.616444,
+            lat: 50.401744,
+            zoom: 17
+        }
+    }
     componentDidMount() {
         window.scrollTo(0, 0);
+
+
+        const map = new mapboxgl.Map({
+            container: this.mapContainer,
+            style: 'mapbox://styles/oleoot/ckewk6z0f0g8r19r1jkgezmzm',
+            center: [this.state.lng, this.state.lat],
+            zoom: this.state.zoom
+        });
+        // const marker = new mapboxgl.Marker()
+        //     .setLngLat([30.616444, 50.401744])
+        //     .addTo(map);
+
+        const geojson = [
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [30.616444, 50.401744]
+                }
+            }
+        ]
+        geojson.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+
+            new mapboxgl.Marker(el)
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map)
+        })
+
+
     }
     render() {
         const mainSettings = {
@@ -45,7 +87,6 @@ class Main extends Component {
                                 <polygon fill="#fff" width="50" points="315.869,21.178 294.621,0 91.566,203.718 294.621,407.436 315.869,386.258 133.924,203.718 " />
                             </g>
                         </svg> */}
-
                     </div>
                     <TinySlider settings={mainSettings}>
                         <section className="main">
@@ -57,9 +98,9 @@ class Main extends Component {
                                             <p className="main__description text_md">Новый взгяд на сладости</p>
                                             <Link to="/shop" className="btn text_md">Магазин</Link>
                                         </div>
-                                        <div className="main__imgWrap">
-                                            {/* <img src={require(`../../img/pineapple.png`)} alt="pineapple" /> */}
-                                        </div>
+                                        {/* <div className="main__imgWrap">
+                                            <img src={require(`../../img/marker.png`)} alt="pineapple" />
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -286,6 +327,7 @@ class Main extends Component {
                     </div>
                 </section>
                 <section id="stats" className="stats">
+                    <div className="stats__mask"></div>
                     <div className="container-xs">
                         <div className="review">
                             <p className="review__number">1</p>
@@ -377,7 +419,29 @@ class Main extends Component {
                         </div>
                     </div>
                 </section>
+                <section className="map">
+                    <div className="container">
+                        <div className="section-headline">
+                            <div className="section-headline_underline"></div>
+                            <div className="section-headline__textWrap">
+                                <p className="section-headline_text text_lg">Мы на карте</p>
+                            </div>
+                            <div className="section-headline_underline"></div>
+                        </div>
+                    </div>
+                    <div className="mapContainer__wrap">
+                        <div className="mapContainer__info">
+                            <ul>
+                                <li>youfruit.shop@gmail.com</li>
+                                <li>+380667395800</li>
+                                <li>м.Осокорки</li>
+                                <li>Княжий Затон 14Б</li>
 
+                            </ul>
+                        </div>
+                        <div ref={el => this.mapContainer = el} className="mapContainer" />
+                    </div>
+                </section>
 
 
             </>
