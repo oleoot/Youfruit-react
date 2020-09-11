@@ -3,16 +3,27 @@ background: url(../../img/bg-delivery.png);
 background-size: cover;
 background-position: center;
 } */
+.delivery {
+  padding: 120px 0 !important;
+}
+
 .delivery-wrap {
-  grid-gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 0 0 100px;
 }
 
 .delivery-item {
+  display: grid;
   background-color: var(--secondary-color);
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   padding: 30px;
   grid-template-columns: 1fr 2fr;
+  /* margin-bottom: 50px; */
+  gap: 10px;
+  align-items: center;
 }
 
 .delivery-item p:nth-child(2) {
@@ -22,4 +33,36 @@ background-position: center;
 .delivery-item img {
   display: block;
   width: 80%;
+}
+
+.delivery__name {
+  font-family: Akrobat-semibold;
+}
+
+.delivery__info,
+.delivery__description {
+  font-family: Akrobat-regular;
+}
+
+.delivery__payment_inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px
+}
+
+.delivery__payment_type {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.delivery__paymentMethodImg {
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.payment__text {
+  font-family: Akrobat-semibold;
+  text-align: center;
 }

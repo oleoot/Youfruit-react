@@ -116,7 +116,7 @@ class App extends Component {
                         <li className="hidden-menu__listItem"><NavLink to="/shop" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Магазин</NavLink></li>
                         <li className="hidden-menu__listItem"><NavLink to="/blog" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Блог</NavLink></li>
                         <li className="hidden-menu__listItem"><NavLink to="/about" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>О нас</NavLink></li>
-                        <li className="hidden-menu__listItem"><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка</NavLink></li>
+                        <li className="hidden-menu__listItem"><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка/Оплата</NavLink></li>
                       </ul>
                     </div> :
                     <div >
@@ -133,7 +133,7 @@ class App extends Component {
                     <li className="header__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="header__link text_md">Магазин</NavLink></li>
                     <li className="header__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="header__link text_md">Блог</NavLink></li>
                     <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md">Контакты</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md">Доставка</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md">Доставка/Оплата</NavLink></li>
                   </ul>
                 </div>
                 <div>

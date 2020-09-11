@@ -66,7 +66,8 @@ class About extends Component {
             <section className="about">
                 <div className="container-xs">
                     <div className="back-btn">
-                        <NavLink exact to="/" activeClassName="nav-active" className="text-lg"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
+                        <NavLink exact to="/" activeClassName="nav-active" className="text_lg breadcrumbs-link">
+                            <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
                     </div>
                     <div className="section-headline">
                         <div className="section-headline_underline"></div>
