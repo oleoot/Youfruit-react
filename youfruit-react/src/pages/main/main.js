@@ -63,7 +63,7 @@ class Main extends Component {
         const mainSettings = {
             lazyload: true,
             mouseDrag: true,
-            controls: false,
+            controlsContainer: '.slider__arrows_main',
             navContainer: ".main__sliderNav"
         };
         const bestsellersSettings = {
@@ -87,6 +87,30 @@ class Main extends Component {
         return (
             <>
                 <div className="slider-wrap main__slider-wrap">
+                    <div className="slider__arrows slider__arrows_main">
+                        <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider__left_main">
+
+                            <g>
+                                <title>background</title>
+                                <rect fill="none" id="canvas_background" height="52" width="52" y="-1" x="-1" />
+                            </g>
+                            <g>
+                                <title>Layer 1</title>
+                                <path stroke="null" id="svg_2" d="m13.43859,49.57138c-0.59261,0.00111 -1.07386,-0.47853 -1.07496,-1.07114c-0.0005,-0.28569 0.11297,-0.55981 0.31527,-0.76161l22.84886,-22.84675l-22.84886,-22.84665c-0.41958,-0.41958 -0.41958,-1.09981 0,-1.51939c0.41958,-0.41958 1.09981,-0.41958 1.51939,0l23.60645,23.60645c0.41888,0.41898 0.41888,1.0982 0,1.51728l-23.60645,23.60635c-0.20119,0.2019 -0.47461,0.31547 -0.7597,0.31547z" />
+                            </g>
+                        </svg>
+                        <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider__right_main">
+
+                            <g>
+                                <title>background</title>
+                                <rect fill="none" id="canvas_background" height="52" width="52" y="-1" x="-1" />
+                            </g>
+                            <g>
+                                <title>Layer 1</title>
+                                <path stroke="null" id="svg_2" d="m13.43859,49.57138c-0.59261,0.00111 -1.07386,-0.47853 -1.07496,-1.07114c-0.0005,-0.28569 0.11297,-0.55981 0.31527,-0.76161l22.84886,-22.84675l-22.84886,-22.84665c-0.41958,-0.41958 -0.41958,-1.09981 0,-1.51939c0.41958,-0.41958 1.09981,-0.41958 1.51939,0l23.60645,23.60645c0.41888,0.41898 0.41888,1.0982 0,1.51728l-23.60645,23.60635c-0.20119,0.2019 -0.47461,0.31547 -0.7597,0.31547z" />
+                            </g>
+                        </svg>
+                    </div>
                     <div className="main__sliderNav">
                         <div className="nav-item"></div>
                         <div className="nav-item"></div>

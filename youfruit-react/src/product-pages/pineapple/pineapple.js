@@ -26,7 +26,7 @@ class Pineapple extends Component {
         const { addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
         return (
             <div className="pineapple" >
-                <div className="container-sm container-products">
+                <div className="container-xs container-products">
                     <div className="back-btn back-btn-product">
                         <NavLink exact to="/shop" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Магазин</NavLink>
                     </div>

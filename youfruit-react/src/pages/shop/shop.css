@@ -13,7 +13,7 @@
     display: block;
     text-decoration: none;
     padding: 30px;
-    border-radius: 30px;
+    border-radius: 10px;
     transition: 0.5s;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     background: var(--secondary-color);
@@ -37,8 +37,11 @@
     justify-content: flex-start !important;
 }
 
+.shop__weight {
+    font-family: Akrobat-semibold !important;
+}
+
 .shop-item-price {
-    font-weight: 600 !important;
     color: var(--accent-color) !important;
 }
 
@@ -65,7 +68,7 @@
 }
 
 .arrow-left {
-    width: 20px;
+    width: 16px;
     margin-right: 10px;
 }
 
@@ -83,6 +86,21 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.breadcrumbs-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    font-family: Akrobat-regular;
+    color: #000;
+}
+
+
+
+
+
 
 /* Media */
 @media screen and (max-width: 1440px) {

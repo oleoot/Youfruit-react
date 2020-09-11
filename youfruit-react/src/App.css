@@ -246,7 +246,9 @@
 }
 
 .header__cartAmount_number {
-    color: #fff;
+    color: #000;
+    font-family: Akrobat-regular;
+    font-size: 15px !important;
 }
 
 /* df[sdfkjsfkjsjfofjjdkj\ */

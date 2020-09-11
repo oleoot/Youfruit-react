@@ -20,17 +20,18 @@ class Shop extends Component {
 
             <section className="shop">
                 <div className="container">
-                    <div className="headline-outer">
-                        <div className="underline"></div>
-                        <div className="headline-wrap">
-                            <p className="text-xl">Фруктовые чипсы</p>
-                        </div>
-                        <div className="underline"></div>
+                    <div className="back-btn">
+                        <NavLink exact to="/" activeClassName="nav-active" className="text_lg breadcrumbs-link">
+                            <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
                     </div>
                 </div>
                 <div className="container">
-                    <div className="back-btn">
-                        <NavLink exact to="/" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
+                    <div className="section-headline">
+                        <div className="section-headline_underline"></div>
+                        <div className="section-headline__textWrap">
+                            <p className="section-headline_text text_lg">Конфеты</p>
+                        </div>
+                        <div className="section-headline_underline"></div>
                     </div>
                 </div>
                 <div className="container">

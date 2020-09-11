@@ -26,9 +26,9 @@ class Apple extends Component {
         const { addToCartNumber, addToCartProduct, info, addToTotal, cartTotal } = this.props;
         return (
             <div className="apple" >
-                <div className="container-sm container-products">
+                <div className="container-xs container-products">
                     <div className="back-btn back-btn-product">
-                        <NavLink exact to="/shop" activeClassName="nav-active" className="text-lg nav-a  align-center flex-container"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Магазин</NavLink>
+                        <NavLink exact to="/shop" activeClassName="nav-active" className="text_lg breadcrumbs-link"><img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Магазин</NavLink>
                     </div>
                     <div className="product-wrap grid-container">
                         <div>
@@ -36,10 +36,10 @@ class Apple extends Component {
                         </div>
 
                         <div id="item-apple">
-                            <p className="text-md">Фруктовые чипсы - яблоко</p>
-                            <p className="text-md">69.00 грн.</p>
-                            <p className="text-sm product-weight">70 г</p>
-                            <p className="text-sm">Количество</p>
+                            <p className="text_lg product__name">Фруктовые чипсы - яблоко</p>
+                            <p className="text_md product__price">69.00 грн.</p>
+                            <p className="text_sm product__weight">70 г</p>
+                            <p className="text_md product__quantity">Количество</p>
                             <input min="1" type="number" value={this.state.inputValue} onChange={this.handleChange} className="text-sm" />
                             {cartTotal[info[0].id] !== 0 ?
                                 <button disabled className="btn btn-added text-sm">Добавлено в корзину</button> :

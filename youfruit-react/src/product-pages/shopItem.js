@@ -14,13 +14,13 @@ class ShopItem extends Component {
                 <div className="shop-img-wrap">
                     <img src={product.img} alt="logo" className="main-img" />
                     <div className="shop-weight flex-container-center align-center">
-                        <p className="text-xs">{product.weight}</p>
+                        <p className="text_sm shop__weight">{product.weight}</p>
                     </div>
                 </div>
                 <div className="item-wrap">
                     <div>
-                        <p className="text-md shop-item-name">{product.name}</p>
-                        <p className="text-sm shop-item-price">{product.price} грн.</p>
+                        <p className="text_md shop-item-name">{product.name}</p>
+                        <p className="text_md shop-item-price">{product.price} грн.</p>
                     </div>
                     <div className="cart-img-wrap">
                         <img src={require(`../img/icons/shopping-cart.png`)} alt="healthy" className="shop-cart" />
