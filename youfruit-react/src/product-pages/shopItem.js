@@ -22,8 +22,8 @@ class ShopItem extends Component {
                         <p className="text_md shop-item-name">{product.name}</p>
                         <p className="text_md shop-item-price">{product.price} грн.</p>
                     </div>
-                    <div className="cart-img-wrap">
-                        <img src={require(`../img/icons/shopping-cart.png`)} alt="healthy" className="shop-cart" />
+                    <div className="item-btn">
+                        <Link to={product.link} className="btn text_xs">Купить</Link>
                     </div>
                 </div>
             </Link>

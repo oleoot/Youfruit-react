@@ -4,21 +4,12 @@ import Shop from './pages/shop/shop';
 import Blog from './pages/blog/blog';
 import About from './pages/about/about';
 import Delivery from './pages/delivery/delivery';
-import Apple from './product-pages/apple/apple';
-import AppleCinnamon from './product-pages/apple-cinnamon/apple-cinnamon';
-import Pear from './product-pages/pear/pear';
-import Banana from './product-pages/banana/banana';
-import Orange from './product-pages/orange/orange';
-import Kiwi from './product-pages/kiwi/kiwi';
-import Sharon from './product-pages/sharon/sharon';
-import Mango from './product-pages/mango/mango';
-import Pineapple from './product-pages/pineapple/pineapple';
-import Mix from './product-pages/mix/mix';
-import Post from './pages/blog/blog-posts/post'
-
+import Post from './pages/blog/post'
+import Product from './product-pages/product'
 import Main from './pages/main/main';
 import Cart from './pages/cart/cart';
 import productData, { productsData } from './products'
+import { blogData } from './blog-info'
 import './App.css';
 
 
@@ -28,6 +19,7 @@ class App extends Component {
 
     this.state = {
       products: productsData,
+      blogPosts: blogData,
       cartQuantity: [],
       cartInside: [],
       cartTotal: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -102,7 +94,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log(this.state.products)
     return (
       <Router>
         <div className="App">
@@ -140,7 +132,7 @@ class App extends Component {
                     <li className="header__listItem"><NavLink exact to="/" activeClassName="header__link_active" className="header__link text_md">Главная</NavLink></li>
                     <li className="header__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="header__link text_md">Магазин</NavLink></li>
                     <li className="header__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="header__link text_md">Блог</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md">О нас</NavLink></li>
+                    <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md">Контакты</NavLink></li>
                     <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md">Доставка</NavLink></li>
                   </ul>
                 </div>
@@ -173,37 +165,18 @@ class App extends Component {
 
             <Route exact path="/shop" component={Shop}>
             </Route>
+            {this.state.products.map(product => (
+              <Route path={product.link} render={(props) =>
+                <Product {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
+              </Route>
+            ))
+            }
 
-            <Route path="/shop/apple" render={(props) => <Apple {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/apple-cinnamon" render={(props) => < AppleCinnamon {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/pear" render={(props) => <Pear {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/banana" render={(props) => <Banana {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-
-            <Route path="/shop/orange" render={(props) => <Orange {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/kiwi" render={(props) => <Kiwi {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/sharon" render={(props) => <Sharon {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/mango" render={(props) => <Mango {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/pineapple" render={(props) => <Pineapple {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
-
-            <Route path="/shop/mix" render={(props) => <Mix {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} info={this.state.products} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
-            </Route>
+            {this.state.blogPosts.map(post => (
+              <Route path={post.link} component={Post}>
+              </Route>
+            ))
+            }
 
             <Route path="/blog" component={Blog}>
             </Route>
@@ -215,7 +188,7 @@ class App extends Component {
             <Route path="/cart" render={(props) => <Cart {...props} cartInside={this.state.cartInside} removeFromCartProduct={this.removeFromCartProduct} removeFromCartNumber={this.removeFromCartNumber} cartTotal={this.state.cartTotal} removeFromTotal={this.removeFromTotal} />} >
             </Route>
 
-            <Route path="/blog/pancakes" component={Post}></Route>
+            {/* <Route path="/blog/pancakes" component={Post}></Route> */}
 
 
           </Switch>

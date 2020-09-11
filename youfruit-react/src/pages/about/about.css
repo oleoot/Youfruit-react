@@ -3,14 +3,20 @@
  background-size: cover;
  background-repeat: round;
 } */
+.about {
+    padding: 120px 0 0;
+}
+
 .about-wrap {
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-gap: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 .about-item {
     background: var(--secondary-color);
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
@@ -21,8 +27,17 @@
     margin: 0 auto;
 }
 
-.about-item p {
+.about__name {
+    font-family: Akrobat-semibold;
     text-align: center;
+}
+
+.about__description {
+    font-family: Akrobat-regular;
+}
+
+.about-item p {
+    /* text-align: center; */
 }
 
 .about-item p:first-of-type {
@@ -30,9 +45,101 @@
 }
 
 .about-logo-img {
-    width: 40% !important;
+    width: 60% !important;
 }
 
-.about-logo-text {
+/* .about-logo-text {
     width: 80%;
+} */
+
+.about__info {
+    padding: 100px 0 50px;
+}
+
+.about__info_phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about__info_inner li {
+    font-family: Akrobat-semibold;
+    background: url(../../img/dot.png) no-repeat left center;
+    padding-left: 25px;
+    font-size: 20px;
+}
+
+.about__info_inner li:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.about__info_inner {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 20px;
+}
+
+.about-item p {
+    line-height: 35px;
+}
+
+.about__info_call {
+    width: 100%;
+    border-radius: 10px;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about__info_headline {
+    font-family: Akrobat-bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 50px;
+    font-size: 35px;
+}
+
+.form__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+
+.form__top input {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    border: 1px solid #000;
+    padding-left: 10px;
+    font-family: Akrobat-regular;
+    font-size: 16px;
+}
+
+form label {
+    display: block;
+    font-family: Akrobat-semibold;
+    font-size: 20px;
+}
+
+.form__bottom textarea {
+    display: block;
+    font-family: Akrobat-regular;
+    width: 100%;
+    resize: none;
+    height: 80px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000;
+}
+
+form .btn {
+    padding: 10px 60px;
+    margin: 30px 0 0 auto;
+    /* color: #fff;
+    background: #000; */
 }

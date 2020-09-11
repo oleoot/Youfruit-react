@@ -170,18 +170,18 @@ class Cart extends Component {
         return (
             <div className="cart-link" >
                 <div className="container">
-                    <div className="headline-outer">
-                        <div className="underline"></div>
-                        <div className="headline-wrap">
-                            <p className="text-xl">Корзина</p>
+                    <div className="section-headline">
+                        <div className="section-headline_underline"></div>
+                        <div className="section-headline__textWrap">
+                            <p className="section-headline_text text_lg">Корзина</p>
                         </div>
-                        <div className="underline"></div>
+                        <div className="section-headline_underline"></div>
                     </div>
                 </div>
                 <div className="cart-wrapper grid-container container">
                     <div className="cart-link-wrap">
                         {this.state.total === 0 ?
-                            <p className="text-md empty-cart">Корзина пуста</p> :
+                            <p className="text_lg empty-cart">Корзина пуста</p> :
                             <p></p>
                         }
                         <div className="cart-item">
@@ -201,11 +201,16 @@ class Cart extends Component {
                                 prArray.push(orderItem)
                                 console.log(prArray)
                                 return (
-                                    <div className="cart-item-wrap grid-container align-center">
-                                        <div className="cart-img"><img src={item.img} alt="" /></div>
-                                        <div className="cart-name"><p className="text-sm">{item.name}</p></div>
-                                        <div className="cart-price"><p className="text-sm">{item.price}грн.</p></div>
-                                        <div className="cart-input flex-container-center align-center"><input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
+                                    <div className="cart-item-wrap">
+                                        <div className="cart-img">
+                                            <img src={item.img} alt="" />
+                                        </div>
+                                        <div className="cart-name"><p className="text_md">{item.name}</p>
+                                        </div>
+                                        <div className="cart-price">
+                                            <p className="text_md">{item.price}грн.</p>
+                                        </div>
+                                        <div className="cart-input"><input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
                                             this.handleChange.bind(this, item.price, item.id)
                                         }
                                             name={item.id} className="text-sm cart-item-input" />
@@ -225,15 +230,15 @@ class Cart extends Component {
                         </div>
                     </div>
                     <div className="inputs-wrap">
-                        <div className="total text-md">Сумма заказа {this.state.total}.00 грн.</div>
+                        <div className="total text_lg">Сумма заказа: {this.state.total}.00 грн.</div>
                         <div className="cart-underline"></div>
-                        <p className="text-md contact-details">Контактные данные</p>
+                        <p className="text_lg contact-details">Контактные данные</p>
                         <form>
-                            <label className="text-sm">Имя</label>
+                            <label className="text_md form__label">Имя</label>
                             <input type="name" placeholder="Имя" name="userName" value={this.state.userName} onChange={this.handleUserInputChange} />
-                            <label className="text-sm">Телефон</label>
+                            <label className="text_md form__label">Телефон</label>
                             <input type="tel" placeholder="Мобильный телефон" name="userEmail" value={this.state.userEmail} onChange={this.handleUserInputChange} />
-                            <label className="text-sm">Комментарий к заказу</label>
+                            <label className="text_md form__label">Комментарий к заказу</label>
                             <input type="text" placeholder="Комментарий к заказу" name="userComments" value={this.state.userComments} onChange={this.handleUserInputChange} />
                         </form>
                         {this.state.total === 0 ?

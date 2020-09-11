@@ -304,7 +304,8 @@
     cursor: pointer;
 }
 
-.bestsellers .btn {
+.bestsellers .btn,
+.shop .btn {
     padding: 5px 30px;
     margin: 0;
     border: 2px solid #000;
