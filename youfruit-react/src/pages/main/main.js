@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import TinySlider from "tiny-slider-react";
-import "./main.css"
+import "../../styles/style.css"
 import mapboxgl from 'mapbox-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 mapboxgl.accessToken = 'pk.eyJ1Ijoib2xlb290IiwiYSI6ImNrYW94NWY5MDA3cTgzMHFueGI3YjFpYXQifQ.O3vQ-bGYRrxazvXGCcnTFQ';

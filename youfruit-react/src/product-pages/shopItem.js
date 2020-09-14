@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProductsData from "../products"
-import "../pages/shop/shop.css"
+import "../styles/style.css"
 
 
 

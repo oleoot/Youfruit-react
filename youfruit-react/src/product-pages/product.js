@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import productData, { productsData } from '../products'
-import "./product.css"
+import "../styles/style.css"
 
 
 class Product extends Component {

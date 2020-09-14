@@ -8,9 +8,9 @@ import Post from './pages/blog/post'
 import Product from './product-pages/product'
 import Main from './pages/main/main';
 import Cart from './pages/cart/cart';
-import productData, { productsData } from './products'
+import { productsData } from './products'
 import { blogData } from './blog-info'
-import './App.css';
+import './styles/style.css';
 
 
 class App extends Component {
@@ -100,51 +100,45 @@ class App extends Component {
         <div className="App">
           <header className="header">
             <div className="container">
-              <nav className="header__nav">
-                <div className="header__left">
-                  <img src={require(`./img/logo.png`)} alt="logo" className="header__logo" />
-                  <p className="header__logoName main-font_regular text_md"><span>You</span>fruit</p>
-                  <div className="burger-menu" onClick={this.openMenu}>
-                    <div className="menu-line line1"></div>
-                    <div className="menu-line line2"></div>
-                    <div className="menu-line line3"></div>
+              <div className="header__left">
+                <img src={require(`./img/logo.png`)} alt="logo" className="header__logo" />
+                <p className="header__logoName text_md font_regular"><span>You</span>fruit</p>
+                <div className="burger-menu" onClick={this.openMenu}>
+                  <div className="burger-menu__line"></div>
+                  <div className="burger-menu__line"></div>
+                  <div className="burger-menu__line"></div>
+                </div>
+                {this.state.menuOpen === true ?
+                  <div className="hidden-menu">
+                    <ul className="hidden-menu__list">
+                      <li className="hidden-menu__listItem"><NavLink exact to="/" activeClassName="header__link_active" className="text_md" onClick={this.openMenu}>Главная</NavLink></li>
+                      <li className="hidden-menu__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="text_md" onClick={this.openMenu}>Магазин</NavLink></li>
+                      <li className="hidden-menu__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="text_md" onClick={this.openMenu}>Блог</NavLink></li>
+                      <li className="hidden-menu__listItem"><NavLink to="/about" activeClassName="header__link_active" className="text_md" onClick={this.openMenu}>О нас</NavLink></li>
+                      <li className="hidden-menu__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="text_md" onClick={this.openMenu}>Доставка/Оплата</NavLink></li>
+                    </ul>
+                  </div> :
+                  <div ></div>
+                }
+              </div>
+
+              <div className="header__middle">
+                <ul className="header__list">
+                  <li className="header__listItem"><NavLink exact to="/" activeClassName="header__link_active" className="header__link text_md font_regular">Главная</NavLink></li>
+                  <li className="header__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="header__link text_md font_regular">Магазин</NavLink></li>
+                  <li className="header__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="header__link text_md font_regular">Блог</NavLink></li>
+                  <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md font_regular">Контакты</NavLink></li>
+                  <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md font_regular">Доставка/Оплата</NavLink></li>
+                </ul>
+              </div>
+              <div>
+                <NavLink to="/cart" className="header__cartWrap">
+                  <img src={require(`./img/icons/shopping-cart.svg`)} alt="cart" className="header__cartImg" />
+                  <div className="header__cartAmount">
+                    <p className="header__cartAmount_number text_sm">{this.state.cartQuantity.length}</p>
                   </div>
-                  {this.state.menuOpen === true ?
-                    <div className="hidden-menu">
-                      <ul className="hidden-menu__list">
-                        <li className="hidden-menu__listItem"><NavLink exact to="/" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Главная</NavLink></li>
-                        <li className="hidden-menu__listItem"><NavLink to="/shop" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Магазин</NavLink></li>
-                        <li className="hidden-menu__listItem"><NavLink to="/blog" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Блог</NavLink></li>
-                        <li className="hidden-menu__listItem"><NavLink to="/about" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>О нас</NavLink></li>
-                        <li className="hidden-menu__listItem"><NavLink to="/delivery" activeClassName="nav-active" className="text-xl nav-a" onClick={this.openMenu}>Доставка/Оплата</NavLink></li>
-                      </ul>
-                    </div> :
-                    <div >
-
-                    </div>
-                  }
-                </div>
-
-                <div className="header__middle">
-                  {/* <img src={require(`./img/logo.png`)} alt="logo" className="nav-center-hidden" id="logo" />
-                  <p className="text-md nav-center-hidden"><span>You</span>fruit</p> */}
-                  <ul className="header__list">
-                    <li className="header__listItem"><NavLink exact to="/" activeClassName="header__link_active" className="header__link text_md">Главная</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/shop" activeClassName="header__link_active" className="header__link text_md">Магазин</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/blog" activeClassName="header__link_active" className="header__link text_md">Блог</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/about" activeClassName="header__link_active" className="header__link text_md">Контакты</NavLink></li>
-                    <li className="header__listItem"><NavLink to="/delivery" activeClassName="header__link_active" className="header__link text_md">Доставка/Оплата</NavLink></li>
-                  </ul>
-                </div>
-                <div>
-                  <NavLink to="/cart" className="header__cartWrap">
-                    <img src={require(`./img/icons/shopping-cart.svg`)} alt="cart" className="header__cartImg" />
-                    <div className="header__cartAmount">
-                      <p className="header__cartAmount_number text_sm">{this.state.cartQuantity.length}</p>
-                    </div>
-                  </NavLink>
-                </div>
-              </nav>
+                </NavLink>
+              </div>
             </div>
           </header>
           <div className="cart">

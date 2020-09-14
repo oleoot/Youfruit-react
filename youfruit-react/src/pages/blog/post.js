@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import { blogData } from '../../blog-info'
+import "../../styles/style.css"
 
 class Post extends Component {
     constructor() {

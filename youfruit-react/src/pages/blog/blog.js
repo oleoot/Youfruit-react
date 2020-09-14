@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import { blogData } from '../../blog-info'
-import "./blog.css"
+import "../../styles/style.css"
 class Blog extends Component {
     constructor() {
         super()

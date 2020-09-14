@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import "./cart.css"
+import "../../styles/style.css"
 
 class Cart extends Component {
 

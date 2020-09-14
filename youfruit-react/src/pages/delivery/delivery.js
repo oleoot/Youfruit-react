@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
-import "./delivery.css"
+import "../../styles/style.css"
 class Delivery extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
