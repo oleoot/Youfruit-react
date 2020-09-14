@@ -104,9 +104,6 @@ class Cart extends Component {
             price: itemPrice,
             quantity: itemQuantity,
         }
-        console.log(orderState)
-        // const orderCheck = orderState.push(order)
-        console.log(order)
         this.setState({
             orderProducts: order
         })
@@ -133,152 +130,103 @@ class Cart extends Component {
         }).then(response => response.json())
     }
 
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     console.log(orderArr, total)
-    //     const orderCompl = {
-    //         products: orderArr,
-    //         total: total,
-    //         name: this.state.userName,
-    //         email: this.state.userEmail,
-    //         comments: this.state.userComments
-    //     }
-    //     const API_URL = 'http://localhost:5000/order';
-    //     fetch(API_URL, {
-    //         method: "POST",
-    //         body: JSON.stringify(orderCompl),
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         }
-    //     }).then(response => response.json())
-    // }
-
-
-
-
-
-
-
-
     render() {
         const { cartInside, removeFromCartProduct, removeFromCartNumber, removeFromTotal } = this.props;
-        // console.log(cartInside)
-        console.log(this.state)
         let prArray = [];
-        console.log(prArray)
         return (
-            <div className="cart-link" >
-                <div className="container">
-                    <div className="section-headline">
-                        <div className="section-headline_underline"></div>
-                        <div className="section-headline__textWrap">
-                            <p className="section-headline_text text_lg">Корзина</p>
+            <div className="cart-page" >
+                <section className="cart">
+                    <div className="container">
+                        <div className="section-headline">
+                            <div className="section-headline_underline"></div>
+                            <div className="section-headline__textWrap">
+                                <p className="section-headline_text text_lg">Корзина</p>
+                            </div>
+                            <div className="section-headline_underline"></div>
                         </div>
-                        <div className="section-headline_underline"></div>
-                    </div>
-                </div>
-                <div className="cart-wrapper grid-container container">
-                    <div className="cart-link-wrap">
-                        {this.state.total === 0 ?
-                            <p className="text_lg empty-cart">Корзина пуста</p> :
-                            <p></p>
-                        }
-                        <div className="cart-item">
-                            {cartInside.map((item) => {
-                                // console.log(this.state.orderProducts)
-                                // this.addToOrder(item.name, item.price, this.state[item.id] || item.inputState, this.state.total, this.state.orderProducts)
-                                // console.log(item.name)
-                                // console.log(item.price)
-                                // console.log(this.state[item.id] || item.inputState)
-                                // console.log(this.state.total)
-                                const orderItem = {
-                                    name: item.name,
-                                    price: item.price,
-                                    quantity: this.state[item.id] || item.inputState,
+                        <div className="cart__innerWrap">
+                            <div className="cart-leftPane">
+                                {this.state.total === 0 ?
+                                    <p className="cart-leftPane__defaultText text_lg font_regular">Корзина пуста</p> :
+                                    <p></p>
                                 }
-                                console.log(orderItem)
-                                prArray.push(orderItem)
-                                console.log(prArray)
-                                return (
-                                    <div className="cart-item-wrap">
-                                        <div className="cart-img">
-                                            <img src={item.img} alt="" />
+                                {cartInside.map((item) => {
+                                    const orderItem = {
+                                        name: item.name,
+                                        price: item.price,
+                                        quantity: this.state[item.id] || item.inputState,
+                                    }
+                                    prArray.push(orderItem)
+                                    return (
+                                        <div className="cart-productItem">
+                                            <div>
+                                                <img src={item.img} alt="" className="cart-productItem__img" />
+                                            </div>
+                                            <div className="cart-productItem__name">
+                                                <p className="text_md">{item.name}</p>
+                                            </div>
+                                            <div className="cart-productItem__price">
+                                                <p className="text_md">{item.price}грн.</p>
+                                            </div>
+                                            <div className="cart-productItem__inputWrap"><input min="1" type="number" className="cart-productItem__input" value={this.state[item.id] || item.inputState} onChange={
+                                                this.handleChange.bind(this, item.price, item.id)
+                                            }
+                                                name={item.id} className="cart-productItem__input text-sm" />
+                                                <p className="text_sm"> шт.</p></div>
+                                            <div className="cart-productItem__remove">
+                                                <button className="cart-productItem__deleteBtn" type="button" onClick={() => {
+                                                    removeFromCartProduct(item)
+                                                    removeFromCartNumber(item.id)
+                                                    this.removeFromTotal(item.price, this.state[item.id], item.id)
+                                                    removeFromTotal(item.price, this.state[item.id], item.id)
+                                                }
+                                                }
+                                                >X</button></div>
                                         </div>
-                                        <div className="cart-name"><p className="text_md">{item.name}</p>
-                                        </div>
-                                        <div className="cart-price">
-                                            <p className="text_md">{item.price}грн.</p>
-                                        </div>
-                                        <div className="cart-input"><input min="1" type="number" value={this.state[item.id] || item.inputState} onChange={
-                                            this.handleChange.bind(this, item.price, item.id)
-                                        }
-                                            name={item.id} className="text-sm cart-item-input" />
-                                            <p className="text-sm"> шт.</p></div>
-                                        <div className="cart-remove"><button className="delete-btn" type="button" onClick={() => {
-                                            removeFromCartProduct(item)
-                                            removeFromCartNumber(item.id)
-                                            this.removeFromTotal(item.price, this.state[item.id], item.id)
-                                            removeFromTotal(item.price, this.state[item.id], item.id)
-                                        }
-                                        }
-                                        >X</button></div>
-                                    </div>
 
-                                )
-                            })}
+                                    )
+                                })}
+                            </div>
+                            <div className="cart-rightPane">
+                                <div className="cart-rightPane__total text_lg font_semibold">Сумма заказа: {this.state.total}.00 грн.</div>
+                                <div className="cart-rightPane__underline"></div>
+                                <p className="cart-rightPane__formName text_lg font_regular">Контактные данные</p>
+                                <form className="cart-form">
+                                    <label className="cart-form__label text_md font_regular">Имя</label>
+                                    <input type="name" placeholder="Имя" name="userName" value={this.state.userName} onChange={this.handleUserInputChange} className="cart-form__input" />
+                                    <label className="cart-form__label text_md font_regular">Телефон</label>
+                                    <input type="tel" placeholder="Мобильный телефон" name="userEmail" value={this.state.userEmail} onChange={this.handleUserInputChange} className="cart-form__input" />
+                                    <label className="cart-form__label text_md font_regular">Комментарий к заказу</label>
+                                    <input type="text" placeholder="Комментарий к заказу" name="userComments" value={this.state.userComments} onChange={this.handleUserInputChange} className="cart-form__input" />
+                                </form>
+                                {this.state.total === 0 ?
+                                    <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
+                                    <div className="btn btn-open-input text-sm" onClick={() => {
+                                        this.showInputsForm()
+                                        this.makeOrder(prArray, this.state.total, this.state.userName, this.state.userEmail, this.state.userComments)
+                                    }
+                                    }
+                                    >Сделать заказ</div>
+                                }
+
+                                {/* {this.state.inputData === true ?
+                                    <div className="transparent-bg">
+                                        <div className="order-input order-input-active">
+                                            <div className="grid-container credentials-wrap">
+                                                <div></div>
+                                                <div><p className="text-lg">Контактные данные</p></div>
+                                                <button onClick={this.closeInputsForm} className="input-btn text-md">X</button>
+                                            </div>
+                                            <div>
+                                                Ok
+                                            </div>
+                                        </div>
+                                    </div> : null
+                                } */}
+                            </div>
                         </div>
                     </div>
-                    <div className="inputs-wrap">
-                        <div className="total text_lg">Сумма заказа: {this.state.total}.00 грн.</div>
-                        <div className="cart-underline"></div>
-                        <p className="text_lg contact-details">Контактные данные</p>
-                        <form>
-                            <label className="text_md form__label">Имя</label>
-                            <input type="name" placeholder="Имя" name="userName" value={this.state.userName} onChange={this.handleUserInputChange} />
-                            <label className="text_md form__label">Телефон</label>
-                            <input type="tel" placeholder="Мобильный телефон" name="userEmail" value={this.state.userEmail} onChange={this.handleUserInputChange} />
-                            <label className="text_md form__label">Комментарий к заказу</label>
-                            <input type="text" placeholder="Комментарий к заказу" name="userComments" value={this.state.userComments} onChange={this.handleUserInputChange} />
-                        </form>
-                        {this.state.total === 0 ?
-                            <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
-                            <div className="btn btn-open-input text-sm" onClick={() => {
-                                this.showInputsForm()
-                                // this.makeOrder(prArray, this.state.total)
-                                this.makeOrder(prArray, this.state.total, this.state.userName, this.state.userEmail, this.state.userComments)
-                            }
-                            }
-                            >Сделать заказ</div>
-                        }
-
-                        {this.state.inputData === true ?
-                            <div className="transparent-bg">
-                                <div className="order-input order-input-active">
-                                    <div className="grid-container credentials-wrap">
-                                        <div></div>
-                                        <div><p className="text-lg">Контактные данные</p></div>
-                                        <button onClick={this.closeInputsForm} className="input-btn text-md">X</button>
-                                    </div>
-                                    <div>
-                                        {/* <input type="name" placeholder="Имя" name="userName" value={this.state.userName} onChange={this.handleUserInputChange} />
-                                        <input type="tel" placeholder="Мобильный телефон" name="userEmail" value={this.state.userEmail} onChange={this.handleUserInputChange} />
-                                        <input type="text" placeholder="Комментарий к заказу" name="userComments" value={this.state.userComments} onChange={this.handleUserInputChange} /> */}
-                                        <button className="btn btn-open-input text-sm">Сделать заказ</button>
-                                    </div>
-                                </div>
-                            </div> : null
-                            // <div className="order-input">
-                            //     <form>
-                            //         <input type="text" placeholder="name" />
-                            //         <input type="text" placeholder="phone" />
-                            //         <input type="text" placeholder="msg" />
-                            //     </form>
-                            // </div>
-
-                        }
-                    </div>
-                </div>
+                </section>
             </div >
 
 
