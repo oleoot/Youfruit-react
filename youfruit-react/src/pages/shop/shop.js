@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
-import productData, { productsData } from '../../products'
+import { productsData } from '../../products'
 import "../../styles/style.css"
 import ShopItem from "../../product-pages/shopItem"
 class Shop extends Component {
@@ -20,9 +20,9 @@ class Shop extends Component {
 
             <section className="shop">
                 <div className="container">
-                    <div className="back-btn">
-                        <NavLink exact to="/" activeClassName="nav-active" className="text_lg breadcrumbs-link">
-                            <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="arrow-left" />Главная</NavLink>
+                    <div className="breadcrumbs-btn">
+                        <NavLink exact to="/" activeClassName="nav-active" className="breadcrumbs-btn__link text_lg font_regular">
+                            <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="breadcrumbs-btn__img" />Главная</NavLink>
                     </div>
                 </div>
                 <div className="container">
@@ -35,7 +35,7 @@ class Shop extends Component {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="shop-wrap grid-container">
+                    <div className="shop__innerWrap">
                         {this.state.products.map(product => {
                             return (
                                 <ShopItem key={product.id} product={product} />
@@ -49,10 +49,6 @@ class Shop extends Component {
 
                 </div>
             </section>
-            //     )
-            // }
-            // )
-            // }
         )
 
     }

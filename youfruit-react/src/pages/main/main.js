@@ -444,8 +444,6 @@ class Main extends Component {
                         <div ref={el => this.mapContainer = el} className="mapContainer" />
                     </div>
                 </section>
-
-
             </div>
         )
     }
