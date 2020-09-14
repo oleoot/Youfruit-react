@@ -648,13 +648,13 @@
 
 
 /* BLOG PAGE START ==========================================================================================================================================*/
-.blog-wrap {
+.blog__innerWrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 
-.blog-item {
+.blog__item {
     grid-template-columns: 1fr;
     grid-gap: 30px;
     padding: 30px;
@@ -662,25 +662,20 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-decoration: none;
-}
-
-.blog-item p {
     color: var(--primary-color);
 }
 
-.blog-item p:last-of-type {
+.blog__img {
+    width: 100%;
+}
+
+.blog__description {
     margin: 20px 0;
-    font-size: 20px !important;
     line-height: 30px;
 }
 
-.blog-post__name {
+.blog__name {
     margin-top: 20px;
-    font-family: Akrobat-semibold;
-}
-
-.blog-post__description {
-    font-family: Akrobat-regular;
 }
 
 .blog .btn {
@@ -688,6 +683,10 @@
     margin: 0 0 0 auto;
     padding: 10px 0px;
 }
+
+/* BLOG PAGE END ==========================================================================================================================================*/
+
+/* BLOG-POST PAGE START ==========================================================================================================================================*/
 
 .post-page {
     padding: 120px 0;
@@ -703,25 +702,25 @@
     line-height: 30px;
 }
 
-/* BLOG PAGE END ==========================================================================================================================================*/
-
-
+/* BLOG-POST PAGE END==========================================================================================================================================*/
 
 
 
 /* DELIVERY PAGE START ==========================================================================================================================================*/
+
+/* Delivery section ========================================================================================================= */
 .delivery {
     padding: 120px 0 !important;
 }
 
-.delivery-wrap {
+.delivery__innerWrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     padding: 0 0 100px;
 }
 
-.delivery-item {
+.delivery__item {
     display: grid;
     background-color: var(--secondary-color);
     border-radius: 10px;
@@ -732,44 +731,39 @@
     align-items: center;
 }
 
-.delivery-item p:nth-child(2) {
+.delivery__info {
     margin: 10px 0 20px;
 }
 
-.delivery-item img {
+.delivery__img {
     display: block;
     width: 80%;
 }
 
-.delivery__name {
-    font-family: Akrobat-semibold;
+/* Payment section ========================================================================================================= */
+.payment {
+    padding: 50px 0 120px;
 }
 
-.delivery__info,
-.delivery__description {
-    font-family: Akrobat-regular;
-}
-
-.delivery__payment_inner {
+.payment__innerWrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px
 }
 
-.delivery__payment_type {
+.payment__type {
     border-radius: 10px;
     background: #fff;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
 }
 
-.delivery__paymentMethodImg {
+.payment__img {
     margin: 0 auto 20px;
     display: block;
 }
 
 .payment__text {
-    font-family: Akrobat-semibold;
     text-align: center;
 }
 
@@ -983,52 +977,51 @@ td {
 
 
 /* ABOUT PAGE START ==========================================================================================================================================*/
-.about {
+.info {
     padding: 120px 0 0;
 }
 
-.about-wrap {
+.info__innerWrap {
     margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
-.about-item {
+.info__item {
     background: var(--secondary-color);
     border-radius: 10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    text-align: center;
 }
 
-.about-item img {
+.info__img {
     width: 60%;
     display: block;
     margin: 0 auto;
 }
 
-.about__name {
-    font-family: Akrobat-semibold;
-    text-align: center;
-}
-
-.about__description {
-    font-family: Akrobat-regular;
-}
-
-.about-item p:first-of-type {
+.info__name {
     margin: 20px auto 30px;
 }
 
-.about-logo-img {
-    width: 60% !important;
+.info__item p {
+    line-height: 30px;
 }
 
-.about__info {
+/* Contact section ====================================================================== */
+.contact {
     padding: 100px 0 50px;
 }
 
-.about__info_phone {
+.contact__innerWrap {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 20px;
+}
+
+.contact__infoPane {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1038,35 +1031,25 @@ td {
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about__info_inner li {
+.contact__listItem {
     font-family: Akrobat-semibold;
     background: url(../img/dot.png) no-repeat left center;
     padding-left: 25px;
     font-size: 20px;
 }
 
-.about__info_inner li:not(:last-child) {
+.contact__listItem:not(:last-child) {
     margin-bottom: 40px;
 }
 
-.about__info_inner {
-    display: grid;
-    grid-template-columns: max-content auto;
-    gap: 20px;
-}
-
-.about-item p {
-    line-height: 30px;
-}
-
-.about__info_call {
+.contact__formPane {
     width: 100%;
     border-radius: 10px;
     padding: 40px 50px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about__info_headline {
+.contact__headline {
     font-family: Akrobat-bold;
     text-transform: uppercase;
     text-align: center;
@@ -1074,14 +1057,14 @@ td {
     font-size: 35px;
 }
 
-.form__top {
+.contact-form__top {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     margin-bottom: 15px;
 }
 
-.form__top input {
+.contact-form__input {
     width: 100%;
     height: 40px;
     margin-top: 15px;
@@ -1091,13 +1074,13 @@ td {
     font-size: 16px;
 }
 
-form label {
+.contact-form__label {
     display: block;
     font-family: Akrobat-semibold;
     font-size: 20px;
 }
 
-.form__bottom textarea {
+.contact-form__textarea {
     display: block;
     font-family: Akrobat-regular;
     width: 100%;
@@ -1109,7 +1092,7 @@ form label {
     border: 1px solid #000;
 }
 
-form .btn {
+.contact-form .btn {
     padding: 10px 60px;
     margin: 30px 0 0 auto;
 }
