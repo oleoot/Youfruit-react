@@ -60,7 +60,7 @@ class Main extends Component {
             gutter: 30,
             nav: false,
             loop: false,
-            controlsContainer: ".slider__arrows_bestsellers",
+            controlsContainer: ".slider-arrows_bestsellers",
             edgePadding: 15
         };
         const reviewsSettings = {
@@ -69,7 +69,7 @@ class Main extends Component {
             gutter: 30,
             nav: false,
             loop: false,
-            controlsContainer: ".slider__arrows_reviews",
+            controlsContainer: ".slider-arrows__reviews",
             edgePadding: 15
         };
         return (
@@ -77,7 +77,7 @@ class Main extends Component {
                 <section className="main">
                     <div className="slider-wrap slider-wrap__main">
                         <div className="slider-arrows slider-arrows__main">
-                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider-arrows__main_left">
+                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider-arrow slider-arrows__main_left">
                                 <g>
                                     <rect fill="none" height="52" width="52" y="-1" x="-1" />
                                 </g>
@@ -85,7 +85,7 @@ class Main extends Component {
                                     <path stroke="null" id="svg_2" d="m13.43859,49.57138c-0.59261,0.00111 -1.07386,-0.47853 -1.07496,-1.07114c-0.0005,-0.28569 0.11297,-0.55981 0.31527,-0.76161l22.84886,-22.84675l-22.84886,-22.84665c-0.41958,-0.41958 -0.41958,-1.09981 0,-1.51939c0.41958,-0.41958 1.09981,-0.41958 1.51939,0l23.60645,23.60645c0.41888,0.41898 0.41888,1.0982 0,1.51728l-23.60645,23.60635c-0.20119,0.2019 -0.47461,0.31547 -0.7597,0.31547z" />
                                 </g>
                             </svg>
-                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider-arrows__main_right">
+                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider-arrow slider-arrows__main_right">
                                 <g>
                                     <rect fill="none" height="52" width="52" y="-1" x="-1" />
                                 </g>
@@ -182,7 +182,7 @@ class Main extends Component {
                         </div>
                     </div>
                 </section>
-                <section id="advantages" className="advantages">
+                <section className="advantages" id="advantages">
                     <div className="container-xs">
                         <div className="section-headline">
                             <div className="section-headline_underline"></div>
@@ -224,9 +224,6 @@ class Main extends Component {
                         </div>
                     </div>
                 </section>
-
-
-
                 <section className="bestsellers" id="bestsellers">
                     <div className="container-xs">
                         <div className="section-headline">
@@ -238,9 +235,9 @@ class Main extends Component {
                         </div>
                     </div>
                     <div className="container-xs">
-                        <div className="bestsellers_sliderWrap">
-                            <div className="slider__arrows slider__arrows_bestsellers">
-                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider__left">
+                        <div className="slider-wrap slider-wrap__bestsellers">
+                            <div className="slider-arrows slider-arrows_bestsellers">
+                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider-arrow slider-arrows__bestsellers_left">
 
                                     <g>
                                         <title>background</title>
@@ -251,7 +248,7 @@ class Main extends Component {
                                         <path stroke="null" id="svg_2" d="m13.43859,49.57138c-0.59261,0.00111 -1.07386,-0.47853 -1.07496,-1.07114c-0.0005,-0.28569 0.11297,-0.55981 0.31527,-0.76161l22.84886,-22.84675l-22.84886,-22.84665c-0.41958,-0.41958 -0.41958,-1.09981 0,-1.51939c0.41958,-0.41958 1.09981,-0.41958 1.51939,0l23.60645,23.60645c0.41888,0.41898 0.41888,1.0982 0,1.51728l-23.60645,23.60635c-0.20119,0.2019 -0.47461,0.31547 -0.7597,0.31547z" />
                                     </g>
                                 </svg>
-                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider__right">
+                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider-arrow slider-arrows__bestsellers_right">
 
                                     <g>
                                         <title>background</title>
@@ -265,79 +262,66 @@ class Main extends Component {
                             </div>
                             <TinySlider settings={bestsellersSettings} className="bestsellers__sliderWrap">
                                 <div>
-                                    {/* <Link to="/shop/apple"> */}
                                     <div className="bestseller__inner">
                                         <img src={require(`../../img/products/apple.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
                                         <div className="bestsellers__textWrap">
                                             <div>
-                                                <p className="bestseller__name text_md">Чипсы - яблоко</p>
-                                                <p className="bestseller__price text_md">69 грн.</p>
+                                                <p className="bestseller__name text_md font_regular">Чипсы - яблоко</p>
+                                                <p className="bestseller__price text_md font_semibold">69 грн.</p>
                                             </div>
-                                            <div className="item-btn">
+                                            <div className="bestsellers__btnWrap">
                                                 <Link to="/shop/apple" className="btn text_xs">Купить</Link>
                                             </div>
                                         </div>
                                     </div>
-                                    {/* </Link> */}
                                 </div>
                                 <div>
-                                    {/* <Link to="/shop/apple"> */}
                                     <div className="bestseller__inner">
                                         <img src={require(`../../img/products/sharon.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
                                         <div className="bestsellers__textWrap">
                                             <div>
-                                                <p className="bestseller__name text_md">Чипсы - шарон</p>
-                                                <p className="bestseller__price text_md">89 грн.</p>
+                                                <p className="bestseller__name text_md font_regular">Чипсы - шарон</p>
+                                                <p className="bestseller__price text_md font_semibold">89 грн.</p>
                                             </div>
-                                            <div className="item-btn">
+                                            <div className="bestsellers__btnWrap">
                                                 <Link to="/shop/sharon" className="btn">Купить</Link>
                                             </div>
                                         </div>
                                     </div>
-                                    {/* </Link> */}
                                 </div>
                                 <div>
-                                    {/* <Link to="/shop/apple"> */}
                                     <div className="bestseller__inner">
-                                        <img src={require(`../../img/products/pear.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
+                                        <img src={require(`../../img/products/pear.jpg`)} alt="healthy" className="bestsellers__img" />
                                         <div className="bestsellers__textWrap">
                                             <div>
-                                                <p className="bestseller__name text_md">Чипсы - груша</p>
-                                                <p className="bestseller__price text_md">89 грн.</p>
+                                                <p className="bestseller__name text_md font_regular">Чипсы - груша</p>
+                                                <p className="bestseller__price text_md font_semibold">89 грн.</p>
                                             </div>
-                                            <div className="item-btn">
+                                            <div className="bestsellers__btnWrap">
                                                 <Link to="/shop/pear" className="btn">Купить</Link>
                                             </div>
                                         </div>
                                     </div>
-                                    {/* </Link> */}
                                 </div>
                                 <div>
-                                    {/* <Link to="/shop/apple"> */}
                                     <div className="bestseller__inner">
-                                        <img src={require(`../../img/products/banana.jpg`)} alt="healthy" id="img-bottom-right" className="bestsellers__img" />
+                                        <img src={require(`../../img/products/banana.jpg`)} alt="healthy" className="bestsellers__img" />
                                         <div className="bestsellers__textWrap">
                                             <div>
-                                                <p className="bestseller__name text_md">Чипсы - банан</p>
-                                                <p className="bestseller__price text_md">89 грн.</p>
+                                                <p className="bestseller__name text_md font_regular">Чипсы - банан</p>
+                                                <p className="bestseller__price text_md font_semibold">89 грн.</p>
                                             </div>
-                                            <div className="item-btn">
+                                            <div className="bestsellers__btnWrap">
                                                 <Link to="/shop/banana" className="btn">Купить</Link>
                                             </div>
                                         </div>
                                     </div>
-                                    {/* </Link> */}
                                 </div>
-                                {/* <Link to="/shop/banana">
-                                <img src={require(`../../img/products/banana.jpg`)} alt="healthy" id="img-bottom-right" />
-                                <p className="text-md shop-item-name">Чипсы - банан</p>
-                                <p className="text-sm shop-item-price">79 грн.</p>
-                            </Link> */}
                             </TinySlider>
                         </div>
                     </div>
                 </section>
-                <section id="stats" className="stats">
+                <section className="stats" id="stats">
                     <div className="container-xs">
                         <div className="section-headline">
                             <div className="section-headline_underline"></div>
@@ -346,28 +330,26 @@ class Main extends Component {
                             </div>
                             <div className="section-headline_underline"></div>
                         </div>
-                    </div>
-                    <div className="container-xs">
-
-                        <div className="review">
-                            <p className="review__number">1</p>
-                            <p className="review__desc">Лет на рынке</p>
-                        </div>
-                        <div className="review">
-                            <p className="review__number">100+</p>
-                            <p className="review__desc">Выполненных заказов</p>
-                        </div>
-                        <div className="review">
-                            <p className="review__number">300+</p>
-                            <p className="review__desc">Довольных клиентов</p>
-                        </div>
-                        <div className="review">
-                            <p className="review__number">40+</p>
-                            <p className="review__desc">Чего-то там</p>
+                        <div className="stats__innerWrap">
+                            <div className="stats__item">
+                                <p className="stats__number text_xl font_bold">1</p>
+                                <p className="stats__desc text_md font_semibold">Лет на рынке</p>
+                            </div>
+                            <div className="stats__item">
+                                <p className="stats__number text_xl font_bold">100+</p>
+                                <p className="stats__desc text_md font_semibold">Выполненных заказов</p>
+                            </div>
+                            <div className="stats__item">
+                                <p className="stats__number text_xl font_bold">300+</p>
+                                <p className="stats__desc text_md font_semibold">Довольных клиентов</p>
+                            </div>
+                            <div className="stats__item">
+                                <p className="stats__number text_xl font_bold">40+</p>
+                                <p className="stats__desc text_md font_semibold">Чего-то там</p>
+                            </div>
                         </div>
                     </div>
                 </section>
-
                 <section className="reviews">
                     <div className="container-xs">
                         <div className="section-headline">
@@ -381,8 +363,8 @@ class Main extends Component {
 
                     <div className="container-xs">
                         <div className="slider-wrap slider__wrap_reviews">
-                            <div className="slider__arrows slider__arrows_reviews">
-                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider__left">
+                            <div className="slider-arrows slider-arrows__reviews">
+                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" className="slider-arrow slider-arrows__reviews_left">
 
                                     <g>
                                         <title>background</title>
@@ -393,7 +375,7 @@ class Main extends Component {
                                         <path stroke="null" id="svg_2" d="m13.43859,49.57138c-0.59261,0.00111 -1.07386,-0.47853 -1.07496,-1.07114c-0.0005,-0.28569 0.11297,-0.55981 0.31527,-0.76161l22.84886,-22.84675l-22.84886,-22.84665c-0.41958,-0.41958 -0.41958,-1.09981 0,-1.51939c0.41958,-0.41958 1.09981,-0.41958 1.51939,0l23.60645,23.60645c0.41888,0.41898 0.41888,1.0982 0,1.51728l-23.60645,23.60635c-0.20119,0.2019 -0.47461,0.31547 -0.7597,0.31547z" />
                                     </g>
                                 </svg>
-                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider__right">
+                                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" className="slider-arrow slider-arrows__reviews_right">
 
                                     <g>
                                         <title>background</title>
@@ -408,31 +390,31 @@ class Main extends Component {
 
                             <TinySlider settings={reviewsSettings}>
                                 <div>
-                                    <div className="review-item">
+                                    <div className="reviews__item">
                                         <svg id="Capa_1" enable-background="new 0 0 512.2 512.2" height="80" viewBox="0 0 512.2 512.2" width="80" xmlns="http://www.w3.org/2000/svg" className="reviews__img"><path d="m80.362 328.788c43.568 103.716 191.005 103.859 234.633 0 5.067-12.063-3.882-25.388-16.938-25.388h-200.757c-13.085-.001-21.995 13.348-16.938 25.388zm16.938-10.389h200.758c2.336 0 4.031 2.38 3.107 4.579-38.432 91.493-168.487 91.62-206.973 0-.925-2.203.776-4.579 3.108-4.579z" /><path d="m105.017 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m236.408 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m222.524 41.317c3.521-2.181 4.608-6.803 2.427-10.325-2.18-3.521-6.801-4.607-10.325-2.427-26.82 16.611-49.178 39.732-64.874 66.986-80.261 20.645-141.955 93.531-142.109 183.668-.106 61.174 29.098 118.18 78.171 153.97 2.201 1.605 2.874 4.515 1.563 6.769-9.979 17.17-22.604 32.761-37.521 46.339-11.007 10.019-2.003 28.283 12.666 25.646 27.806-4.996 68.543-16.339 104.71-42.005 2.051-1.455 4.667-2.074 7.372-1.746 34.415 4.186 69.52-.922 101.796-15.63 3.769-1.718 5.432-6.166 3.715-9.935-1.718-3.769-6.164-5.432-9.936-3.715-29.926 13.637-62.292 18.217-93.765 14.389-6.419-.778-12.762.784-17.863 4.404-33.705 23.919-71.915 34.619-98.282 39.397 15.915-14.544 29.396-31.231 40.077-49.606 5.184-8.917 2.736-20.278-5.693-26.426-45.187-32.955-72.105-85.974-72.01-141.825.165-96.347 78.687-174.73 175.038-174.729 96.515 0 175.035 78.521 175.035 175.036 0 56.437-27.465 109.733-73.47 142.569-3.371 2.406-4.153 7.09-1.747 10.461 2.406 3.372 7.089 4.154 10.462 1.748 18.366-13.109 33.998-29.231 46.438-47.414 33.779 21.329 70.102 31.177 95.278 35.7 14.657 2.633 23.684-15.617 12.666-25.646-14.919-13.58-27.543-29.171-37.521-46.34-1.311-2.253-.638-5.163 1.563-6.768 48.951-35.7 78.278-92.618 78.172-153.97-.229-133.605-133.595-224.12-257.112-177.496-3.875 1.462-5.831 5.79-4.368 9.665 1.464 3.875 5.793 5.831 9.665 4.368 114.498-43.217 236.606 41.973 236.814 163.488.096 55.851-26.823 108.87-72.01 141.825-8.43 6.147-10.877 17.508-5.693 26.425 10.667 18.353 24.13 35.023 40.076 49.612-23.829-4.317-57.984-13.621-89.558-33.57 16.351-28.458 25.344-61.04 25.344-94.658 0-114.742-101.8-204.773-217.733-188.053 13.779-20.114 31.704-37.276 52.542-50.181z" /></svg>
-                                        <p className="text_md reviews__name">Олег</p>
-                                        <p className="text_sm reviews__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                        <p className="reviews__name text_md font_bold">Олег</p>
+                                        <p className="reviews__description text_sm font_regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="review-item">
+                                    <div className="reviews__item">
                                         <svg id="Capa_1" enable-background="new 0 0 512.2 512.2" height="80" viewBox="0 0 512.2 512.2" width="80" xmlns="http://www.w3.org/2000/svg" className="reviews__img"><path d="m80.362 328.788c43.568 103.716 191.005 103.859 234.633 0 5.067-12.063-3.882-25.388-16.938-25.388h-200.757c-13.085-.001-21.995 13.348-16.938 25.388zm16.938-10.389h200.758c2.336 0 4.031 2.38 3.107 4.579-38.432 91.493-168.487 91.62-206.973 0-.925-2.203.776-4.579 3.108-4.579z" /><path d="m105.017 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m236.408 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m222.524 41.317c3.521-2.181 4.608-6.803 2.427-10.325-2.18-3.521-6.801-4.607-10.325-2.427-26.82 16.611-49.178 39.732-64.874 66.986-80.261 20.645-141.955 93.531-142.109 183.668-.106 61.174 29.098 118.18 78.171 153.97 2.201 1.605 2.874 4.515 1.563 6.769-9.979 17.17-22.604 32.761-37.521 46.339-11.007 10.019-2.003 28.283 12.666 25.646 27.806-4.996 68.543-16.339 104.71-42.005 2.051-1.455 4.667-2.074 7.372-1.746 34.415 4.186 69.52-.922 101.796-15.63 3.769-1.718 5.432-6.166 3.715-9.935-1.718-3.769-6.164-5.432-9.936-3.715-29.926 13.637-62.292 18.217-93.765 14.389-6.419-.778-12.762.784-17.863 4.404-33.705 23.919-71.915 34.619-98.282 39.397 15.915-14.544 29.396-31.231 40.077-49.606 5.184-8.917 2.736-20.278-5.693-26.426-45.187-32.955-72.105-85.974-72.01-141.825.165-96.347 78.687-174.73 175.038-174.729 96.515 0 175.035 78.521 175.035 175.036 0 56.437-27.465 109.733-73.47 142.569-3.371 2.406-4.153 7.09-1.747 10.461 2.406 3.372 7.089 4.154 10.462 1.748 18.366-13.109 33.998-29.231 46.438-47.414 33.779 21.329 70.102 31.177 95.278 35.7 14.657 2.633 23.684-15.617 12.666-25.646-14.919-13.58-27.543-29.171-37.521-46.34-1.311-2.253-.638-5.163 1.563-6.768 48.951-35.7 78.278-92.618 78.172-153.97-.229-133.605-133.595-224.12-257.112-177.496-3.875 1.462-5.831 5.79-4.368 9.665 1.464 3.875 5.793 5.831 9.665 4.368 114.498-43.217 236.606 41.973 236.814 163.488.096 55.851-26.823 108.87-72.01 141.825-8.43 6.147-10.877 17.508-5.693 26.425 10.667 18.353 24.13 35.023 40.076 49.612-23.829-4.317-57.984-13.621-89.558-33.57 16.351-28.458 25.344-61.04 25.344-94.658 0-114.742-101.8-204.773-217.733-188.053 13.779-20.114 31.704-37.276 52.542-50.181z" /></svg>
-                                        <p className="text_md reviews__name">Дарья</p>
-                                        <p className="text_sm reviews__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                        <p className="reviews__name text_md font_bold">Дарья</p>
+                                        <p className="reviews__description text_sm font_regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="review-item">
+                                    <div className="reviews__item">
                                         <svg id="Capa_1" enable-background="new 0 0 512.2 512.2" height="80" viewBox="0 0 512.2 512.2" width="80" xmlns="http://www.w3.org/2000/svg" className="reviews__img"><path d="m80.362 328.788c43.568 103.716 191.005 103.859 234.633 0 5.067-12.063-3.882-25.388-16.938-25.388h-200.757c-13.085-.001-21.995 13.348-16.938 25.388zm16.938-10.389h200.758c2.336 0 4.031 2.38 3.107 4.579-38.432 91.493-168.487 91.62-206.973 0-.925-2.203.776-4.579 3.108-4.579z" /><path d="m105.017 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m236.408 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m222.524 41.317c3.521-2.181 4.608-6.803 2.427-10.325-2.18-3.521-6.801-4.607-10.325-2.427-26.82 16.611-49.178 39.732-64.874 66.986-80.261 20.645-141.955 93.531-142.109 183.668-.106 61.174 29.098 118.18 78.171 153.97 2.201 1.605 2.874 4.515 1.563 6.769-9.979 17.17-22.604 32.761-37.521 46.339-11.007 10.019-2.003 28.283 12.666 25.646 27.806-4.996 68.543-16.339 104.71-42.005 2.051-1.455 4.667-2.074 7.372-1.746 34.415 4.186 69.52-.922 101.796-15.63 3.769-1.718 5.432-6.166 3.715-9.935-1.718-3.769-6.164-5.432-9.936-3.715-29.926 13.637-62.292 18.217-93.765 14.389-6.419-.778-12.762.784-17.863 4.404-33.705 23.919-71.915 34.619-98.282 39.397 15.915-14.544 29.396-31.231 40.077-49.606 5.184-8.917 2.736-20.278-5.693-26.426-45.187-32.955-72.105-85.974-72.01-141.825.165-96.347 78.687-174.73 175.038-174.729 96.515 0 175.035 78.521 175.035 175.036 0 56.437-27.465 109.733-73.47 142.569-3.371 2.406-4.153 7.09-1.747 10.461 2.406 3.372 7.089 4.154 10.462 1.748 18.366-13.109 33.998-29.231 46.438-47.414 33.779 21.329 70.102 31.177 95.278 35.7 14.657 2.633 23.684-15.617 12.666-25.646-14.919-13.58-27.543-29.171-37.521-46.34-1.311-2.253-.638-5.163 1.563-6.768 48.951-35.7 78.278-92.618 78.172-153.97-.229-133.605-133.595-224.12-257.112-177.496-3.875 1.462-5.831 5.79-4.368 9.665 1.464 3.875 5.793 5.831 9.665 4.368 114.498-43.217 236.606 41.973 236.814 163.488.096 55.851-26.823 108.87-72.01 141.825-8.43 6.147-10.877 17.508-5.693 26.425 10.667 18.353 24.13 35.023 40.076 49.612-23.829-4.317-57.984-13.621-89.558-33.57 16.351-28.458 25.344-61.04 25.344-94.658 0-114.742-101.8-204.773-217.733-188.053 13.779-20.114 31.704-37.276 52.542-50.181z" /></svg>
-                                        <p className="text_md reviews__name">Юля</p>
-                                        <p className="text_sm reviews__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                        <p className="reviews__name text_md font_bold">Юля</p>
+                                        <p className="reviews__description text_sm font_regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="review-item">
+                                    <div className="reviews__item">
                                         <svg id="Capa_1" enable-background="new 0 0 512.2 512.2" height="80" viewBox="0 0 512.2 512.2" width="80" xmlns="http://www.w3.org/2000/svg" className="reviews__img"><path d="m80.362 328.788c43.568 103.716 191.005 103.859 234.633 0 5.067-12.063-3.882-25.388-16.938-25.388h-200.757c-13.085-.001-21.995 13.348-16.938 25.388zm16.938-10.389h200.758c2.336 0 4.031 2.38 3.107 4.579-38.432 91.493-168.487 91.62-206.973 0-.925-2.203.776-4.579 3.108-4.579z" /><path d="m105.017 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m236.408 236.49c0-14.869 12.098-26.966 26.967-26.966s26.966 12.097 26.966 26.966c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-23.14-18.826-41.966-41.966-41.966-23.141 0-41.967 18.826-41.967 41.966 0 4.142 3.357 7.5 7.5 7.5s7.5-3.357 7.5-7.5z" /><path d="m222.524 41.317c3.521-2.181 4.608-6.803 2.427-10.325-2.18-3.521-6.801-4.607-10.325-2.427-26.82 16.611-49.178 39.732-64.874 66.986-80.261 20.645-141.955 93.531-142.109 183.668-.106 61.174 29.098 118.18 78.171 153.97 2.201 1.605 2.874 4.515 1.563 6.769-9.979 17.17-22.604 32.761-37.521 46.339-11.007 10.019-2.003 28.283 12.666 25.646 27.806-4.996 68.543-16.339 104.71-42.005 2.051-1.455 4.667-2.074 7.372-1.746 34.415 4.186 69.52-.922 101.796-15.63 3.769-1.718 5.432-6.166 3.715-9.935-1.718-3.769-6.164-5.432-9.936-3.715-29.926 13.637-62.292 18.217-93.765 14.389-6.419-.778-12.762.784-17.863 4.404-33.705 23.919-71.915 34.619-98.282 39.397 15.915-14.544 29.396-31.231 40.077-49.606 5.184-8.917 2.736-20.278-5.693-26.426-45.187-32.955-72.105-85.974-72.01-141.825.165-96.347 78.687-174.73 175.038-174.729 96.515 0 175.035 78.521 175.035 175.036 0 56.437-27.465 109.733-73.47 142.569-3.371 2.406-4.153 7.09-1.747 10.461 2.406 3.372 7.089 4.154 10.462 1.748 18.366-13.109 33.998-29.231 46.438-47.414 33.779 21.329 70.102 31.177 95.278 35.7 14.657 2.633 23.684-15.617 12.666-25.646-14.919-13.58-27.543-29.171-37.521-46.34-1.311-2.253-.638-5.163 1.563-6.768 48.951-35.7 78.278-92.618 78.172-153.97-.229-133.605-133.595-224.12-257.112-177.496-3.875 1.462-5.831 5.79-4.368 9.665 1.464 3.875 5.793 5.831 9.665 4.368 114.498-43.217 236.606 41.973 236.814 163.488.096 55.851-26.823 108.87-72.01 141.825-8.43 6.147-10.877 17.508-5.693 26.425 10.667 18.353 24.13 35.023 40.076 49.612-23.829-4.317-57.984-13.621-89.558-33.57 16.351-28.458 25.344-61.04 25.344-94.658 0-114.742-101.8-204.773-217.733-188.053 13.779-20.114 31.704-37.276 52.542-50.181z" /></svg>
-                                        <p className="text_md reviews__name">Саша</p>
-                                        <p className="text_sm reviews__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
+                                        <p className="reviews__name text_md font_bold">Саша</p>
+                                        <p className="reviews__description text_sm font_regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur, veniam provident veritatis voluptatem est ut fuga magni explicabo consequatur?</p>
                                     </div>
                                 </div>
                             </TinySlider>

@@ -236,6 +236,12 @@
 /* Bestsellers section ==========================================================================================================================================*/
 .bestsellers {
     padding: 50px 0;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-gap: 20px;
+}
+
+.slider-wrap__bestsellers {
+    position: relative;
 }
 
 .bestsellers__img {
@@ -247,12 +253,7 @@
     padding: 15px 0;
 }
 
-.bestseller__name {
-    font-family: Akrobat-regular;
-}
-
 .bestseller__price {
-    font-family: Akrobat-semibold;
     color: var(--accent-color);
 }
 
@@ -262,41 +263,24 @@
     align-items: center;
 }
 
-.bestsellers {
-    grid-template-columns: 1fr 1fr 0.5fr;
-    grid-gap: 20px;
-}
-
-.slider__right {
-    position: absolute;
-    right: -80px;
-    outline: none;
-    cursor: pointer;
-}
-
 .mapboxgl-ctrl-attrib-inner {
     display: none !important;
 }
 
-.slider__left {
-    position: absolute;
-    left: -80px;
-    outline: none;
-    cursor: pointer;
+.slider-arrows__main_right {
+    right: 80px;
 }
 
-.slider-arrows__main_right {
-    position: absolute;
-    right: 80px;
-    outline: none;
-    cursor: pointer;
+.slider-arrows__bestsellers_right {
+    right: -80px;
 }
 
 .slider-arrows__main_left {
-    position: absolute;
     left: 80px;
-    outline: none;
-    cursor: pointer;
+}
+
+.slider-arrows__bestsellers_left {
+    left: -80px;
 }
 
 .bestsellers .btn,
@@ -307,8 +291,12 @@
     font-size: 18px;
 }
 
-.bestsellers_sliderWrap {
-    position: relative;
+
+
+.slider-arrow {
+    position: absolute;
+    outline: none;
+    cursor: pointer;
 }
 
 .slider-arrows {
@@ -319,61 +307,13 @@
     z-index: 10;
 }
 
-.bestsellers a {
-    display: block;
-    text-decoration: none;
-    color: var(--primary-color)
-}
-
-.bestsellers a:hover .social-overlay {
-    opacity: 1;
-    -webkit-transition: all 0.5s ease;
-}
-
-.bestsellers a:hover .social-icon {
-    opacity: 1;
-}
-
-.bestsellers img:first-of-type {
-    width: 100%;
-    display: block;
-}
-
 .bestseller__inner {
     padding: 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
-.social-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 50;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.social-item {
-    position: relative;
-    box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.1);
-}
-
-.social-icon {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-    transition: 0.5s;
-    z-index: 100;
-}
-
+/* Reviews section =================================================================================================================== */
 .reviews {
     padding: 50px 0;
 }
@@ -383,33 +323,31 @@
     display: block;
 }
 
-.review-item {
+.reviews__item {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
-}
-
-.review-item p {
     text-align: center;
-}
-
-.reviews__name {
-    font-family: Akrobat-bold;
-}
-
-.reviews__description {
-    font-family: Akrobat-regular;
 }
 
 .slider__wrap_reviews .tns-inner {
     padding: 15px 0;
 }
 
-.review-item p:last-of-type {
+.reviews__description {
     margin-top: 10px;
 }
 
+.slider-arrows__reviews_left {
+    left: -80px;
+}
+
+.slider-arrows__reviews_right {
+    right: -80px;
+}
+
+/* Shop pieces =============*/
 .item-wrap {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -422,7 +360,13 @@
     margin: auto;
 }
 
-.item-btn {
+.item-wrap {
+    display: flex;
+    align-items: center;
+}
+
+/* ================ */
+.bestsellers__btnWrap {
     display: flex;
     align-items: center;
 }
@@ -432,6 +376,33 @@
     padding: 35px 0 50px;
 }
 
+.stats__innerWrap {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 30px;
+}
+
+.stats__item {
+    border-radius: 0px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    border: 2px solid #26252B;
+    text-align: center;
+}
+
+.stats__number {
+    color: #ee5253;
+}
+
+.stats__desc {
+    color: #000;
+}
+
+/* Map section ================================================================================================================== */
 .map {
     position: relative;
     padding: 50px 0 0;
@@ -470,54 +441,7 @@
     margin-bottom: 20px;
 }
 
-.stats .container-xs:nth-child(2) {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 30px;
-}
 
-/* Reviews section ============================================================================================================================================ */
-.review {
-    border: 2px solid #26252B;
-}
-
-.review:nth-child(1) {
-    color: #fff;
-}
-
-.review__number {
-    color: #ee5253 !important;
-}
-
-.review__desc {
-    color: #000;
-}
-
-.review {
-    border-radius: 0px;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-}
-
-.review p {
-    text-align: center;
-}
-
-.review__number {
-    font-size: 50px;
-    color: #EE5253;
-    font-family: Akrobat-bold;
-}
-
-.review__desc {
-    font-size: 20px;
-    margin-top: 0px;
-    font-family: Akrobat-semibold;
-}
 
 /* FRONT PAGE END ==========================================================================================================================================*/
 
