@@ -688,17 +688,16 @@
 
 /* BLOG-POST PAGE START ==========================================================================================================================================*/
 
-.post-page {
+.post {
     padding: 120px 0;
 }
 
-.post-page__mainImg {
+.post__mainImg {
     width: 100%;
     margin-bottom: 50px;
 }
 
-.post-page__mainText {
-    font-family: Akrobat-regular;
+.post__mainText {
     line-height: 30px;
 }
 

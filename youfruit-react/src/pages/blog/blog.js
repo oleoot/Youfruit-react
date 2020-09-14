@@ -18,11 +18,9 @@ class Blog extends Component {
             <div className="blog-page">
                 <section className="blog">
                     <div className="container">
-                        <div className="container">
-                            <div className="breadcrumbs-btn">
-                                <NavLink exact to="/" activeClassName="nav-active" className="breadcrumbs-btn__link text_lg font_regular">
-                                    <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="breadcrumbs-btn__img" />Главная</NavLink>
-                            </div>
+                        <div className="breadcrumbs-btn">
+                            <NavLink exact to="/" activeClassName="nav-active" className="breadcrumbs-btn__link text_lg font_regular">
+                                <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="breadcrumbs-btn__img" />Главная</NavLink>
                         </div>
                         <div className="blog__innerWrap">
                             {this.state.blogPosts.map((post) => (
@@ -35,17 +33,10 @@ class Blog extends Component {
                                     </div>
                                 </div>
                             ))}
-
                         </div>
                     </div>
                 </section>
             </div>
-
-
-
-
-
-
         )
     }
 }

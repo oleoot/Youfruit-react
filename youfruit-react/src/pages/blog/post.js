@@ -17,14 +17,17 @@ class Post extends Component {
     }
 
     render() {
-        console.log('localhost:3000/shop/' + this.state.currentLink)
         return (
-            <div className="post-page">
+            <div className="blogpost-page">
                 {this.state.blogInfo.map((blogPost) => {
                     if ('http://localhost:3000/blog/' + blogPost.componentName === this.state.currentLink) {
                         return (
-                            <>
+                            <section className="post">
                                 <div className="container-xs">
+                                    <div className="breadcrumbs-btn">
+                                        <NavLink exact to="/" activeClassName="nav-active" className="breadcrumbs-btn__link text_lg font_regular">
+                                            <img src={require(`../../img/icons/arrow-left.png`)} alt="arrow-left" className="breadcrumbs-btn__img" />Главная</NavLink>
+                                    </div>
                                     <div className="section-headline">
                                         <div className="section-headline_underline"></div>
                                         <div className="section-headline__textWrap">
@@ -32,14 +35,12 @@ class Post extends Component {
                                         </div>
                                         <div className="section-headline_underline"></div>
                                     </div>
-                                </div>
-                                <div className="container">
-                                    <img src={blogPost.blogImg} alt="" className="post-page__mainImg" />
-                                    <p className="post-page__mainText text_md">
+                                    <img src={blogPost.blogImg} alt="" className="post__mainImg" />
+                                    <p className="post__mainText text_md font_regular">
                                         {blogPost.text}
                                     </p>
                                 </div>
-                            </>
+                            </section>
                         )
                     }
                 })}
