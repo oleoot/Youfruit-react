@@ -434,10 +434,10 @@ class Main extends Component {
                     <div className="mapContainer__wrap">
                         <div className="mapContainer__info">
                             <ul>
-                                <li>youfruit.shop@gmail.com</li>
-                                <li>+380667395800</li>
-                                <li>м.Осокорки</li>
-                                <li>Княжий Затон 14Б</li>
+                                <li className="mapContainer__listItem text_sm font_semibold">youfruit.shop@gmail.com</li>
+                                <li className="mapContainer__listItem text_sm font_semibold">+380667395800</li>
+                                <li className="mapContainer__listItem text_sm font_semibold">м.Осокорки</li>
+                                <li className="mapContainer__listItem text_sm font_semibold">Княжий Затон 14Б</li>
 
                             </ul>
                         </div>

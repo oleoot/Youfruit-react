@@ -431,13 +431,12 @@
     z-index: 10;
 }
 
-.mapContainer__info li {
-    font-family: Akrobat-semibold;
+.mapContainer__listItem {
     background: url(../img/dot.png) no-repeat left center;
     padding-left: 25px;
 }
 
-.mapContainer__info li:not(:last-child) {
+.mapContainer__listItem:not(:last-child) {
     margin-bottom: 20px;
 }
 
