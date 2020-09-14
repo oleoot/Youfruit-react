@@ -518,7 +518,7 @@
 
 
 /* PRODUCT PAGE START ==========================================================================================================================================*/
-.product-wrap {
+.product__innerWrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 100px;
@@ -526,32 +526,20 @@
     margin-top: 100px;
 }
 
-.product-wrap img {
+.product__img {
     width: 100%;
     display: block;
 }
 
-.product-wrap p {
+.product__innerWrap p {
     margin-bottom: 20px;
-
-}
-
-.product__name {
-    font-family: Akrobat-semibold;
 }
 
 .product__price {
-    font-family: Akrobat-semibold;
     color: var(--accent-color);
 }
 
-.product-wrap a {
-    height: 50px;
-    line-height: 50px;
-    margin: 20px 0 0 0;
-}
-
-.product-wrap input {
+.product__input {
     width: 100px;
     height: 40px;
     outline: none;
@@ -560,34 +548,24 @@
 
 .product__weight {
     color: #a5a5a5;
-    font-family: Akrobat-regular;
 }
 
-.product__quantity {
-    font-family: Akrobat-regular;
+.product__descriptionWrap {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
-.product-description {
+.product__description {
     line-height: 40px;
 }
 
-.product-description span {
-    font-weight: 400;
-}
-
-.product-wrap-description {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-family: Akrobat-regular;
-}
-
-.back-btn-product {
+/* .back-btn-product {
     margin: 0px 0 0 !important;
 }
 
 .container-products {
     padding-top: 120px;
-}
+} */
 
 /* PRODUCT PAGE END ==========================================================================================================================================*/
 
@@ -1245,7 +1223,7 @@
     color: #fff;
 }
 
-.btn-added {
+.btn_added {
     background: #000;
     color: #fff;
     cursor: auto;
