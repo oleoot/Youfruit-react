@@ -30,7 +30,7 @@ class Product extends Component {
         return (
             <div className="product-page" >
                 {this.state.products.map((product) => {
-                    if ('http://localhost:3000/shop/' + product.componentName === this.state.currentLink) {
+                    if ('http://localhost:3002/shop/' + product.componentName === this.state.currentLink) {
                         return (
                             <section className="product">
                                 <div className="container-xs">

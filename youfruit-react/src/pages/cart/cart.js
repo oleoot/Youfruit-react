@@ -200,8 +200,8 @@ class Cart extends Component {
                                     <input type="text" placeholder="Комментарий к заказу" name="userComments" value={this.state.userComments} onChange={this.handleUserInputChange} className="cart-form__input" />
                                 </form>
                                 {this.state.total === 0 ?
-                                    <Link to="/shop" className="btn btn-open-input text-sm">Перейти в магазин</Link> :
-                                    <div className="btn btn-open-input text-sm" onClick={() => {
+                                    <Link to="/shop" className="btn text_sm">Перейти в магазин</Link> :
+                                    <div className="btn text_sm" onClick={() => {
                                         this.showInputsForm()
                                         this.makeOrder(prArray, this.state.total, this.state.userName, this.state.userEmail, this.state.userComments)
                                     }

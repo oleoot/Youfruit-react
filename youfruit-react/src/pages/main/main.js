@@ -61,7 +61,7 @@ class Main extends Component {
             nav: false,
             loop: false,
             controlsContainer: ".slider-arrows_bestsellers",
-            edgePadding: 15
+            edgePadding: 15,
         };
         const reviewsSettings = {
             items: 3,
