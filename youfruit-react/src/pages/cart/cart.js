@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "../../styles/style.css"
+import Context from "../../Context"
 
 class Cart extends Component {
-
+    static contextType = Context
     constructor(props) {
         super(props);
         this.state = {
@@ -49,6 +50,8 @@ class Cart extends Component {
 
 
     componentDidMount = () => {
+        const state = this.context
+        console.log(state)
         window.scrollTo(0, 0);
         const arr = [...this.state.newTotal];
         let totalSum = 0;

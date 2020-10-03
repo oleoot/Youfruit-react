@@ -1346,6 +1346,19 @@
         max-width: 700px;
     }
 
+    .header__list {
+        display: none;
+    }
+
+    .production__img {
+        min-height: 500px;
+    }
+
+    /* .slider-arrow {
+        width: 30px;
+        height: 30px;
+    } */
+
     .advantages__wrap {
         grid-template-columns: 1fr 1fr;
     }

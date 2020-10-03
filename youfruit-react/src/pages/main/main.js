@@ -62,6 +62,14 @@ class Main extends Component {
             loop: false,
             controlsContainer: ".slider-arrows_bestsellers",
             edgePadding: 15,
+            responsive: {
+                640: {
+                    items: 2
+                },
+                1024: {
+                    items: 3
+                }
+            }
         };
         const reviewsSettings = {
             items: 3,
@@ -70,7 +78,15 @@ class Main extends Component {
             nav: false,
             loop: false,
             controlsContainer: ".slider-arrows__reviews",
-            edgePadding: 15
+            edgePadding: 15,
+            responsive: {
+                640: {
+                    items: 2
+                },
+                1024: {
+                    items: 3
+                }
+            }
         };
         return (
             <div className="front-page">
