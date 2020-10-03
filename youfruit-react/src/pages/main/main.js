@@ -63,7 +63,10 @@ class Main extends Component {
             edgePadding: 15,
             navContainer: ".slider-nav_bestsellers",
             responsive: {
-                640: {
+                320: {
+                    items: 2
+                },
+                641: {
                     items: 2
                 },
                 1024: {

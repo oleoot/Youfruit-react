@@ -510,8 +510,8 @@
     border-radius: 50%;
     background: var(--secondary-color);
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     color: #000;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
@@ -1452,5 +1452,111 @@
 
     .product .btn {
         padding: 15px 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .container,
+    .container-xs {
+        max-width: 550px;
+    }
+
+    .production__wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .production__pane {
+        margin: 50px 0;
+    }
+
+    .production__pane:nth-child(2) {
+        grid-row: 4;
+    }
+
+    .production__img_topLeft {
+        border-top-right-radius: 10px;
+    }
+
+    .production__img_bottomRight {
+        border-bottom-left-radius: 0px;
+    }
+
+    .footer__left {
+        grid-column: 1/3;
+        justify-content: center;
+    }
+
+    .footer__right {
+        grid-row: 2;
+        grid-column: 1/3;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .footer__middle {
+        grid-row: 3;
+    }
+
+    .bestsellers__textWrap {
+        flex-wrap: wrap;
+    }
+
+    .bestsellers__btnWrap {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .bestsellers .btn {
+        width: 100%;
+    }
+
+    .section-headline_underline {
+        width: 120px;
+    }
+
+    .shop__innerWrap {
+        gap: 20px;
+        grid-gap: 20px;
+    }
+
+    .shop__textWrap {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        gap: 20px;
+    }
+
+    .shop__productWeight {
+        width: 40px;
+        height: 40px;
+    }
+
+    .shop__productWeight .text_sm {
+        font-size: 14px;
+    }
+
+    .product__innerWrap {
+        grid-template-columns: 1fr;
+    }
+
+    .product__descriptionWrap {
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+
+    .blog__innerWrap {
+        grid-template-columns: 1fr;
+    }
+
+    .info__innerWrap {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery__innerWrap {
+        grid-template-columns: 1fr;
+    }
+
+    .payment__innerWrap {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
