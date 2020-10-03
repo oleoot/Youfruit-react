@@ -58,10 +58,10 @@ class Main extends Component {
             items: 3,
             lazyload: true,
             gutter: 30,
-            nav: false,
             loop: false,
             controlsContainer: ".slider-arrows_bestsellers",
             edgePadding: 15,
+            navContainer: ".slider-nav_bestsellers",
             responsive: {
                 640: {
                     items: 2
@@ -75,10 +75,10 @@ class Main extends Component {
             items: 3,
             lazyload: true,
             gutter: 30,
-            nav: false,
             loop: false,
             controlsContainer: ".slider-arrows__reviews",
             edgePadding: 15,
+            navContainer: ".slider-nav_reviews",
             responsive: {
                 640: {
                     items: 2
@@ -276,6 +276,10 @@ class Main extends Component {
                                     </g>
                                 </svg>
                             </div>
+                            <div className="slider-nav slider-nav_bestsellers">
+                                <div className="nav-item"></div>
+                                <div className="nav-item"></div>
+                            </div>
                             <TinySlider settings={bestsellersSettings} className="bestsellers__sliderWrap">
                                 <div>
                                     <div className="bestseller__inner">
@@ -403,7 +407,10 @@ class Main extends Component {
                                     </g>
                                 </svg>
                             </div>
-
+                            <div className="slider-nav slider-nav_reviews">
+                                <div className="nav-item"></div>
+                                <div className="nav-item"></div>
+                            </div>
                             <TinySlider settings={reviewsSettings}>
                                 <div>
                                     <div className="reviews__item">

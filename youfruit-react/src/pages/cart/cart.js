@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "../../styles/style.css"
-import Context from "../../Context"
+import UserContext from "../../UserContext"
 
 class Cart extends Component {
-    static contextType = Context
-    constructor(props) {
-        super(props);
+    static contextType = UserContext
+    constructor(props, context) {
+        super(props, context);
         this.state = {
-
             newInputValue: '',
             newTotal: props.cartTotal,
             total: 0,
@@ -51,7 +50,7 @@ class Cart extends Component {
 
     componentDidMount = () => {
         const state = this.context
-        console.log(state)
+        console.log(this.context)
         window.scrollTo(0, 0);
         const arr = [...this.state.newTotal];
         let totalSum = 0;
@@ -134,6 +133,7 @@ class Cart extends Component {
     }
 
     render() {
+        const { test, changeTest } = this.context
         const { cartInside, removeFromCartProduct, removeFromCartNumber, removeFromTotal } = this.props;
         let prArray = [];
         return (
@@ -143,7 +143,7 @@ class Cart extends Component {
                         <div className="section-headline">
                             <div className="section-headline_underline"></div>
                             <div className="section-headline__textWrap">
-                                <p className="section-headline_text text_lg">Корзина</p>
+                                <p className="section-headline_text text_lg"></p>
                             </div>
                             <div className="section-headline_underline"></div>
                         </div>
