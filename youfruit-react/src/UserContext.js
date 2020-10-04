@@ -7,24 +7,31 @@ const UserContext = React.createContext()
 
 class UserProvider extends Component {
     state = {
-        test: false
+        // products: productsData,
+        // blogPosts: blogData,
+        cartQuantity: [],
+        cartInside: [],
+        cartTotal: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        menuOpen: false
     }
 
 
-    changeTest = () => {
-        this.setState((prevState) => ({
-            test
-        }))
+    addToCartProductNew = (id, name, price, img, inputState) => {
+        const addToCartProductNew = [...this.state.cartInside];
+        addToCartProductNew.push({ id, name, price, img, inputState });
+        this.setState({
+            cartInside: addToCartProductNew
+        })
     }
     render() {
         const { children } = this.props
         const { test } = this.state
-        const { changeTest } = this
+        const { addToCartProductNew } = this
         return (
             <UserContext.Provider value={
                 {
                     test,
-                    changeTest
+                    addToCartProductNew
                 }
             }>
                 {children}

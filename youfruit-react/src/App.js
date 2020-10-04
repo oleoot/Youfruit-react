@@ -148,13 +148,14 @@ class App extends Component {
             </Route>
             <Route exact path="/shop" component={Shop}>
             </Route>
+            {/* <UserProvider> */}
             {this.state.products.map(product => (
               <Route path={product.link} render={(props) =>
                 <Product {...props} addToCartNumber={this.addToCartNumber} addToCartProduct={this.addToCartProduct} addToTotal={this.addToTotal} cartTotal={this.state.cartTotal} />}>
               </Route>
             ))
             }
-
+            {/* </UserProvider> */}
             {this.state.blogPosts.map(post => (
               <Route path={post.link} component={Post}>
               </Route>

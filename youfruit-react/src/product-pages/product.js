@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import { productsData } from '../products'
 import "../styles/style.css"
+// import UserContext from "../UserContext"
 
 
 class Product extends Component {
+    // static contextType = UserContext
     constructor() {
         super();
 
@@ -16,6 +18,7 @@ class Product extends Component {
     }
     componentDidMount() {
         window.scrollTo(0, 0);
+        // console.log(this.context)
     }
 
     handleChange = (event) => {
@@ -26,6 +29,7 @@ class Product extends Component {
 
 
     render() {
+        // const { addToCartProductNew } = this.context
         const { addToCartNumber, addToCartProduct, addToTotal, cartTotal } = this.props;
         return (
             <div className="product-page" >
@@ -55,6 +59,7 @@ class Product extends Component {
                                                     addToTotal(product.price, this.state.inputValue, product.id)
                                                     addToCartNumber(product.id)
                                                     addToCartProduct(product.id, product.name, product.price, product.img, this.state.inputValue)
+                                                    // addToCartProductNew(product.id, product.name, product.price, product.img, this.state.inputValue)
                                                 }} className="btn text_sm">Добавить в корзину</button>
                                             }
                                         </div>

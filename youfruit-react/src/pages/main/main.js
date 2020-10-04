@@ -66,7 +66,7 @@ class Main extends Component {
                 320: {
                     items: 2
                 },
-                641: {
+                640: {
                     items: 2
                 },
                 1024: {
@@ -83,6 +83,9 @@ class Main extends Component {
             edgePadding: 15,
             navContainer: ".slider-nav_reviews",
             responsive: {
+                320: {
+                    items: 2
+                },
                 640: {
                     items: 2
                 },
